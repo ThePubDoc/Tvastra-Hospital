@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    text-align: center;
+}
+
+.container h2 {
+    padding-top: 1rem;
+}
+
+.container p {
+    padding: 2.5rem;
+}
+
+.container .grid-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    /* margin: 0 1rem 0 1rem; */
+}
+
+.container .grid-container .img {
+    background-color: rgb(224, 218, 218);
+    margin: 0 .5rem 1rem .5rem;
+    border-radius: 10px;
+    height: 10rem;
+}
+
+.container .grid-container .img p{
+    color:rgb(66, 62, 62);
+}
