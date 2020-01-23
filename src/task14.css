@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+li {
+    list-style-type: none;
+}
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 0 10rem 0 10rem;
+}
+
+.navbar img {
+    width: 13rem;
+    height: 3rem;
+}
+
+.navbar .navbar-middle {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar .navbar-middle li {
+    margin-left: 3rem;
+    font-size:larger;
+    margin-top: 1rem;
+}
+
+
+.navbar .navbar-buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.navbar .navbar-buttons li {
+    border-style: solid;
+    padding: 1rem;
+    margin-left: 1rem;
+    width: 9rem;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+.navbar .navbar-buttons li .login {
+    text-decoration: none;
+    color: black;
+}
+
+.navbar .navbar-buttons li .quote {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .navbar-buttons .quote-button {
+    background-color: rgb(23, 23, 44);
+}
+
+.container-1 {
+    background-image: url("images/img1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10rem 0 10rem 5rem;
+}
+
+.container-1 h1 {
+    font-size: xxx-large;
+    margin-bottom: 1rem;
+}
+
+.container-1 p {
+    font-size: x-large;
+    margin-bottom: 3rem;
+}
+
+.container-1 .search {
+    display: flex;
+    flex-direction: row;
+    height: 4rem;
+    align-items: center;
+    margin-bottom: 4rem;
+}
+
+.container-1 .search .fa-map-marker{
+    background-color: white;
+    font-size: x-large;
+    padding: 1rem 0 1rem 2rem;
+    border-style: hidden;
+}
+
+.container-1 .search input {
+    border-style: hidden;
+    padding: 1.3rem;
+    width: 25rem;
+}
+
+.container-1 .search img {
+    width: 1.8rem;
+    height: 2rem;
+    background-color: white;
+    padding: .77rem;
+    margin-left: -15rem;
+}
+
+.container-1  .search button {
+    padding: 1.1rem 4rem 1.1rem 4rem;
+    background-color: rgb(23, 23, 44);
+    border-style: hidden;
+    color: white;
+    font-size: large;
+}
