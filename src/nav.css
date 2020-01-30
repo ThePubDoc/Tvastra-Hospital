@@ -7,6 +7,14 @@ body {
     text-align: center;
 }
 
+li {
+    list-style-type: none;
+}
+
+a {
+    color: black;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -17,10 +25,79 @@ body {
 .navbar img {
     width: 7rem;
     height: 2rem;
+
+}
+
+.navbar .menu {
+    display: none;
+}
+
+.navbar .menu-buttons {
+    display: none;
 }
 
 .navbar i {
     color: #525659;
 }
 
-@media only screen and (min-width: 600px){}
+@media only screen and (min-width: 600px) and (max-width: 1000px){
+
+}
+
+@media only screen and (min-width : 1000px){
+    .navbar img {
+        /* margin-left: 3rem; */
+    }
+
+    .navbar {
+        justify-content: space-evenly;
+    }
+
+    .navbar .menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .navbar .menu li {
+        /* margin-left: 5rem; */
+        padding-left: 5rem;
+    }
+
+    .navbar .menu li a {
+        font-size: large;
+    }
+
+    .navbar i {
+        display: none;
+    }
+
+    .navbar .menu-buttons {
+        display: flex;
+        flex-direction: row;
+        margin-right: -5rem;
+    }
+    
+    .navbar .menu-buttons .login {
+        margin-right: 1rem;
+        background-color: white;
+        border: none;
+        border-style: solid;
+        border-width: 1px;
+        padding: 1rem;
+        border-radius: 5px;
+        width: 10rem;
+        font-size: medium;
+    }
+
+    .navbar .menu-buttons .quote {
+        background-color: rgb(2, 2, 63);
+        border: solid;
+        color: white;
+        border-width: 1px;
+        padding: 1rem;
+        border-radius: 5px;
+        width: 10rem;
+        font-size: medium;
+    }
+}
