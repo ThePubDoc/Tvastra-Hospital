@@ -1,0 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    align-items: center;
+}
+
+.navbar img {
+    width: 7rem;
+    height: 2rem;
+}
+
+.navbar i {
+    color: #525659;
+}
+
+@media only screen and (min-width: 600px){}

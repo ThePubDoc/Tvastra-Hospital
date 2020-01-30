@@ -1,0 +1,73 @@
+.treatments {
+    margin-top: 2rem;
+}
+
+.treatments h2 {
+    padding: 0 3rem 0 3rem;
+}
+
+.treatments p {
+    padding: 1rem;
+    font-size: large;
+}
+
+
+.treatments .treatment {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 1rem;
+    margin: .5rem 2rem 1rem 2rem;
+    background-size: cover;
+}
+
+.treatments .treatment p {
+    color: white;
+    margin: .7rem;
+    font-size: 1.2rem;
+}
+
+.treatments .img-1 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--009.jpg");
+    background-repeat: no-repeat;
+}
+
+.treatments .img-2 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--010.jpg");
+    background-repeat: no-repeat;
+}
+
+.treatments .img-3 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--008.jpg");
+    background-repeat: no-repeat;
+}
+
+.treatments .img-4 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--011.jpg");
+    background-repeat: no-repeat;
+}
+
+.treatments .img-5 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--007.jpg");
+    background-repeat: no-repeat;
+}
+
+@media only screen and (min-width: 600px){
+    .treatments {
+        display: grid;
+        margin: 2rem;
+        grid-template-columns: 50% 50%;
+    }
+
+    .treatments h2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .treatments p {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
