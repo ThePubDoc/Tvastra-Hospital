@@ -22,3 +22,29 @@
 }
 
 @media only screen and (min-width: 600px){}
+
+@media only screen and (min-width: 1000px){
+    .querry {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .querry .content {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        margin-left: 5rem;
+    }
+
+    .querry .content h2{
+        font-size: xx-large;
+    }
+
+    .querry .content p {
+        margin-left: .9rem;    
+    }
+}
