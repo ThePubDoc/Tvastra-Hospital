@@ -3,20 +3,20 @@
     margin: 0;
 }
 
-.doctor-sort {
+.hospital-sort {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: 2rem;
 }
 
-.doctor-sort select {
+.hospital-sort select {
     padding: .5rem;
     background-color: rgb(206, 197, 197);
     border: none;
 }
 
-.doctor-list-container {
+.hospital-list-container {
     margin: 0;
     padding: 0;
     display: flex;
@@ -24,27 +24,18 @@
     margin: 2rem;
 }
 
-.doctor-list-container .filter-doctor {
+.hospital-list-container .filter-hospital {
     display: none;
 }
 
-.doctor-list-container .doctor-list {
+.hospital-list-container .hospital-list {
     display: flex;
     flex-direction: column;
 }
 
-/* .doctor-list-container .doctor-list .doctor-card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    border: solid;
-    border-width: 1px;
-    margin-top: 1rem;
-} */
-
-.doctor-list-container .doctor-list .doctor-card {
+.hospital-list-container .hospital-list .hospital-card {
     display: grid;
-    grid-template-columns: 10% auto;
+    grid-template-columns: 12% auto;
     align-items: baseline;
     border: solid;
     border-width: 1px;
@@ -52,7 +43,7 @@
     text-align: left;
 }
 
-.doctor-list-container .doctor-list .doctor-card h3 {
+.hospital-list-container .hospital-list .hospital-card h3 {
     color: rgb(0, 115, 209);
     grid-column-start: 1;
     grid-column-end: 3;
@@ -60,27 +51,20 @@
     flex-direction: row;
 }
 
-.doctor-list-container .doctor-list .doctor-card h3::before{
+.hospital-list-container .hospital-list .hospital-card i {
+    color: rgb(0, 115, 209);
+    margin: 1rem .5rem 0 1rem;
+}
+
+.hospital-list-container .hospital-list .hospital-card h3::before {
     content: "";
     border-bottom: 2px solid #0099ff;
     width: 1rem;
     height: .6rem;
 }
 
-.doctor-list-container .doctor-list .doctor-card i{
-    color: rgb(0, 115, 209);
-    margin: 1rem .5rem 0 .5rem;
-}
 
-.doctor-list-container .doctor-list .doctor-card .certi {
-    width: 1rem;
-    height: 1rem;
-    margin: 0;
-    padding: 0;
-    margin: 1rem .5rem 0 .5rem;
-}
-
-.doctor-list-container .doctor-list .doctor-card button{
+.hospital-list-container .hospital-list .hospital-card button {
     align-self: center;
     background-color: rgb(3, 3, 44);
     grid-column-start: 1;
@@ -92,51 +76,72 @@
     margin: 1rem 5rem 1rem 5rem;
 }
 
-.doctor-list-container .doctor-list .doctor-card .doctor-img {
+.hospital-list-container .hospital-list .hospital-card .hospital-img{
     width: 100%;
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
+.hospital-list-container .hospital-list .hospital-card .hospital-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    margin: 1rem;
+}
+
+.hospital-list-container .hospital-list .hospital-card .hospital-tags li {
+    list-style-type: none;
+    border: solid rgb(175, 173, 173);
+    border-width: 1px;
+    border-radius: 20px;
+    padding: .4rem .7rem;
+    font-size: .8rem;
+    margin-right: .3rem;
+    color: #2a2a2a;
+    margin-bottom: .3rem; 
+}
+
 @media only screen and (min-width : 600px){
-    .doctor-list-container{
+    .hospital-list-container{
         display: grid;
         grid-template-columns: 20% auto;
     }
 
-    .doctor-list-container .filter-doctor {
+    .hospital-list-container .filter-hospital {
         display: block;
     }
 
-    .doctor-list-container .filter-doctor .filter {
+    .hospital-list-container .filter-hospital .filter {
         display: grid;
         grid-template-columns: 5% auto;
         margin-bottom: 1rem;
         margin-top: 1rem;
     }
 
-    .doctor-list-container .filter-doctor .filter .fa-plus {
+    .hospital-list-container .filter-hospital .filter .fa-plus {
         grid-column-start: 1;
         grid-column-end: 3;
         margin-top: 1rem;    
         color: rgb(0, 153, 255);  
     }
 
-    .doctor-list-container .doctor-list .doctor-card{
+    .hospital-list-container .hospital-list .hospital-card{
         grid-template-columns: 10% 20% 10% 20% auto;
     }
 
-    .doctor-list-container .doctor-list .doctor-card h3 {
+    .hospital-list-container .hospital-list .hospital-card h3 {
         grid-column-start: 1;
         grid-column-end: 5;
     }
 
-    .doctor-list-container .doctor-list .doctor-card button {
+    .hospital-list-container .hospital-list .hospital-card button {
         grid-column-start: 1;
         grid-column-end: 5;
     }
     
-    .doctor-list-container .doctor-list .doctor-card .doctor-img {
+    .hospital-list-container .hospital-list .hospital-card .hospital-img {
         width: 100%;
         grid-column-start: 5;
         grid-column-end: 6;
@@ -147,36 +152,36 @@
 }
 
 @media only screen and (min-width : 1000px){
-    .doctor-list-container .filter-doctor .filter {
+    .hospital-list-container .filter-hospital .filter {
         display: grid;
         grid-template-columns: 10% 80%;
         align-items: center;
     }
 
-    .doctor-list-container .filter-doctor .filter label {
+    .hospital-list-container .filter-hospital .filter label {
         justify-self: left;
     }
 
-    .doctor-list-container .filter-doctor .filter .fa-search {
+    .hospital-list-container .filter-hospital .filter .fa-search {
         justify-self: right;
     }
 
-    .doctor-list-container .filter-doctor .filter .fa-plus {
+    .hospital-list-container .filter-hospital .filter .fa-plus {
         justify-self: left;
     }
 
-    .doctor-list-container .doctor-list .doctor-card{
+    .hospital-list-container .hospital-list .hospital-card{
         grid-template-columns: 4% 20% 4% 5% auto;
         /* justify-content: space-around; */
     }
 
-    .doctor-list-container .doctor-list .doctor-card button {
+    .hospital-list-container .hospital-list .hospital-card button {
         grid-column-start: 1;
         grid-column-end: 3;
         margin-left: 1rem;
     }
 
-    .doctor-list-container .doctor-list .doctor-card .doctor-img {
+    .hospital-list-container .hospital-list .hospital-card .hospital-img {
         width: 20rem;
         grid-column-start: 5;
         grid-column-end: 6;
