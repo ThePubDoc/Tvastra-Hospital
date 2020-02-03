@@ -58,7 +58,7 @@
 
 .hospital-list-container .hospital-list .hospital-card h3::before {
     content: "";
-    border-bottom: 2px solid #0099ff;
+    border-bottom: 2px solid rgb(0, 115, 209);;
     width: 1rem;
     height: .6rem;
 }
