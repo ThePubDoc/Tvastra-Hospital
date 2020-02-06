@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem;
+    align-items: center;
+}
+
+.navbar img {
+    width: 7rem;
+    height: 2rem;
+}
+
+.navbar i {
+    color: #525659;
+}
+
+.locator {
+    background-color: #99c0da;
+    text-align: center;
+}
+
+.locator h1 {
+    padding: 2rem;
+}
+
+.locator p {
+    padding: 0 2rem 0 2rem;
+}
+
+.locator .city {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+    align-items: center;
+}
+
+.locator .city i {
+    background-color: white;
+    padding: 1rem;
+    height: 1rem;
+}
+
+.locator .city .fa-map-marker {
+    background-color: white;
+    font-size: large;
+    padding: 1rem;
+    border-style: hidden;
+}
+
+.locator .city input {
+    width: 15rem;
+    height: 3rem;
+    border-style: hidden;
+}
+
+.locator .city img {
+    background-color: white;
+    height: 1rem;
+    padding: 1rem;
+}
+
+.locator .search input {
+    width: 18.7rem;
+    height: 1rem;
+    padding: 1rem;
+}
+
+.locator button {
+    background-color: rgb(2, 2, 63);
+    border: none;
+    color: white;
+    margin: 2rem;
+    width: 9rem;
+    height: 3rem;
+}
+
+.working h2 {
+    margin: 1rem;
+}
+
+.working p {
+    margin: 1rem;
+}
+
+.working .workflow {
+    display: grid;
+    grid-template-rows: auto auto auto auto auto auto auto;
+}
+
+.working .workflow .steps {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    border-style: solid;
+    border-width: 1px;
+    margin: .2rem 2rem .2rem 2rem;
+    padding: 2rem;
+    border-radius: 5px;
+    color: rgb(218, 216, 216);
+    height: 1rem;
+}
+
+.working .workflow .steps:hover {
+    color: blue;
+}
+
+.working .workflow .steps .number {
+    font-weight: 900;
+    font-size: 1.3rem;
+    margin-left: -1rem;
+    margin-right: 1rem;
+}
+
+.working .workflow .steps .text {
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-align: left;
+}
+
+.working .workflow .img-container {
+    display: flex;
+    flex-direction: column;
+    /* width: 20rem; */
+}
+
+.working .workflow .img-container img {
+    height: 16rem;
+    margin: 1rem;
+    /* margin: 1.5rem 0.5rem 1rem 1.5rem; */
+    width: 80%;
+}
+
+.doctor-list {
+    background-color:  #021433;
+    text-align: center;
+    padding: 1rem;
+    margin: .1rem;
+    margin-top: 2rem;
+}
+
+.doctor-list h2 {
+    color: white;
+    padding: 2rem 2rem 0 2rem;
+}
+
+.doctor-list p {
+    color: white;
+    padding: 1rem 2rem 1rem 2rem;
+}
+
+.doctor-list .doctor {
+    background-color: white;
+    margin: 1.5rem;
+    box-shadow: 0 .5rem #7adbf8;
+}
+
+.doctor-list .doctor img {
+    width: 90%;
+    height: 30rem;
+}
+
+.doctor-list .doctor h3 {
+    color: #7adbf8;
+    text-align: left;
+    margin: .5rem 0 0 1.5rem;
+}
+
+.doctor-list .doctor p {
+    color: black;
+    text-align: left;
+    margin: .5rem 0 0 1.5rem;
+    padding: 0;
+    padding-bottom: 10px;
+}
+
+.treatments {
+    margin-top: 2rem;
+}
+
+.treatments h2 {
+    padding: 0 3rem 0 3rem;
+}
+
+.treatments p {
+    padding: 1rem;
+    font-size: large;
+}
+
+
+.treatments .treatment {
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 1rem;
+    margin: .5rem 2rem 1rem 2rem;
+    background-size: cover;
+}
+
+.treatments .treatment p {
+    color: white;
+    margin: .7rem;
+    font-size: 1.2rem;
+}
+
+.treatments .img-1 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--009.jpg");
+    background-repeat: no-repeat;
+}
+
+.treatments .img-2 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--010.jpg");
+    background-repeat: no-repeat;
+}
+
+.treatments .img-3 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--008.jpg");
+    background-repeat: no-repeat;
+}
+
+.treatments .img-4 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--011.jpg");
+    background-repeat: no-repeat;
+}
+
+.treatments .img-5 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("images/image--007.jpg");
+    background-repeat: no-repeat;
+}
+
+.services h2 {
+    padding-top: 1rem;
+}
+
+.services p {
+    padding: 0 2.5rem 0 2.5rem;
+    margin: 1rem 1rem 2rem 1rem;
+}
+
+.services .services-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0 2rem 0 2rem;
+}
+
+.services .services-container .img-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 227, 227);
+    border-radius: 7px;
+    margin: 0 .5rem 1rem .5rem;
+    height: 10rem;
+}
+
+.services .services-container .img-5 img {
+    margin-top: 1rem;
+    padding: 0 1rem 0 1rem;
+    margin-bottom: -1.7rem;
+}
+
+.services .services-container .img-5 p{
+    color:rgb(146, 144, 144);
+    font-weight: bolder;
+    margin: 2.8rem;
+    padding: 0;
+}
+
+.querry {
+    padding: 1rem;
+    background-color: #8fcaf1;
+    text-align: center;
+    color: #021433;
+    /* margin: .2rem; */
+}
+
+.querry h2 {
+    color: white;
+    margin: .8rem;
+}
+
+.querry button {
+    background-color: #0099ff;
+    width: 15rem;
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    margin: 1rem;
+    margin-top: 2rem;
+}
+
+.footer {
+    background-color: #021433;
+    padding: 1rem;
+    text-align: center;
+}
+
+.footer .footer-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer .footer-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer img {
+    margin: 1rem;
+    height: 3rem;
+    width: 12rem;
+}
+
+.footer h2 {
+    color: white;
+    text-align: center;
+    margin: 2rem;
+}
+
+.footer ul {
+    list-style-type: none;
+    text-align: center;
+    text-decoration: none;
+}
+
+.footer ul li {
+    margin: 1rem;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+}
+
+.footer .footer-2 .social-icons {
+    display: none;
+}
+
+.footer .footer-2 .note {
+    text-align: center;
+    margin: .7rem;
+    font-size: small;
+    color: white;
+}
+
+@media only screen and (min-width: 600px){
+    .working .workflow {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .working .workflow .img-container {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 7;
+    }
+
+    .doctor-list {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .doctor-list h2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .doctor-list p {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .treatments {
+        display: grid;
+        margin: 2rem;
+        grid-template-columns: 50% 50%;
+    }
+
+    .treatments h2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .treatments p {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .services .grid-container-5 {
+        grid-template-columns: auto auto auto;
+    }
+
+    .footer {
+        display: grid;
+        grid-template-rows: 50% 50%;
+        background-color: white;
+        color: black;
+    }
+
+    .footer h2 {
+        display: none;
+    }
+
+    .footer .footer-1 {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .footer ul {
+        display: flex;
+    }
+    
+    .footer a {
+        color: black;
+    }
+    
+    .footer .footer-1 img {
+        margin-right: 2rem;
+    }
+
+    .footer .footer-2 {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        margin: 0 2rem 0 2rem;
+    }
+
+    .footer .footer-2 .social-links{
+        display: none;
+    }
+
+    .footer .footer-2 .social-icons {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .footer .footer-2 .social-icons li {
+        margin: 0 0 0 1.8rem;
+    }
+
+    .footer .footer-2 .note {
+        color: black;
+        margin: 0 0 0 1rem;
+    }
+}

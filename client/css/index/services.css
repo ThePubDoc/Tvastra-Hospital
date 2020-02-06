@@ -1,0 +1,79 @@
+.services h2 {
+    padding-top: 1rem;
+}
+
+.services p {
+    padding: 0 2.5rem 0 2.5rem;
+    margin: 1rem 1rem 2rem 1rem;
+}
+
+.services .services-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0 2rem 0 2rem;
+}
+
+.services .services-container .img-5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(228, 227, 227);
+    border-radius: 7px;
+    margin: 0 .5rem 1rem .5rem;
+    height: 10rem;
+}
+
+.services .services-container .img-5 img {
+    margin-top: 1rem;
+    padding: 0 1rem 0 1rem;
+    margin-bottom: -1.7rem;
+}
+
+.services .services-container .img-5 p{
+    color:rgb(146, 144, 144);
+    font-weight: bolder;
+    margin: 2.8rem;
+    padding: 0;
+}
+
+@media only screen and (min-width: 600px){
+    .services .grid-container-5 {
+        grid-template-columns: auto auto auto;
+    }
+}
+
+@media only screen and (min-width : 1000px){
+    .services {
+        text-align: left;
+        padding-left: 6rem;
+        background-color: whitesmoke;
+        padding-bottom: 6rem;
+    }
+
+    .services h2 {
+        font-size: xx-large;
+    }
+
+    .services p {
+        padding-left: 0;
+        margin-left: 0;
+    }
+
+    .services .services-container {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        margin: 0;
+        /* width: 100rem; */
+    }
+
+    .services .services-container .img-5 {
+        margin: 0;
+        margin-right: .5rem;
+        border-radius: 0px;
+        background-color: white;
+        width: 20rem;
+        height: 15rem;
+    }
+}

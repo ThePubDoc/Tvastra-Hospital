@@ -1,0 +1,50 @@
+.querry {
+    padding: 1rem;
+    background-color: #8fcaf1;
+    text-align: center;
+    color: #021433;
+    /* margin: .2rem; */
+}
+
+.querry h2 {
+    color: white;
+    margin: .8rem;
+}
+
+.querry button {
+    background-color: #0099ff;
+    width: 15rem;
+    height: 4rem;
+    border: none;
+    border-radius: 5px;
+    margin: 1rem;
+    margin-top: 2rem;
+}
+
+@media only screen and (min-width: 600px){}
+
+@media only screen and (min-width: 1000px){
+    .querry {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .querry .content {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        margin-left: 5rem;
+    }
+
+    .querry .content h2{
+        font-size: xx-large;
+    }
+
+    .querry .content p {
+        margin-left: .9rem;    
+    }
+}
