@@ -3,7 +3,7 @@
 }
 
 .treatments-container h2 {
-    padding: 0 3rem 0 3rem;
+    padding: 0 3rem 0 1rem;
 }
 
 .treatments-container p {
@@ -25,7 +25,7 @@
 
 .treatments-container .treatments .treatment p {
     color: white;
-    margin: .7rem;
+    /* margin: .7rem; */
     font-size: 1.2rem;
 }
 
