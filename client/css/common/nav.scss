@@ -1,0 +1,131 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	text-align: center;
+}
+li {
+	list-style-type: none;
+}
+a {
+	color: black;
+	font-family: light;
+	font-weight: 500;
+}
+.navbar {
+	display: flex;
+	justify-content: space-between;
+	margin: 1rem;
+	align-items: center;
+	img {
+		max-width: 7rem;
+		height: 2rem;
+	}
+	.menu {
+		display: none;
+	}
+	.menu-buttons {
+		display: none;
+	}
+	i {
+		color: #000000;
+	}
+}
+.mobile-menu {
+	display: none;
+	ul {
+		display: flex;
+		flex-direction: column;
+		li {
+			padding: .5rem;
+			a {
+				font-size: larger;
+			}
+		}
+	}
+	.menu-buttons {
+		display: flex;
+		margin: 1rem;
+		justify-content: space-evenly;
+	}
+}
+.login {
+	margin-right: 1rem;
+	background-color: white;
+	border: none;
+	border-style: solid;
+	border-width: 1px;
+	padding: 1rem;
+	border-radius: 5px;
+	max-width: 10rem;
+	font-size: medium;
+	font-family: light;
+}
+.quote {
+	background-color: rgba(22, 22, 49, 0.904);
+	border: solid;
+	color: white;
+	border-width: 1px;
+	padding: 1rem;
+	border-radius: 5px;
+	max-width: 10rem;
+	font-size: medium;
+	font-family: light;
+}
+@media only screen and (min-width : 1000px) {
+	.navbar {
+		img {
+			max-width: 7rem;
+			margin-left: 4rem;
+		}
+		justify-content: space-between;
+		.menu {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin: 0 1rem 0 1rem;
+			li {
+				padding: 0 2rem 0 2rem;
+				a {
+					font-size: large;
+				}
+			}
+		}
+		i {
+			display: none;
+		}
+		.menu-buttons {
+			display: flex;
+			flex-direction: row;
+			margin-right: 4rem;
+			.login {
+				margin-right: 1rem;
+				background-color: white;
+				border: none;
+				border-style: solid;
+				border-width: 1px;
+				padding: 1rem;
+				border-radius: 5px;
+				max-width: 10rem;
+				font-size: medium;
+			}
+			.quote {
+				background-color: rgba(22, 22, 49, 0.904);
+				border: solid;
+				color: white;
+				border-width: 1px;
+				padding: 1rem;
+				border-radius: 5px;
+				max-width: 10rem;
+				font-size: medium;
+			}
+		}
+		.burger {
+			display: none;
+		}
+	}
+	.mobile-menu {
+		display: none;
+	}
+}

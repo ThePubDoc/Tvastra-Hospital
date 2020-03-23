@@ -13,6 +13,8 @@ li {
 
 a {
     color: black;
+    font-family: light;
+    font-weight: 500;
 }
 
 .navbar {
@@ -23,9 +25,8 @@ a {
 }
 
 .navbar img {
-    width: 7rem;
+    max-width: 7rem;
     height: 2rem;
-
 }
 
 .navbar .menu {
@@ -40,6 +41,54 @@ a {
     color: #000000;
 }
 
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+}
+
+.mobile-menu ul li {
+    padding: .5rem;
+}
+
+.mobile-menu ul li a {
+    font-size: larger;
+}
+
+.mobile-menu .menu-buttons {
+    display: flex;
+    margin: 1rem;
+    justify-content: space-evenly;
+}
+
+.login {
+    margin-right: 1rem;
+    background-color: white;
+    border: none;
+    border-style: solid;
+    border-width: 1px;
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 10rem;
+    font-size: medium;
+    font-family: light;
+}
+
+.quote {
+    background-color: rgba(22, 22, 49, 0.904);
+    border: solid;
+    color: white;
+    border-width: 1px;
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 10rem;
+    font-size: medium;
+    font-family: light;
+}
+
 @media only screen and (min-width: 600px) and (max-width: 1000px){
 
 }
@@ -47,21 +96,24 @@ a {
 @media only screen and (min-width : 1000px){
     .navbar img {
         /* margin-left: 3rem; */
+        max-width: 7rem;
+        margin-left: 4rem;
     }
 
     .navbar {
-        justify-content: space-evenly;
+        justify-content: space-between;
     }
 
     .navbar .menu {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
+        margin: 0 1rem 0 1rem;
     }
 
     .navbar .menu li {
         /* margin-left: 5rem; */
-        padding-left: 5rem;
+        padding: 0 2rem 0 2rem;
     }
 
     .navbar .menu li a {
@@ -75,7 +127,7 @@ a {
     .navbar .menu-buttons {
         display: flex;
         flex-direction: row;
-        margin-right: -5rem;
+        margin-right: 4rem;
     }
     
     .navbar .menu-buttons .login {
@@ -86,18 +138,26 @@ a {
         border-width: 1px;
         padding: 1rem;
         border-radius: 5px;
-        width: 10rem;
+        max-width: 10rem;
         font-size: medium;
     }
 
     .navbar .menu-buttons .quote {
-        background-color: rgb(2, 2, 63);
+        background-color: rgba(22, 22, 49, 0.904);
         border: solid;
         color: white;
         border-width: 1px;
         padding: 1rem;
         border-radius: 5px;
-        width: 10rem;
+        max-width: 10rem;
         font-size: medium;
+    }
+
+    .navbar .burger{
+        display: none;
+    }
+
+    .mobile-menu {
+        display: none;
     }
 }

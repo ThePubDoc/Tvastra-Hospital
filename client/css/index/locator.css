@@ -3,6 +3,11 @@
     padding: 0;
 }
 
+#map {
+    height: 400px;  /* The height is 400 pixels */
+    width: 100%;  /* The width is the width of the web page */
+}
+
 .locator {
     background-color: #99c0da;
     text-align: center;
@@ -10,10 +15,15 @@
 
 .locator h1 {
     padding: 2rem;
+    font-size: xxx-large;
+    font-weight: bolder;
+    font-family: bold;
+    color: rgba(0, 0, 0, 0.781);
 }
 
 .locator p {
     padding: 0 2rem 0 2rem;
+    font-family: light;
 }
 
 .locator .city {
@@ -33,13 +43,15 @@
     background-color: white;
     font-size: large;
     padding: 1rem;
-    border-style: hidden;
+    border: none;
+    /* border-style: hidden; */
 }
 
 .locator .city input {
     width: 15rem;
     height: 3rem;
-    border-style: hidden;
+    border: none;
+    /* border-style: hidden; */
 }
 
 .locator .city img {
@@ -52,15 +64,17 @@
     width: 18.7rem;
     height: 1rem;
     padding: 1rem;
+    border: none;
+    border-left: 3px;
 }
 
 .locator button {
-    background-color: rgb(2, 2, 63);
+    background-color: rgba(22, 22, 49, 0.904);
     border: none;
     color: white;
     margin: 2rem;
     width: 9rem;
-    height: 3.2rem;
+    height: 3rem;
 }
 
 @media only screen and (min-width: 600px){
