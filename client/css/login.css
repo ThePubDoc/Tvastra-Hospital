@@ -1,0 +1,70 @@
+.login-container {
+    background-color: rgb(119, 169, 192);
+    height: 100%;
+    padding: 1rem;
+}
+
+.login-container .login-form-container {
+    
+}
+
+.login-container .login-form-container .login-elements {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    background-color: white;
+    padding: 2rem;
+}
+
+.login-container .login-form-container .login-elements .login-header{
+    color: rgb(55, 115, 145);
+    font-size: x-large;
+    margin-bottom: 2rem;
+    font-family: bold;
+}
+
+input {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    color: grey;
+}
+
+.login-container .login-form-container .login-elements .login-button {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    background-color: rgb(19, 19, 43);
+    border: none;
+    color: white;
+    padding: 1rem;
+    font-family: bold;
+    font-size: large;
+    margin-bottom: 2rem;
+}
+
+.login-container .login-form-container .login-elements .login-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: light;
+}
+
+.login-container .login-form-container .login-elements .login-footer a{
+    color: rgb(0, 153, 255);
+}
+
+@media only screen and (min-width: 600px){
+    .login-container .login-form-container .login-elements{
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .login-container .login-form-container .login-elements{
+        margin-top: 10rem;
+        margin-left: 40rem;
+        margin-right: 40rem;
+    }
+}
