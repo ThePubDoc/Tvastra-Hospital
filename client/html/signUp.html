@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/common/nav.css">
+    <link rel="stylesheet" href="../css/index/locator.css">
+    <link rel="stylesheet" href="../css/index/working.css">
+    <link rel="stylesheet" href="../css/index/doctor_list.css">
+    <link rel="stylesheet" href="../css/index/treatments.css">
+    <link rel="stylesheet" href="../css/index/services.css">
+    <link rel="stylesheet" href="../css/index/querry.css">
+    <link rel="stylesheet" href="../css/common/footer.css">
+    <link rel="stylesheet" href="../css/signUp.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+
+        <img src="../images/footer.png" alt="">
+        
+        <ul class="menu" id="menu">
+            <li><a href="/doctor">Doctor</a></li>
+            <li><a href="/hospital">Hospitals</a></li>
+            <li><a href="#">Treatment</a></li>
+            <li><a href="#">Other Services</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+
+        <div class="menu-buttons">
+            <button class="login">Login / Sign Up</button>
+            <button class="quote">Get a Quote</button>
+        </div>
+
+        <div class="burger" id="burger" onclick="burgerMenu()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </nav>
+    <div class="signup-container">
+        
+        <form class="signup-form"> 
+            <div class="signup-form-container">
+                <div class="signup-elements">
+                    <p class="signup-header">Sign Up</p>
+                    <input type="text" placeholder="Enter Name">
+                    <input type="email" placeholder="Enter Email">
+                    <input type="password" placeholder="Enter Password">
+                    <select class="gender" >
+                        <option value="" disabled selected>Select Your Gender</option>
+                        <option value="">Male</option>
+                        <option value="">Female</option>
+                    </select>
+                    <input type="text" placeholder="dd/mm/yyyy">
+                    <input type="number" placeholder="Enter Phone no">
+                    <div class="address">
+                        <input type="text" placeholder="Enter City">
+                        <input type="text" placeholder="Enter State">
+                    </div>
+                    <select class="country">
+                        <option value="" disabled selected>Select Your Country</option>
+                        <option value="">India</option>
+                        <option value="">Pakistan</option>
+                    </select>
+                    <input type="number" placeholder="Enter OTP">
+
+                    <button class="signup-button">
+                        <div><p>SIGN UP</p></div>
+                        <div><i class="fas fa-arrow-right"></i></div>
+                    </button>
+
+                    <div class="signup-footer">
+                        <p>Already a member?</p>
+                        <a href="/signup">Login</a>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <div id="signup-footer">
+            <p> All Rights Reserved. &#169; tvastra 2020 </p>
+        </div>
+    </div>
+
+    
+      
+</body>
+</html>
