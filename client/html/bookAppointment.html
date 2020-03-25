@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/common/nav.css">
+    <link rel="stylesheet" href="../css/index/locator.css">
+    <link rel="stylesheet" href="../css/index/working.css">
+    <link rel="stylesheet" href="../css/index/doctor_list.css">
+    <link rel="stylesheet" href="../css/index/treatments.css">
+    <link rel="stylesheet" href="../css/index/services.css">
+    <link rel="stylesheet" href="../css/index/querry.css">
+    <link rel="stylesheet" href="../css/common/footer.css">
+    <link rel="stylesheet" href="../css/bookAppointment.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="navbar">
+
+        <img src="../images/footer.png" alt="">
+        
+        <ul class="menu" id="menu">
+            <li><a href="/doctor">Doctor</a></li>
+            <li><a href="/hospital">Hospitals</a></li>
+            <li><a href="#">Treatment</a></li>
+            <li><a href="#">Other Services</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+
+        <div class="menu-buttons">
+            <button class="appointment">appointment / Sign Up</button>
+            <button class="quote">Get a Quote</button>
+        </div>
+
+        <div class="burger" id="burger" onclick="burgerMenu()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </nav>
+    <div class="appointment-container">
+        
+        <form class="appointment-form"> 
+            <div class="appointment-form-container">
+                <div class="appointment-elements">
+                    <h1 class="appointment-header">Book An Appointment</h1>
+                    <h2>Select Appointment Date*</h2>
+                    <input type="text" placeholder="dd/mm/yyyy">
+                    <h2>Time Interval</h2>
+
+                    <div class="radio-container">
+                        <input type="radio"><p>Morning</p>
+                        <input type="radio"><p>Afternoon</p>
+                        <input type="radio"><p>Evening</p>
+                    </div>
+
+                    <h2>Appointment Status/Urgency</h2>
+                    
+                    <div class="radio-container">
+                        <input type="radio"><p>Routine Check-up</p>
+                        <input type="radio"><p>Non Urgent Check-up</p>
+                        <input type="radio"><p>Urgent Check-up</p>
+                        <input type="radio"><p>Surgical Appointment</p>
+                    </div>
+                    
+                    <h2>Upload Previous Health Record</h2>
+                    <input type="file" class="file">
+
+                    <h2>Appointment Details</h2>
+                    <textarea rows="4"></textarea>
+
+                    <button class="appointment-button">
+                        <div><p>Book Appointment</p></div>
+                        <div><i class="fas fa-arrow-right"></i></div>
+                    </button>
+
+                </div>
+            </div>
+        </form>
+        <div id="appointment-footer">
+            <p> All Rights Reserved. &#169; tvastra 2020 </p>
+        </div>
+    </div>
+</body>
+</html>
