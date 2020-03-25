@@ -1,0 +1,117 @@
+.contactUs-img {
+    background-image: url("../images/contactUs.png");
+    height: auto;
+    width: 100%;
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+}
+
+.contactUs-img h1 {
+    font-family: bold;
+    color: white;
+    font-size: 2rem;
+    margin: 1rem;
+
+}
+
+.contactUs-img p {
+    font-family: light;
+    color: white;
+}
+
+.hospital-info {
+    display: grid;
+    grid-template-columns: 5rem auto;
+    gap: .7rem;
+    margin-top: 2rem;
+    font-size: large;
+}
+
+.hospital-info i {
+    font-size: x-large;
+    align-self: center;
+    color: rgb(11, 99, 150);
+}
+
+.icon1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+}
+
+.icon2 {
+    grid-row-start: 3;
+    grid-row-end: 5;
+}
+
+.icon3 {
+    grid-row-start: 5;
+    grid-row-end: 7;
+}
+
+.hospital-info p {
+    justify-self: left;
+}
+
+.hospital-info .bold {
+    font-family: bold;
+    /* margin-bottom: .5rem; */
+}
+
+.hospital-info .light {
+    font-family: light;
+    margin-bottom: 1rem;
+    font-size: medium;
+}
+
+.message-form {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background-color: rgba(56, 159, 255, 0.726);;
+}
+
+.message-form input{
+    margin-bottom: 1rem;
+    padding: .8rem;
+}
+
+.message-form button{
+    background-color:rgb(11, 99, 150);
+    border: none;
+    color: white;
+    padding: 1rem;
+    width: 50%;
+    align-self: flex-end;
+}
+
+@media only screen and (min-width: 600px){
+    .message-form {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .message-form .message {
+        grid-column-start: 2;
+        grid-row-start: 1;
+        grid-row-end: 4;
+        
+    }
+    
+    .message-form .inputs {
+        width: 90%;
+    }
+
+    .message-form button {
+        grid-column-start: 2;
+        justify-self: flex-end;
+        width: 50%;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .info-form {
+        display: grid;
+        grid-template-columns: 30% auto;
+        margin-top: 1rem;
+    }
+}

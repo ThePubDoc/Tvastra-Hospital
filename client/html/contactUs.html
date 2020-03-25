@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/common/nav.css">
+    <link rel="stylesheet" href="../css/index/locator.css">
+    <link rel="stylesheet" href="../css/index/working.css">
+    <link rel="stylesheet" href="../css/index/doctor_list.css">
+    <link rel="stylesheet" href="../css/index/treatments.css">
+    <link rel="stylesheet" href="../css/index/services.css">
+    <link rel="stylesheet" href="../css/index/querry.css">
+    <link rel="stylesheet" href="../css/common/footer.css">
+    <link rel="stylesheet" href="../css/contactUs.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Always set the map height explicitly to define the size of the div
+         * element that contains the map. */
+        #map {
+          height: 50%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+          height: 100%;
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+</head>
+<body>
+    <nav class="navbar">
+
+        <img src="../images/footer.png" alt="">
+        
+        <ul class="menu" id="menu">
+            <li><a href="/doctor">Doctor</a></li>
+            <li><a href="/hospital">Hospitals</a></li>
+            <li><a href="#">Treatment</a></li>
+            <li><a href="#">Other Services</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+
+        <div class="menu-buttons">
+            <button class="login">Login / Sign Up</button>
+            <button class="quote">Get a Quote</button>
+        </div>
+
+        <div class="burger" id="burger" onclick="burgerMenu()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </nav>
+
+    <div class="contactUs-img">
+        <h1>Contact Us</h1>
+        <p>Home / Contact Us</p>
+    </div>
+
+    <div id="map">
+        
+    </div>
+
+    <div class="info-form">
+        <div class="hospital-info">
+            <i class="fa fa-home icon1"></i>
+            <p class="bold">Noida , India</p>
+            <p class="light">Sector 45</p>
+            <i class="fa fa-phone icon2"></i>
+            <p class="bold">00 (11) 123456789</p>
+            <p class="light">Mon to Fri 9am to 6pm</p>
+            <i class="fa fa-home icon3"></i>
+            <p class="bold">support@tvastra.com</p>
+            <p class="light">Send us your query anytime!</p>
+        </div>
+
+
+        <div class="message-form">
+            <input class = "inputs" type="text" placeholder="Enter Your Name">
+            <input class = "inputs" type="text" placeholder="Enter Email Address">
+            <input class = "inputs" type="text" placeholder="Enter Subject">
+            <input class = "message" type="text" placeholder="Enter Message">
+            <button>Send Message</button>
+        </div>
+    </div>
+
+    <div class="footer">
+
+        <div class="footer-1">
+            <img src="images/footer.png" alt="" srcset="">
+        
+            <h2>TVASTRA</h2>
+
+            <ul class="footer-links">
+                <li><a href="#">Doctor</a></li>
+                <li><a href="#">Hospitals</a></li>
+                <li><a href="#">Treatment</a></li>
+                <li><a href="#">Other Services</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
+        
+        <div class="footer-2">
+            <h2>FOLLOW US</h2>
+
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Pinterest</a></li>
+                <li><a href="#">Google+</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+            
+            <ul class="social-icons">
+                <li><i class="fa fa-facebook" aria-hidden="true"></i></li>
+                <li><i class="fa fa-pinterest-p" aria-hidden="true"></i></li>
+                <li><i class="fa fa-twitter" aria-hidden="true"></i></li>
+                <li><i class="fa fa-google-plus" aria-hidden="true"></i></li>
+                <li><i class="fa fa-instagram" aria-hidden="true"></i></li>
+            </ul>
+            
+            <div class="note">
+                All Rights Reserved. © tvastra 2018
+            </div>
+        </div>    
+    </div>
+    <script>
+        var map;
+        function initMap() {
+          map = new google.maps.Map(document.getElementById('map'), {
+            center: {lat: -34.397, lng: 150.644},
+            zoom: 8
+          });
+        }
+      </script>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAwzUJ5cXnPajUZdv12VaFDm5Qnd3dg_8k&callback=initMap"
+      async defer></script>
+</body>
+</html>
