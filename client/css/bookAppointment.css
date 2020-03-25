@@ -100,4 +100,10 @@ input {
         margin-left: 20rem;
         margin-right: 20rem;
     }
+
+    .appointment-container .appointment-form-container .appointment-elements .radio-container {
+        display: grid;
+        grid-template-columns: 5% auto;
+        margin-top: 1rem;
+    }
 }
