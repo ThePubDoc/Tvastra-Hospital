@@ -55,6 +55,20 @@
     display: flex;
     flex-direction: column;
     text-align: center;
+    margin: 1rem;
+}
+
+.dentist-icons .dentist-icons-elements {
+    margin: 1rem;
+}
+
+.dentist-icons .dentist-icons-elements i {
+    font-size: xx-large;
+    border: 60px;
+    background-color: rgba(70, 191, 247, 0.37);
+    border-radius: 50%;
+    padding: 1.3rem 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .dentist-icons .dentist-icons-elements h3{
@@ -87,6 +101,7 @@
     grid-column-end: 3;
     margin-bottom: 1.5rem;
     font-family: bold;
+    text-align: left;
 }
 
 .dentist-info .dentist-service h3::before {
@@ -104,11 +119,13 @@
     margin-right: 0;
     font-family: light;
     font-size: small;
+    text-align: left;
+    margin-bottom: 1rem;
 }
 
 .dentist-info .dentist-service .heading {
     color: black;
-    font-weight: 1000;
+    font-weight: bolder;
 }
 
 .dentist-info .dentist-service .heading-detail {
@@ -118,7 +135,7 @@
 }
 
 .more-services {
-    background-color: rgb(112, 191, 236);
+    background-color: rgba(15, 115, 161, 0.582);
     margin: 0;
     padding: 1rem;
 }
@@ -128,12 +145,20 @@
     color: white;
     font-size: x-large;
     padding-top: 2rem;
+    text-align: left;
+    margin-left: 1rem;
 }
 
 .more-services .arrows i {
-    color: white;
+    color: black;
     margin-top: 1rem;
-    font-size: x-large;
+    font-size: large;
+    border: 60px;
+    background-color: white;
+    border-radius: 50%;
+    padding: .5rem .7rem;
+    margin:0 .2rem 0 .2rem;
+
 }
 
 .more-services .service-container {
@@ -162,4 +187,68 @@
 
 .more-services .service-container img {
     width: 100%;
+}
+
+@media only screen and (min-width: 600px){
+    .dentist-about {
+        display: grid;
+        grid-template-columns: 35% auto;
+    }
+
+    .dentist-about h1 {
+        grid-column-start: 1;
+        grid-column-end: 3;
+        text-align: left;
+    }
+
+    .dentist-about img {
+        height: 100%;
+        margin-left: 2rem;
+    }
+
+    .dentist-about .about {
+        margin-left: 3rem;
+    }
+
+    .dentist-icons {
+        display: flex;
+        flex-direction: row;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin: 0 3rem 1rem 3rem;
+    }
+
+    .dentist-icons .dentist-icons-elements {
+        margin: 1rem;
+    }
+
+    .dentist-info {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        margin: 0 3rem 1rem 3rem;
+    }
+
+    .dentist-info .dentist-service {
+        margin-right: 1rem;
+    }
+
+    .dentist-info .table2 {
+        height: 50%;
+    }
+
+    .more-services {
+        display: grid;
+        grid-template-columns: 33.3% 33.3% 33.3%; 
+        margin: 0;
+    }
+
+    .more-services .arrows {
+        grid-column-start: 2;
+        grid-column-end: 4;
+        align-self: flex-end;
+        text-align: right;
+        margin-right: 1rem;
+    }
 }
