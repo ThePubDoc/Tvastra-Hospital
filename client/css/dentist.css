@@ -51,6 +51,10 @@
     margin-right: .5rem;
 }
 
+.dentist-about .dentist-info {
+    display: none;
+}
+
 .dentist-icons {
     display: flex;
     flex-direction: column;
@@ -192,12 +196,12 @@
 @media only screen and (min-width: 600px){
     .dentist-about {
         display: grid;
-        grid-template-columns: 35% auto;
+        grid-template-columns: 35% auto auto;
     }
 
     .dentist-about h1 {
         grid-column-start: 1;
-        grid-column-end: 3;
+        grid-column-end: 4;
         text-align: left;
     }
 
@@ -250,5 +254,26 @@
         align-self: flex-end;
         text-align: right;
         margin-right: 1rem;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .dentist-about img {
+        height: 90%;
+    }
+    .dentist-about {
+        display: grid;
+        grid-template-columns: 35% 30% 30%;
+        grid-row-start: 1;
+    }
+
+    .dentist-about .dentist-info {
+        display: block;
+        grid-column-start: 3;
+        margin-top: -3rem;
+    }
+
+    .dentist-info {
+        display: none;
     }
 }
