@@ -1,0 +1,267 @@
+.aboutus-hero {
+    background-image: linear-gradient(transparent,rgba(0, 0, 0, 0.63)99%),url("../images/aboutUs_hero.jpeg");
+    background-size: cover;
+    position: relative;
+    padding: 3rem;
+    color: white;
+}
+
+.aboutus-hero h1 {
+    font-family: bold;
+    font-size: x-large;
+    position: relative;
+    top: 2rem;
+}
+
+.aboutus-hero p {
+    position: relative;
+    top: 3rem;
+    margin-bottom: 3rem;
+    color: rgba(255, 255, 255, 0.603);
+    /* padding-bottom: 3rem; */
+}
+
+.doctor-hero {
+    margin: 2rem;
+}
+
+.doctor-hero h1 {
+    font-family: bold;
+    font-size: x-large;
+    margin-bottom: 2rem;
+}
+
+.doctor-hero p {
+    font-family: light;
+    margin-bottom: 1rem;
+    color: rgba(0, 0, 0, 0.719);
+}
+
+.doctor-hero .signature {
+    width: auto;
+    margin-bottom: 1rem;
+}
+
+.doctor-hero .female-doctor {
+    width: 100%;
+}
+
+.brag {
+    background-color: black;
+    color: white;
+    padding: 1rem;
+}
+
+.brag video {
+    display: none;
+}
+
+.brag h1 {
+    font-family: bold;
+    font-size: x-large;
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.brag p {
+    margin: 0 1rem 1rem 1rem;
+    font-family: light;
+    color: rgba(255, 255, 255, 0.521);
+}
+
+.brag button {
+    padding: .5rem 1rem .5rem 1rem;
+    background-color: rgb(0, 132, 255);
+    border: none;
+    border-radius: 3px;
+    color: white;
+    margin-bottom: 1rem;
+    font-family: light;
+}
+
+.brag .brag-points {
+    border: 1px solid rgba(255, 255, 255, 0.226);
+    margin: 1rem 0 1rem 0;
+    border-radius: 3px;
+    padding: 1rem;
+}
+
+.brag .brag-points h1{
+    font-family: bold;
+    margin-bottom: 0;
+}
+
+.brag .brag-points p {
+    font-family: light;
+    font-size: smaller;
+    margin-top: 1rem;
+}
+
+.apply {
+    background-color: rgba(15, 115, 161, 0.582);
+    padding: 3rem;
+}
+
+.apply h1 {
+    font-family: bold;
+    font-size: x-large;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.apply p {
+    color: black;
+    font-family: light;
+    font-size: medium;
+    margin-bottom: 1rem;
+}
+
+.apply button {
+    padding: .8rem;
+    color: white;
+    background-color: rgb(10, 140, 226);
+    border: none;
+    border-radius: 3px;
+    font-size: medium;
+    font-family: light;
+}
+
+@media only screen and (min-width: 600px){
+    .aboutus-hero {
+        height: 20rem;
+    }
+
+    .aboutus-hero h1 {
+        font-size: xx-large;
+        top: 7rem;
+    }
+
+    .aboutus-hero p {
+        top: 8rem;
+        font-family: light;
+        font-size: 20px;
+    }
+
+    .doctor-hero {
+        display: grid;
+        grid-template-columns: 55% auto;
+    }
+
+    .doctor-hero .signature {
+        grid-row-start: 2;
+    }
+
+    .doctor-hero .female-doctor {
+        height: 100%;
+    }
+
+    .brag video {
+        display: none;
+    }
+
+    .brag .brag-points-hero{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .brag h1 {
+        text-align: left;
+        margin-left: 1rem;
+    }
+
+    .brag p {
+        text-align: left;
+    }
+
+    .brag button {
+        width: 25%;
+        margin: 2rem 0 2rem 1rem;
+    }
+
+    .brag .brag-points-hero .container2 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        /* margin: 1rem; */
+        
+        gap: 1rem;
+    }
+
+    .brag .brag-points-hero .container2 .brag-points {
+        margin: 0;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .doctor-hero {
+        margin: 2rem 5rem 1rem 5rem;
+        grid-template-columns: 50% auto;
+    }
+
+    .doctor-hero .hero-content {
+        text-align: left;
+    }
+
+    .doctor-hero .hero-content p {
+        padding-right: 3rem;
+    }
+
+    .doctor-hero .female-doctor {
+        width: auto;
+        margin-left: 10rem;
+    }
+
+    .brag {
+        position: relative;
+        background: none;
+    }
+
+    .brag video {
+        position: absolute;
+        display: block;
+        z-index: -1;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .brag-points-hero {
+        display: grid;
+        grid-template-columns: 45% auto;
+        color: white;
+        padding: 10rem 5rem 10rem 5rem;
+    }
+    
+    .brag-points-hero .container2 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .brag-points-hero .brag-points {
+        border: 1px solid rgba(255, 255, 255, 0.226);
+        margin-bottom: 1rem;
+    }
+
+    .apply {
+        display: grid;
+        grid-template-columns: auto auto;
+        text-align: left;
+        padding: 2rem 6rem 2rem 6rem;
+    }
+
+    .apply p {
+        grid-row-start: 2;
+    }
+
+    .apply button {
+        width: 50%;
+        justify-self: right;
+        padding: 1rem;
+        grid-row-start: 1;
+        grid-row-end: 3;
+        align-self: center;
+    }
+}

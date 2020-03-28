@@ -1,0 +1,54 @@
+@media only screen and (min-width: 1000px){
+    .brag {
+        position: relative;
+    }
+
+    .brag video {
+        position: absolute;
+        z-index: -1;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .brag-points-hero {
+        display: grid;
+        grid-template-columns: 45% auto;
+        color: white;
+        padding: 10rem 5rem 10rem 5rem;
+    }
+
+    .brag-points-hero .container1 {
+        text-align: left;
+    }
+
+    .brag-points-hero .container1 h1{
+        font-family: bold;
+        font-size: x-large;
+        margin-bottom: 1rem;
+    }
+
+    .brag-points-hero .container1 p {
+        font-family: light;
+        margin-bottom: 1rem;
+    }
+
+    .brag-points-hero .container1 button {
+        color: white;
+        padding: .5rem;
+        background-color: blue;
+        border: none;
+    }
+
+    .brag-points-hero .container2 {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .brag-points-hero .brag-points {
+        border: 1px solid black;
+        margin-bottom: 1rem;
+    }
+}
