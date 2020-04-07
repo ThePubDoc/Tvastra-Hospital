@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/common/nav.css">
+    <link rel="stylesheet" href="../css/index/locator.css">
+    <link rel="stylesheet" href="../css/index/working.css">
+    <link rel="stylesheet" href="../css/index/doctor_list.css">
+    <link rel="stylesheet" href="../css/index/treatments.css">
+    <link rel="stylesheet" href="../css/index/services.css">
+    <link rel="stylesheet" href="../css/index/querry.css">
+    <link rel="stylesheet" href="../css/common/footer.css">
+    <link rel="stylesheet" href="../css/doctor-profile.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="doctor-banner">
+        <h1>About John Nisson</h1>
+        <p>Home / Doctor Profile</p>
+    </div>
+
+    <div class="about-doctor-hero">
+        <div class="doctor-image">
+            <img src="../images/image--005.jpg" alt="" srcset="">
+            <button>Book an appointment</button>
+        </div>
+
+        <div class="about-doctor">
+            <h1>John Nisson</h1>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+            </p>
+            
+            <div class="biodata">
+                <div class="biodata-point" onclick="drop(1)">
+                    <i class="fas fa-award"></i>
+                    <h2>Specialization</h2>
+                    <i class="fas fa-angle-up"></i>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="biodata-point-info" id="1">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+                <div class="biodata-point" onclick="drop(2)">
+                    <i class="fas fa-stethoscope"></i>
+                    <h2>List Of Treatments</h2>
+                    <i class="fas fa-angle-up"></i>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="biodata-point-info" id="2">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+                <div class="biodata-point" onclick="drop(3)">
+                    <i class="fas fa-hospital"></i>
+                    <h2>Work Experiencce</h2>
+                    <i class="fas fa-angle-up"></i>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="biodata-point-info" id="3">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+                <div class="biodata-point" onclick="drop(4)">
+                    <i class="fas fa-star"></i>
+                    <h2>Qualification</h2>
+                    <i class="fas fa-angle-up"></i>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="biodata-point-info" id="4">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+                <div class="biodata-point" onclick="drop(5)">
+                    <i class="fas fa-trophy"></i>
+                    <h2>Awards</h2>
+                    <i class="fas fa-angle-up"></i>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="biodata-point-info" id="5">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+                <div class="biodata-point" onclick="drop(6)">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <h2>Location</h2>
+                    <i class="fas fa-angle-up"></i>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="biodata-point-info" id="6">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+                <div class="biodata-point last-point" onclick="drop(7)">
+                    <i class="fas fa-rupee-sign"></i>
+                    <h2>Avg Fees</h2>
+                    <i class="fas fa-angle-up"></i>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="biodata-point-info" id="7">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+                        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                        Ut enim ad minim veniam, quis nostrud exercitation ullamco.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function drop(id){
+            var info = document.getElementById(id);
+            
+            for(var i=1;i<=7;i++){
+                if(i==id)
+                continue;
+                document.getElementById(i).style.display = "none";
+                document.getElementsByClassName("fa-angle-up")[i-1].style.display = "none";
+                document.getElementsByClassName("fa-angle-down")[i-1].style.display = "block";
+            }
+
+            if(info.style.display == "none" || info.style.display == ""){
+                // console.log("clicked-none")
+                info.style.display = "block";
+                document.getElementsByClassName("fa-angle-up")[id-1].style.display = "block";
+                document.getElementsByClassName("fa-angle-down")[id-1].style.display = "none";
+            }
+            else {
+                // console.log("clicked-block")
+                info.style.display = "none";
+                document.getElementsByClassName("fa-angle-up")[id-1].style.display = "none";
+                document.getElementsByClassName("fa-angle-down")[id-1].style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

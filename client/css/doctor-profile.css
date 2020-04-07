@@ -1,0 +1,153 @@
+.doctor-banner {
+    background-image: url("../images/contactUs.png");
+    /* width: 100%; */
+    padding: 5rem;
+    background-size: cover;
+    color: white;
+}
+
+.doctor-banner h1 {
+    font-family: bold;
+    font-size: x-large;
+    margin: 1rem;
+}
+
+.doctor-banner p {
+    font-family: light;
+    font-size: medium;
+}
+
+.about-doctor-hero {
+    margin: 2rem;
+    border: 1px solid rgba(0, 0, 0, 0.274);
+    padding: 1rem;
+    text-align: left;
+}
+
+.about-doctor-hero .doctor-image img {
+    width: 100%;
+}
+
+.about-doctor-hero .doctor-image button {
+    width: 100%;
+    margin: .5rem 0 2rem 0;
+    padding: .5rem;
+    color: white;
+    background-color: rgba(2, 2, 51, 0.938);
+    border: none;
+}
+
+.about-doctor h1 {
+    font-family: bold;
+    font-size: x-large;
+    color: rgb(48, 160, 212);
+    margin-bottom: 1rem;
+}
+
+.about-doctor h1::before {
+    content: "";
+    border: 1px solid;
+    display: inline-block;
+    width: 3rem;
+    vertical-align: middle;
+    margin-right: .5rem;
+    margin-left: -1rem;
+}
+
+.about-doctor p {
+    font-family: light;
+}
+
+i {
+    color:rgb(10, 89, 126);
+}
+
+.about-doctor .biodata {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+}
+
+.about-doctor .biodata .biodata-point {
+    display: grid;
+    grid-template-columns: 10% auto 10%;
+    padding: 1rem 0 1rem 0;
+    align-items: center;
+    /* margin-top: .5rem; */
+    border-top: 1px dashed rgba(0, 0, 0, 0.247);
+}
+
+.about-doctor .biodata .last-point {
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.247);
+}
+
+.about-doctor .biodata .biodata-point h2 {
+    font-family: bold;
+    color: rgb(10, 89, 126);
+    font-size: larger;
+    margin-right: 3rem;
+
+}
+
+.about-doctor .biodata .biodata-point .fa-angle-up {
+    display: none;
+    text-align: right;
+}
+
+.about-doctor .biodata .biodata-point .fa-angle-down {
+    text-align: right;
+}
+
+.fa-angle-down {
+    text-align: right;
+}
+
+.about-doctor .biodata .biodata-point-info {
+    display: none;
+    background-color:rgba(48, 160, 212, 0.253); 
+    padding: .5rem;
+}
+
+.about-doctor .biodata .biodata-point-info p {
+    font-family: light;
+}
+
+@media only screen and (min-width: 600px){
+    .about-doctor-hero {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 1rem;
+        margin: 3rem 4rem 3rem 4rem;
+        padding: 2rem;
+    }
+
+    .about-doctor h1::before {
+        content: "";
+        border: 1px solid;
+        display: inline-block;
+        width: 1rem;
+        vertical-align: middle;
+        margin-right: .5rem;
+        margin-left: -2rem;
+    }
+    
+    .about-doctor-hero .doctor-image {
+        grid-column-start: 2;
+    }
+
+    .about-doctor-hero .about-doctor {
+        grid-row-start: 1;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    
+    .about-doctor .biodata .biodata-point {
+        grid-template-columns: 5% auto 10%;
+    }
+
+    .about-doctor-hero {
+        margin: 3rem 10rem 3rem 10rem;
+        grid-template-columns: 75% auto;
+    }
+}
