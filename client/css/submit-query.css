@@ -1,0 +1,59 @@
+.query-container {
+    background-color: rgba(68, 141, 190, 0.712);
+    text-align: center;
+    padding: 1rem;
+}
+
+.query-container .query {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+}
+
+.query-container .query h1 {
+    font-family: bold;
+    font-size: x-large;
+    color: rgb(68, 141, 190);
+    padding: 2rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.356);
+}
+
+.query-container .query input {
+    margin: 1rem;
+    padding: .5rem;
+    font-family: light;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+}
+
+.query-container .query textarea {
+    margin: 1rem;
+    padding: .5rem;
+    font-family: light;
+    border: 1px solid rgba(0, 0, 0, 0.199);
+}
+
+.query-container .query button {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    background-color: rgba(19, 19, 43, 0.829);
+    border: none;
+    color: white;
+    padding: 1rem;
+    font-family: bold;
+    font-size: large;
+    margin: 1rem;
+}
+
+.query-container .copyright p{
+    font-family: light;
+    font-size: small;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+@media only screen and (min-width: 600px){
+    .query-container .query {
+        margin: 2rem 10rem 2rem 10rem;
+    }
+}
