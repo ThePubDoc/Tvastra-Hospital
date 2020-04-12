@@ -1,0 +1,254 @@
+.plan-hero {
+    background-image: url("../images/plus/tvastraPlus_heroSection.webp");
+    text-align: center;
+    background-size: cover;
+    height: 100%;
+}
+
+.plan-hero button {
+    font-family: light;
+    color: white;
+    background-color: rgba(4, 53, 110, 0.719);
+    padding: .5rem;
+    border: none;
+    border-radius: 3px;
+    margin: 2rem ;
+}
+
+.plan-hero h1 {
+    font-family: bold;
+    font-size: x-large;
+    margin: 0 2rem 2rem 2rem;
+}
+
+.plan-hero p {
+    font-family: light;
+    font-size: small;
+    margin: 0 1rem 0rem 1rem;
+    padding-bottom: 10rem;
+}
+
+.tvastra-plans-hero {
+    background-image: linear-gradient(to bottom,rgba(0, 174, 255, 0.199) 50%,white);
+    padding: 1rem;
+}
+
+.tvastra-plans-hero .tvastra-plans {
+    background-color: white;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 .7rem -0.4rem black;
+    margin-top: -10rem;
+}
+
+.tvastra-plans-hero .tvastra-plans h1 {
+    font-family: bold;
+    font-size: x-large;
+    padding-top: 2rem;
+    margin: 1rem 0 1rem 0;
+}
+
+.tvastra-plans-hero .tvastra-plans p {
+    font-family: light;
+    font-size: 15px;
+}
+
+.tvastra-plans-hero .tvastra-plans .plan-comprises {
+    /* border-bottom: 1px solid rgba(0, 0, 0, 0.199); */
+    padding-bottom: 1.5rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .line {
+    background-color: rgba(0, 0, 0, 0.199);
+    height: 1px;
+    margin: auto;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .long {
+    max-width: 20rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .short {
+    width: 10rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .plans-grid .plan {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3rem;
+}
+
+.tvastra-plans-hero .tvastra-plans h2 {
+    font-family: bold;
+    font-size: large;
+    margin: 1rem;
+    padding-bottom: 1rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .plans-grid .plan p{
+    font-family: light;
+    margin: 1rem 2rem 1rem 2rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .plans-grid .plan h3 {
+    font-family: bold;
+    font-size: x-large;
+    margin-top: 3rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .plans-grid .plan .year {
+    font-size: small;
+}
+
+.tvastra-plans-hero .tvastra-plans .plans-grid .plan .plan-details {
+    font-size: small;
+    font-weight: bold;
+    color: rgba(11, 80, 184, 0.945);
+}
+
+.tvastra-plans-hero .tvastra-plans .plans-grid .plan button {
+    font-family: light;
+    color: white;
+    background-color: rgb(4, 71, 110);
+    padding: .5rem;
+    border: none;
+    border-radius: 3px;
+    margin: 0 7rem 1rem 7rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .plans-grid .advance {
+    /* background-image: linear-gradient(to bottom, blue); */
+    background-image: linear-gradient(to bottom,rgba(0, 174, 255, 0.199) 60%,white);
+    margin: .5rem;
+    margin-bottom: 2.5rem;
+}
+
+.ratings-hero h1{
+    font-family: bold;
+    font-size: x-large;
+    padding: 0 2rem 2rem 2rem;
+}
+
+.ratings-hero p {
+    font-family: light;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.ratings-hero .overall-rating h2{
+    color:  rgb(4, 71, 110);
+    font-family: bold;
+    font-size: xxx-large;
+}
+
+.ratings-hero .overall-rating i {
+    font-size: smaller;
+    color: rgb(4, 71, 110);
+}
+
+.ratings-hero .overall-rating p {
+    color: rgb(4, 71, 110);
+}
+
+.ratings-hero .overall-rating .scorecard {
+    display: grid;
+    grid-template-columns: 5% auto;
+    gap: 1rem;
+    margin: 0 6rem;
+}
+
+.ratings-hero .overall-rating .scorecard p{
+    font-family: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.ratings-hero .overall-rating .scorecard .bar {
+    width: 100%;
+    height: 1rem;
+    border-radius: 10px;
+    background-color: rgba(128, 128, 128, 0.274);
+}
+
+.ratings-hero .overall-rating .scorecard .bar .frequency {
+    height: 1rem;
+    background-color: rgb(4, 71, 110);
+    border-radius: 10px;
+}
+
+.brag-container {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 3rem 1rem 3rem 1rem;
+}
+
+.brag-container .brag-point {
+    display: flex;
+    flex-direction: column;
+}
+
+.brag-container .brag-point i {
+    font-size: xx-large;
+    margin-bottom: 1rem;
+    color: rgb(4, 71, 110);
+}
+
+.brag-container .brag-point h2 {
+    font-family: bold;
+    font-size: large;
+    color: rgb(4, 71, 110);
+    margin-bottom: 1rem;
+}
+
+.brag-container .brag-point p {
+    font-family: light;
+    font-size: small;
+    margin-bottom: 2rem;
+    color: rgb(4, 71, 110);
+}
+
+.benifits-hero {
+    margin: 1rem;
+}
+
+.benifits-hero p {
+    font-family: light;
+    margin-bottom: 1rem;
+}
+
+.benifits-hero .line {
+    background-color: rgb(4, 71, 110);
+    height: 3px;
+    margin: auto;
+    display: block;
+    margin-bottom: 1rem;
+    width: 15rem;
+}
+
+.benifits-hero .benifits-grid h1{
+    font-family: bold;
+    font-size: x-large;
+}
+
+.benifits-hero .benifits-grid .benifit-fee-points {
+    display: grid;
+    grid-template-columns: 10% auto;
+    margin: 2rem 1rem;
+    text-align: left;
+}
+
+.benifits-hero .benifits-grid .benifit-fee-points i {
+    color: rgb(4, 71, 110);
+}
+
+.benifits-hero .benifits-grid .hospitals-onboard-grid .hospitals-onboard {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    align-items: center;
+}
+
+.benifits-hero .benifits-grid .hospitals-onboard-grid .hospitals-onboard img {
+    margin: 0 2rem;
+}
