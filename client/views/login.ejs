@@ -9,22 +9,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link rel="stylesheet" href="css/common/reset.css">
-    <link rel="stylesheet" href="css/common/nav.css">
-    <link rel="stylesheet" href="css/index/locator.css">
-    <link rel="stylesheet" href="css/index/working.css">
-    <link rel="stylesheet" href="css/index/doctor_list.css">
-    <link rel="stylesheet" href="css/index/treatments.css">
-    <link rel="stylesheet" href="css/index/services.css">
-    <link rel="stylesheet" href="css/index/querry.css">
-    <link rel="stylesheet" href="css/common/footer.css">
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/common/nav.css">
+    <link rel="stylesheet" href="../css/index/locator.css">
+    <link rel="stylesheet" href="../css/index/working.css">
+    <link rel="stylesheet" href="../css/index/doctor_list.css">
+    <link rel="stylesheet" href="../css/index/treatments.css">
+    <link rel="stylesheet" href="../css/index/services.css">
+    <link rel="stylesheet" href="../css/index/querry.css">
+    <link rel="stylesheet" href="../css/common/footer.css">
+    <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav class="navbar">
 
-        <img src="images/footer.png" alt="">
+        <img src="../images/footer.png" alt="">
         
         <ul class="menu" id="menu">
             <li><a href="/doctor">Doctor</a></li>
@@ -43,5 +44,35 @@
             <i class="fa fa-bars" aria-hidden="true"></i>
         </div>
     </nav>
+    <div class="login-container">
+        
+        <form class="login-form"> 
+            <div class="login-form-container">
+                <div class="login-elements">
+                    <p class="login-header">Login</p>
+                    <input type="text" placeholder="Enter Mobile no">
+
+                    <input type="number" placeholder="Enter OTP">
+
+                    <button class="login-button">
+                        <div><p>LOGIN</p></div>
+                        <div><i class="fas fa-arrow-right"></i></div>
+                    </button>
+
+                    <div class="login-footer">
+                        <p>Not Registered?</p>
+                        <a href="/signup">Sign Up</a>
+                    </div>
+
+                </div>
+            </div>
+        </form>
+        <div id="login-footer">
+            <p> All Rights Reserved. &#169; tvastra 2020 </p>
+        </div>
+    </div>
+
+    
+      
 </body>
 </html>
