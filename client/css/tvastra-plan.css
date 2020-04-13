@@ -8,7 +8,7 @@
 .plan-hero button {
     font-family: light;
     color: white;
-    background-color: rgba(4, 53, 110, 0.719);
+    background-color: #0173b2;
     padding: .5rem;
     border: none;
     border-radius: 3px;
@@ -29,7 +29,7 @@
 }
 
 .tvastra-plans-hero {
-    background-image: linear-gradient(to bottom,rgba(0, 174, 255, 0.199) 50%,white);
+    background-image: linear-gradient(to bottom,#9bc8e1 50%,white);
     padding: 1rem;
 }
 
@@ -105,13 +105,13 @@
 .tvastra-plans-hero .tvastra-plans .plans-grid .plan .plan-details {
     font-size: small;
     font-weight: bold;
-    color: rgba(11, 80, 184, 0.945);
+    color: #24a3dc;
 }
 
 .tvastra-plans-hero .tvastra-plans .plans-grid .plan button {
     font-family: light;
     color: white;
-    background-color: rgb(4, 71, 110);
+    background-color: #0173b2;
     padding: .5rem;
     border: none;
     border-radius: 3px;
@@ -120,9 +120,21 @@
 
 .tvastra-plans-hero .tvastra-plans .plans-grid .advance {
     /* background-image: linear-gradient(to bottom, blue); */
-    background-image: linear-gradient(to bottom,rgba(0, 174, 255, 0.199) 60%,white);
+    background-image: linear-gradient(to bottom,#b3d5e8 50%,white);
     margin: .5rem;
     margin-bottom: 2.5rem;
+}
+
+.tvastra-plans-hero .tvastra-plans .plans-grid .advance .popular{
+    background-color: #008000;
+    border-radius: 20px;
+    color: white;
+    font-family: light;
+    width: fit-content;
+    padding: .3rem .8rem;
+    align-self: center;
+    margin-top: -.7rem;
+    font-size: small;
 }
 
 .ratings-hero h1{
@@ -138,18 +150,18 @@
 }
 
 .ratings-hero .overall-rating h2{
-    color:  rgb(4, 71, 110);
+    color:  #0173b2;
     font-family: bold;
     font-size: xxx-large;
 }
 
 .ratings-hero .overall-rating i {
     font-size: smaller;
-    color: rgb(4, 71, 110);
+    color: #0173b2;
 }
 
 .ratings-hero .overall-rating p {
-    color: rgb(4, 71, 110);
+    color: #0173b2;
 }
 
 .ratings-hero .overall-rating .scorecard {
@@ -174,7 +186,7 @@
 
 .ratings-hero .overall-rating .scorecard .bar .frequency {
     height: 1rem;
-    background-color: rgb(4, 71, 110);
+    background-color: #0173b2;
     border-radius: 10px;
 }
 
@@ -192,13 +204,13 @@
 .brag-container .brag-point i {
     font-size: xx-large;
     margin-bottom: 1rem;
-    color: rgb(4, 71, 110);
+    color: #0173b2;
 }
 
 .brag-container .brag-point h2 {
     font-family: bold;
     font-size: large;
-    color: rgb(4, 71, 110);
+    color: #0173b2;
     margin-bottom: 1rem;
 }
 
@@ -219,7 +231,7 @@
 }
 
 .benifits-hero .line {
-    background-color: rgb(4, 71, 110);
+    background-color: #0174b25b;
     height: 3px;
     margin: auto;
     display: block;
@@ -232,23 +244,190 @@
     font-size: x-large;
 }
 
-.benifits-hero .benifits-grid .benifit-fee-points {
+.checkpoints {
     display: grid;
     grid-template-columns: 10% auto;
-    margin: 2rem 1rem;
+    margin: 2rem 2rem;
     text-align: left;
+    gap: .5rem;
 }
 
-.benifits-hero .benifits-grid .benifit-fee-points i {
-    color: rgb(4, 71, 110);
+.checkpoints i {
+    color: #80b9d8;
+}
+
+.checkpoints p {
+    font-family: light;
 }
 
 .benifits-hero .benifits-grid .hospitals-onboard-grid .hospitals-onboard {
     display: grid;
     grid-template-columns: 50% 50%;
     align-items: center;
+    margin: 1rem 0;
 }
 
 .benifits-hero .benifits-grid .hospitals-onboard-grid .hospitals-onboard img {
     margin: 0 2rem;
+    /* padding: 2rem ; */
+    /* height: 100%; */
+}
+
+.benifits-hero .benifits-grid .hospitals-onboard-grid .hospitals-onboard .left {
+}
+
+.benifits-hero .benifits-grid .hospitals-onboard-grid .hospitals-onboard .right {
+}
+
+.features {
+    display: flex;
+    flex-direction: column;
+}
+
+.features .feature h1 {
+    font-family: bold;
+    font-size: x-large;
+    margin: 2rem;
+}
+
+.features img {
+    margin: 1rem;
+    border-radius: .8rem;
+}
+
+.tests-hero h1 {
+    font-family: bold;
+    font-size: large;
+    margin: 2rem;
+}
+
+.tests-hero .tests-list {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: 0 2rem 1rem 2rem;
+    gap: .5rem;
+}
+
+.tests-hero .tests-list .test {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    box-shadow: 0 0 10px -7px black;
+}
+
+.tests-hero .tests-list .test img {
+    height: 50%;
+    width: 50%;
+    align-self: center;
+}
+
+.tests-hero .tests-list .test h2 {
+    font-family: bold;
+    font-size: medium;
+    margin-bottom: 1.5rem;
+}
+
+.tests-hero .tests-list .test p {
+    font-family: light;
+    margin-bottom: 1rem;
+}
+
+.tests-hero .carousel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.tests-hero .carousel .dot {
+    width: .7rem;
+    height: .7rem;
+    border-radius: 50%;
+    background-color: gray;
+    margin: 1rem .2rem;
+}
+
+.tests-hero .carousel .active {
+    background-color: rgb(4, 71, 110);
+}
+
+.love-hero .love {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.love-hero .love h1  {
+    font-family: bold;
+    font-size: x-large;
+    margin: 1rem;
+}
+
+.love-hero .love button {
+    font-family: light;
+    color: white;
+    background-color: #0173b2;
+    padding: .5rem;
+    border: none;
+    border-radius: 3px;
+}
+
+.love-hero .reviews-hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.love-hero .reviews-hero .review {
+    text-align: left;
+    margin: .33rem 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 15px -10px black;
+}
+
+.love-hero .reviews-hero .review h3 {
+    font-family: bold;
+    text-align: left;
+    font-size: small;
+}
+
+.love-hero .reviews-hero .review .review-user {
+    display: grid;
+    grid-template-columns: 15% auto;
+    gap: .9rem;
+    margin: 1rem 0;
+}
+
+.love-hero .reviews-hero .review .review-user img {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.love-hero .reviews-hero .review .review-user h2 {
+    font-family: bold;
+    font-size: medium;
+}
+
+.love-hero .reviews-hero .review .review-user h4 {
+    font-family: bold;
+    font-size: small;
+    color: #2387bf;
+    background-color: #cce3f0;
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    width: fit-content;
+}
+
+.faqs-hero {
+    margin: 2rem;
+}
+
+.faqs-hero h1 {
+    font-family: bold;
+    font-size: larger;
+    text-align: center;
+    margin: 2rem 0rem;
 }

@@ -33,7 +33,7 @@
 .faqs-hero .question h2 {
     font-family: bold;
     font-size: larger;
-    color: rgb(10, 89, 126);
+    color: #1873b2;
 }
 
 .faqs-hero .fa-angle-up {
@@ -47,7 +47,7 @@
 
 .faqs-hero .answer {
     display: none;
-    background-color:rgba(48, 160, 212, 0.253); 
+    background-color:#e5f1f7; 
     padding: .5rem;
     margin-bottom: 2rem;
 }
