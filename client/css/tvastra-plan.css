@@ -431,3 +431,82 @@
     text-align: center;
     margin: 2rem 0rem;
 }
+
+@media only screen and (min-width: 768px){
+    .tvastra-plans-hero .tvastra-plans .plans-grid {
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .ratings-hero .overall-rating {
+        display: grid;
+        grid-template-columns: 30% auto;
+        align-items: center;
+        margin: 0 10rem;
+    }
+
+    .brag-container {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-evenly;
+         margin: 2rem 3rem;
+    }
+    
+    .benifits-hero .benifits-grid {
+        display: grid;
+        grid-template-columns: 50% 50%;
+    }
+
+    .features {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        padding: 2rem;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .features .feature-img-one {
+        grid-column-start: 1;
+        grid-row-start: 1;
+    }
+
+    .features .feature-img-three {
+        grid-column-start: 1;
+        grid-row-start: 3;
+    }
+
+    .features img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .tests-hero h1 {
+        text-align: left;
+        padding: 1rem;
+    }
+
+    .tests-hero .tests-list {
+        margin: 0 4rem;
+    }
+
+    .tests-hero .tests-list .test img {
+        width: 20%;
+    }
+
+    .love-hero {
+        margin: 0 2rem;
+    }
+
+    .love-hero .love {
+        justify-content: flex-start;
+    }
+
+    .love-hero .reviews-hero {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+
+    .faqs-hero h1{
+        text-align: left;
+    }
+}
