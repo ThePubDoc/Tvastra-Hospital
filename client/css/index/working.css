@@ -1,7 +1,11 @@
+.working {
+    padding: 1rem;
+}
+
 .working h1 {
     margin: 1rem;
-    font-size: xxx-large;
     font-family: bold;
+    font-size: x-large;
 }
 
 .working p {
@@ -20,9 +24,9 @@
     justify-content: flex-start;
     align-items: center;
     border-style: solid;
+    padding: 1.4rem 0;
+    margin: .5rem 0;
     border-width: 1px;
-    margin: .2rem 2rem .2rem 1rem;
-    padding: 4rem 2rem 4rem 2rem;
     border-radius: 10px;
     color: rgb(218, 216, 216);
     height: 1rem;
@@ -37,18 +41,16 @@
 }
 
 .working .workflow .steps .number {
-    font-weight: 900;
-    font-size: 2rem;
     margin-right: 1rem;
+    font-size: larger;
     font-family: bold;
     color: rgba(181, 182, 182, 0.507);
 }
 
 .working .workflow .steps .text {
-    font-weight: 900;
-    font-size: 2rem;
     text-align: left;
     font-family: bold;
+    font-size: larger;
     color: rgba(65, 66, 66, 0.376);
 }
 

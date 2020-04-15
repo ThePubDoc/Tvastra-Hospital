@@ -1,16 +1,23 @@
+.services {
+    background-color: #f3f3f3;
+    padding: 1rem 0;
+}
+
 .services h2 {
-    padding-top: 1rem;
+    font-family: bold;
+    font-size: x-large;
+    padding: 1rem;
 }
 
 .services p {
-    padding: 0 2.5rem 0 2.5rem;
-    margin: 1rem 1rem 2rem 1rem;
+    font-family: light;
+    padding: 1rem 2rem;
 }
 
 .services .services-container {
     display: grid;
     grid-template-columns: 50% 50%;
-    margin: 0 2rem 0 2rem;
+    margin: 0 .5rem;
 }
 
 .services .services-container .img-5 {
@@ -18,27 +25,28 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(228, 227, 227);
+    background-color: white;
     border-radius: 7px;
-    margin: 0 .5rem 1rem .5rem;
-    height: 10rem;
+    margin: .5rem;
+    height: 8rem;
 }
 
 .services .services-container .img-5 img {
-    margin-top: 1rem;
-    padding: 0 1rem 0 1rem;
+    padding: .5rem;
     margin-bottom: -1.7rem;
 }
 
 .services .services-container .img-5 p{
     color:rgb(146, 144, 144);
     font-weight: bolder;
-    margin: 2.8rem;
+    margin: 1rem;
     padding: 0;
+    color: #5d5d5d;
+    font-family: bold;
 }
 
-@media only screen and (min-width: 600px){
-    .services .grid-container-5 {
+@media only screen and (min-width: 760px){
+    .services .services-container {
         grid-template-columns: auto auto auto;
     }
 }

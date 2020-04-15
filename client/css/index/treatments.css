@@ -1,69 +1,70 @@
 .treatments-container {
-    margin-top: 2rem;
+    padding: 1rem 0;
 }
 
 .treatments-container h1 {
-    padding: 0 3rem 0 1rem;
+    
     font-family: bold;
-    font-size: xxx-large;
+    font-size: x-large;
 }
 
 .treatments-container p {
-    padding: 1rem;
+    padding: 1rem 1.5rem;
     font-size: large;
     font-family: light;
 }
 
 
 .treatments-container .treatments .treatment {
-    height: 20rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: flex-start;
-    padding: 1rem;
-    margin: .5rem 2rem 1rem 2rem;
     background-size: cover;
+    margin: 1rem;
+    padding: 14rem 0 0 0;
 }
 
 .treatments-container .treatments .treatment p {
     color: white;
-    /* margin: .7rem; */
-    font-size: 1.2rem;
+    font-family: light;
+    padding: 0;
+    padding: .5rem;
+    font-size: smaller;
 }
 
 .treatments-container .treatments .img-1 {
-    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("../../images/image--009.jpg");
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg");
     background-repeat: no-repeat;
     
 }
 
 .treatments-container .treatments .img-2 {
-    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("../../images/image--010.jpg");
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg");
     background-repeat: no-repeat;
     
     /* height: 450px; */
 }
 
 .treatments-container .treatments .img-3 {
-    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("../../images/image--008.jpg");
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
     background-repeat: no-repeat;
     /* height: calc(450px-.25rem); */
 }
 
 .treatments-container .treatments .img-4 {
-    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("../../images/image--011.jpg");
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg");
     background-repeat: no-repeat;
     /* height: calc(450px-.25rem); */
 }
 
 .treatments-container .treatments .img-5 {
-    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("../../images/image--007.jpg");
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg");
     background-repeat: no-repeat;
     /* height: calc(450px-.25rem); */
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 760px){
     .treatments-container .treatments  {
         display: grid;
         margin: 2rem;
@@ -96,15 +97,40 @@
 
     .treatments-container p {
         /* padding-left: 3rem; */
-        margin-left: 4rem;
+        margin-left: 2rem;
     }
 
     .treatments-container .treatments {
         display: grid;
         grid-template-columns: auto auto auto;
+        /* grid-template-areas: 
+                        "img-1 img-2 img-3"
+                        "img-4 img-2 img-5"
+                        "img-4 img-2 img-5"; */
         /* grid-auto-rows: 20rem; */
     }
 
+    
+    /* .treatments-container .treatments .img-1 {
+        
+    }
+    
+    .treatments-container .treatments .img-2 {
+        grid-area: img-2;
+    }
+    
+    .treatments-container .treatments .img-3 {
+        grid-area: img-3;
+    }
+    
+    .treatments-container .treatments .img-4 {
+        grid-area: img-4;
+    }
+    
+    .treatments-container .treatments .img-5 {
+        grid-area: img-5;
+    } */
+    
     .treatments-container .treatments .treatment p{
        padding: 0;
        margin: 0;

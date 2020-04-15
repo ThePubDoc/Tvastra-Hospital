@@ -228,7 +228,7 @@
         left: 0;
     }
 
-    .brag-points-hero {
+    .brag .brag-points-hero {
         display: grid;
         grid-template-columns: 45% auto;
         color: white;

@@ -1,5 +1,5 @@
 .footer {
-    background-color: #021433;
+    background-color: #22263f;
     padding: 1rem;
     text-align: center;
 }
@@ -44,14 +44,16 @@
 }
 
 .footer .footer-2 .social-icons {
-    display: none;
+    display: flex;
+    color: white;
 }
 
 .footer .footer-2 .note {
     text-align: center;
     margin: .7rem;
-    font-size: small;
+    font-size: medium;
     color: white;
+    word-spacing: 1px;
 }
 
 @media only screen and (min-width: 600px){ 
@@ -91,12 +93,14 @@
     }
 
     .footer .footer-2 .social-links{
-        display: none;
+        display: flex;
+        color: black;
     }
 
     .footer .footer-2 .social-icons {
         display: flex;
         flex-direction: row;
+        color: black;
     }
 
     .footer .footer-2 .social-icons li {
