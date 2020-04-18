@@ -26,15 +26,15 @@
     <% include ./common/navbar %>
     <div class="login-container">
         
-        <form class="login-form" action="/login" method="POST"> 
+        <form class="login-form" action="/getOTP" method="POST"> 
             <div class="login-form-container">
                 <div class="login-elements">
                     <p class="login-header">Login</p>
-                    <input type="text" placeholder="Enter Email" name="email">
-                    <input type="password" placeholder="Enter Password" name="password">
+                    <input type="text" placeholder="Enter OTP">
+                    
 
                     <button class="login-button">
-                        <div><p>LOGIN</p></div>
+                        <div><p>GET OTP</p></div>
                         <div><i class="fas fa-arrow-right"></i></div>
                     </button>
 
@@ -50,5 +50,6 @@
     </div>
     <% include ./common/footer %>
 
+      
 </body>
 </html>

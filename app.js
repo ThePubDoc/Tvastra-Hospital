@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require("express");
 const router = express.Router();
 const app = express();
@@ -6,9 +7,9 @@ const compression = require("compression");
 const bodyParser = require("body-parser");
 const logger = require("morgan");
 const path = require("path");
+var cookieParser = require('cookie-parser');
+var session = require('express-session');
 const mainRoutes = require("./backend/routes/mainRoutes");
-var session = require("express-session");
-var cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const models = require("./backend/models/index");
 

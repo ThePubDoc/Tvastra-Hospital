@@ -23,35 +23,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav class="navbar">
+    <% include ./common/navbar %>
 
-        <img src="../images/footer.png" alt="">
-        
-        <ul class="menu" id="menu">
-            <li><a href="/doctor">Doctor</a></li>
-            <li><a href="/hospital">Hospitals</a></li>
-            <li><a href="#">Treatment</a></li>
-            <li><a href="#">Other Services</a></li>
-            <li><a href="#">About</a></li>
-        </ul>
-
-        <div class="menu-buttons">
-            <button class="login">Login / Sign Up</button>
-            <button class="quote">Get a Quote</button>
-        </div>
-
-        <div class="burger" id="burger" onclick="burgerMenu()">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </div>
-    </nav>
     <div class="signup-container">
         
+        <script>
+            var error = <%= err_msg %>;
+            console.log(error)
+            alert(error);
+        </script>
         <form class="signup-form" method="POST" action="/signup"> 
             <div class="signup-form-container">
                 <div class="signup-elements">
                     <p class="signup-header">Sign Up</p>
                     <input type="text" placeholder="Enter Name" name="name">
+                    <div class="error">
+                        <%  if(type === "email") %>
+                        <%= err_msg %>
+                    </div>
                     <input type="email" placeholder="Enter Email" name="email">
+                    
                     <input type="password" placeholder="Enter Password" name="password">
                     <select class="gender" name="gender">
                         <option value="" disabled selected>Select Your Gender</option>
@@ -59,6 +50,10 @@
                         <option value="Female">Female</option>
                     </select>
                     <input type="date" placeholder="dd/mm/yyyy" name="dob">
+                    <div class="error">
+                        <%  if(type === "phone") %>
+                        <%= err_msg %>
+                    </div>
                     <input type="number" placeholder="Enter Phone no" name="phone">
                     <div class="address">
                         <input type="text" placeholder="Enter City" name="city">
@@ -78,17 +73,15 @@
 
                     <div class="signup-footer">
                         <p>Already a member?</p>
-                        <a href="/signup">Login</a>
+                        <a href="/login">Login</a>
                     </div>
 
                 </div>
             </div>
         </form>
-        <div id="signup-footer">
-            <p> All Rights Reserved. &#169; tvastra 2020 </p>
-        </div>
     </div>
 
+    <% include ./common/footer %>
     
       
 </body>

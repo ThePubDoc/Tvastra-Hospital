@@ -11,12 +11,20 @@ function hospital(req,res){
 }
 
 function signup(req,res){
-    res.render("signUp");
+    res.render("signUp" , {
+        err_msg:"",
+        type:"",
+    });
+}
+
+function login(req,res){
+    res.render("login");
 }
 
 module.exports = {
     index : index,
     doctor : doctor,
     hospital : hospital,
-    signup : signup
+    signup : signup,
+    login : login,
 }
