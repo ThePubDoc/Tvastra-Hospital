@@ -43,7 +43,10 @@
                     </div>
                     <input type="email" placeholder="Enter Email" name="email">
                     
-                    <input type="password" placeholder="Enter Password" name="password">
+                    <div class="password">
+                        <input type="password" placeholder="Enter Password" name="password" id="password">
+                        <i class="fa fa-eye-slash" aria-hidden="true" onclick="showpassword()"></i>
+                    </div>
                     <select class="gender" name="gender">
                         <option value="" disabled selected>Select Your Gender</option>
                         <option value="Male">Male</option>
@@ -82,7 +85,17 @@
     </div>
 
     <% include ./common/footer %>
-    
+    <script>
+        function showpassword(){
+            if(document.getElementById("password").getAttribute("type").localeCompare("password")===0){
+                document.getElementById("password").setAttribute("type","text")
+            }
+            else{
+                document.getElementById("password").setAttribute("type","password")
+            }
+            
+        }
+    </script>
       
 </body>
 </html>

@@ -11,10 +11,15 @@ function hospital(req,res){
 }
 
 function signup(req,res){
-    res.render("signUp" , {
-        err_msg:"",
-        type:"",
-    });
+    if(req.session.user){
+        res.redirect("/")
+    }
+    else{
+        res.render("signUp" , {
+            err_msg:"",
+            type:"",
+        });
+    }
 }
 
 function login(req,res){

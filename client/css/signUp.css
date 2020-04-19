@@ -41,6 +41,25 @@ input {
     color: grey;
 }
 
+.signup-container .signup-form-container .signup-elements .password{
+    display: flex;
+    flex-direction: row;
+}
+
+.signup-container .signup-form-container .signup-elements .password input {
+    width: 100%;
+}
+
+.signup-container .signup-form-container .signup-elements .password i {
+    font-size: x-large;
+    /* align-self: center; */
+    border: 1px solid gray;
+    height: fit-content;
+    padding: .77rem;
+    border-left: none;
+    color: rgb(119, 169, 192);;
+}
+
 select {
     padding: 1rem;
     margin-bottom: 1rem;
