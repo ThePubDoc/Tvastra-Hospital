@@ -9,11 +9,12 @@ const router = express.Router();
 const app = express();
 
 router.route('/').get(middle.checkLogin, mainController.index)
-router.route('/doctor').get(mainController.doctor)
-router.route('/hospital').get(mainController.hospital)
-router.route('/signup').get(mainController.signup)
-router.route('/signup').get(mainController.signup)
+router.route('/doctor').get(middle.checkLogin, mainController.doctor)
+router.route('/hospital').get(middle.checkLogin, mainController.hospital)
+router.route('/signup').get(middle.checkLogin, mainController.signup)
+router.route('/signup').get(middle.checkLogin, mainController.signup)
 router.route('/login').get(mainController.login);
+router.route('/logout').get(mainController.logout);
 
 router.route('/signup').post(singupController.signup);
 router.route('/getOTP').post(OTPController.getOTP);

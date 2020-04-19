@@ -18,13 +18,25 @@ function signup(req,res){
 }
 
 function login(req,res){
-    res.render("login");
+    if(req.session.user){
+        res.redirect("/")
+    }
+    else{
+        res.render("login");
+    }
 }
 
+function logout(req,res){
+    req.session.destroy();
+    res.redirect("/");
+}
+
+
 module.exports = {
-    index : index,
-    doctor : doctor,
-    hospital : hospital,
-    signup : signup,
-    login : login,
+    index,
+    doctor,
+    hospital,
+    signup,
+    login,
+    logout,
 }

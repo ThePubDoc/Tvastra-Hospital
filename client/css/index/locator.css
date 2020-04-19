@@ -9,7 +9,9 @@
 }
 
 .locator {
-    background-color: #99c0da;
+    /* background-color: #99c0da; */
+    background-image: url("../../images/img1.jpg");
+    background-size: 100% 100%;
     text-align: center;
 }
 

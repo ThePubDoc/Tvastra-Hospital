@@ -272,11 +272,11 @@
             if(img_div.style.display == "none"){
                 img_div.style.display = "block";
                 for(i=1;i<8;i++){
-                if(i===id){
-                    continue;
-                }
-                var img_div = document.getElementById("image-"+i);
-                img_div.style.display = "none";
+                    if(i===id){
+                        continue;
+                    }
+                    var img_div = document.getElementById("image-"+i);
+                    img_div.style.display = "none";
                 }
             }
             else{
@@ -285,16 +285,6 @@
 
             
 
-        }
-
-        function burgerMenu(){
-            var menu = document.getElementById("mobile-menu")
-            if(menu.style.display === "none"){
-                menu.style.display = "block";
-            }
-            else{
-                menu.style.display = "none";
-            }
         }
 
         function initMap() {
