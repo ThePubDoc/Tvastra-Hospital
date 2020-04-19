@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/working.css">
+</head>
+<body>
+    <div class="working"> 
+        <h1>How it works</h1>
+        <p>Various facilities are provided here. But there is a protocol which needs to be followed so that you may get the service at its best.</p>
+
+    
+        <div class="workflow">
+            
+            <div class="steps active" onclick="image(1)" id="workflow1">
+                <p class="number">01</p>
+                <p class="text">Fix Consultation</p>
+            </div>
+        
+            <div class="steps" onclick="image(2)" id="workflow2">
+                <p class="number">02</p>
+                <p class="text">Upload Medical Reports</p>
+            </div>
+
+            <div class="steps" onclick="image(3)" id="workflow3">
+                <p class="number">03</p>
+                <p class="text">Consult With Doctor</p>
+            </div>
+
+            <div class="steps" onclick="image(4)" id="workflow4">
+                <p class="number">04</p>
+                <p class="text">Fix Surgery</p>
+            </div>
+
+            <div class="steps" onclick="image(5)" id="workflow5">
+                <p class="number">05</p>
+                <p class="text">Hospital Sent Estimates</p>
+            </div>
+
+            <div class="steps" onclick="image(6)" id="workflow6">
+                <p class="number">06</p>
+                <p class="text">Payment</p>
+            </div>
+
+            <div class="steps" onclick="image(7)" id="workflow7">
+                <p class="number">07</p>
+                <p class="text">Surgery Completed</p>
+            </div>
+        
+            <div class="img-container">
+                <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.png" alt="" srcset="" id="image">
+                <h2>Fix Consultation</h2>
+                <p>This depicts that user will have to fix appointment first when it selects a particular doctor.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function image(id){
+            
+            const images = [
+                            "https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.png",
+                            "https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img2.png",
+                            "https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img3.jpeg",
+                            "https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img4.jpeg",
+                            "https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img5.jpg",
+                            "https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img6.jpg",
+                            "https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img3.jpeg"
+                            ]
+            var img_div = document.getElementById("image");
+            var imageSrc = images[id-1];
+            document.getElementById("image").setAttribute("src",images[id-1]);
+            document.getElementById("workflow"+id).setAttribute("class","steps active")
+            for(let i=1;i<=7;i++){
+                if(i===id)  
+                    continue;
+                else
+                    document.getElementById("workflow"+i).setAttribute("class","steps")
+            }
+        }
+    </script>
+</body>
+</html>

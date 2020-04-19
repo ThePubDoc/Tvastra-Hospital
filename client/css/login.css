@@ -75,17 +75,20 @@ input {
     color: rgb(0, 153, 255);
 }
 
-@media only screen and (min-width: 600px){
+@media only screen and (min-width: 768px){
     .login-container .login-form-container .login-elements{
         margin-left: 5rem;
         margin-right: 5rem;
     }
 }
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1024px){
+
+    .login-container .login-form-container{
+        padding: 0 20rem;
+    }
+
     .login-container .login-form-container .login-elements{
-        margin-top: 10rem;
-        margin-left: 40rem;
-        margin-right: 40rem;
+        margin: 5rem 0;
     }
 }

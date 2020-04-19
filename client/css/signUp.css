@@ -100,10 +100,12 @@ select {
     }
 }
 
-@media only screen and (min-width: 1000px){
+@media only screen and (min-width: 1024px){
+    .signup-container .signup-form-container {
+        padding: 0 20rem;
+    }
+
     .signup-container .signup-form-container .signup-elements{
-        margin-top: 10rem;
-        margin-left: 40rem;
-        margin-right: 40rem;
+        margin: 5rem 0;
     }
 }
