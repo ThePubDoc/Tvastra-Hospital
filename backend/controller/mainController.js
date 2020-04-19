@@ -36,6 +36,17 @@ function logout(req,res){
     res.redirect("/");
 }
 
+function OTPLogin(req,res){
+    res.render("otpLogin")
+}
+
+function status(req,res){
+    res.render("status")
+}
+
+function verify(req,res){
+    res.render("verify")
+}
 
 module.exports = {
     index,
@@ -44,4 +55,7 @@ module.exports = {
     signup,
     login,
     logout,
+    OTPLogin,
+    status,
+    verify,
 }

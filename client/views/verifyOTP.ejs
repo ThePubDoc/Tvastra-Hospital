@@ -3,11 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="../css/common/reset.css">
     <link rel="stylesheet" href="../css/common/nav.css">
@@ -26,43 +21,22 @@
     <% include ./common/navbar %>
     <div class="login-container">
         
-        <form class="login-form" action="/login" method="POST"> 
+        <form class="login-form" action="/verify" method="POST"> 
             <div class="login-form-container">
                 <div class="login-elements">
                     <p class="login-header">Login</p>
-                    <input type="text" placeholder="Enter Email" name="email">
-                    <div class="password">
-                        <input type="password" placeholder="Enter Password" name="password" id="password">
-                        <i class="fa fa-eye-slash" aria-hidden="true" onclick="showpassword()"></i>
-                    </div>
-                    <a href="/OTP-login">Login With OTP</a>
+                    <input type="text" name="otp" placeholder="Enter OTP" maxlength="4">
                     <button class="login-button">
                         <div><p>LOGIN</p></div>
                         <div><i class="fas fa-arrow-right"></i></div>
                     </button>
 
-                    <div class="login-footer">
-                        <p>Not Registered?</p>
-                        <a href="/signup">Sign Up</a>
-                    </div>
-                    
                 </div>
-                
             </div>
         </form>
         
     </div>
     <% include ./common/footer %>
-    <script>
-        function showpassword(){
-            if(document.getElementById("password").getAttribute("type").localeCompare("password")===0){
-                document.getElementById("password").setAttribute("type","text")
-            }
-            else{
-                document.getElementById("password").setAttribute("type","password")
-            }
-            
-        }
-    </script>
+    
 </body>
 </html>
