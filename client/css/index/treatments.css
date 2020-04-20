@@ -36,32 +36,43 @@
 .treatments-container .treatments .img-1 {
     background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg");
     background-repeat: no-repeat;
-    
+    grid-row-start: ;
+    grid-row-end: ;
 }
 
 .treatments-container .treatments .img-2 {
     background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg");
     background-repeat: no-repeat;
-    
-    /* height: 450px; */
+    grid-row-start: ;
+    grid-row-end: ;
 }
 
 .treatments-container .treatments .img-3 {
     background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
     background-repeat: no-repeat;
-    /* height: calc(450px-.25rem); */
+    grid-row-start: ;
+    grid-row-end: ;
 }
 
 .treatments-container .treatments .img-4 {
     background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg");
     background-repeat: no-repeat;
-    /* height: calc(450px-.25rem); */
+    grid-row-start: ;
+    grid-row-end: ;
 }
 
 .treatments-container .treatments .img-5 {
     background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg");
     background-repeat: no-repeat;
-    /* height: calc(450px-.25rem); */
+    grid-row-start: ;
+    grid-row-end: ;
+}
+
+.treatments-container .treatments .img-6 {
+    background-image: linear-gradient(to bottom, transparent,rgb(0, 0, 0)99%),url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
+    background-repeat: no-repeat;
+    grid-row-start: ;
+    grid-row-end: ;
 }
 
 @media only screen and (min-width: 760px){
@@ -85,54 +96,24 @@
 @media only screen and (min-width : 1000px){
     .treatments-container {
         text-align: left;
-        /* padding-left: 3rem;
-        padding-bottom: 6rem; */
     }
 
     .treatments-container h1 {
-        /* padding-top: 3rem; */
         font-size: xxx-large;
         margin: 3rem 4rem 3rem 4rem;
     }
 
     .treatments-container p {
-        /* padding-left: 3rem; */
         margin-left: 2rem;
     }
 
     .treatments-container .treatments {
         display: grid;
         grid-template-columns: auto auto auto;
-        /* grid-template-areas: 
-                        "img-1 img-2 img-3"
-                        "img-4 img-2 img-5"
-                        "img-4 img-2 img-5"; */
-        /* grid-auto-rows: 20rem; */
     }
-
-    
-    /* .treatments-container .treatments .img-1 {
-        
-    }
-    
-    .treatments-container .treatments .img-2 {
-        grid-area: img-2;
-    }
-    
-    .treatments-container .treatments .img-3 {
-        grid-area: img-3;
-    }
-    
-    .treatments-container .treatments .img-4 {
-        grid-area: img-4;
-    }
-    
-    .treatments-container .treatments .img-5 {
-        grid-area: img-5;
-    } */
     
     .treatments-container .treatments .treatment p{
-       padding: 0;
+       padding: 0.5rem;
        margin: 0;
        font-family: bold;
     }
