@@ -32,19 +32,16 @@
                 <i class="fa fa-info-circle icon1" aria-hidden="true"></i>
                 <h2>Info</h2>
                 <p><%= err_msg %></p>
-                <i class="fa fa-times icon2" aria-hidden="true" onclick="close()"></i>
+                <i class="fa fa-times icon2" aria-hidden="true" onclick="show()"></i>
             </div>
         <% } %>
         <form class="signup-form" method="POST" action="/signup"> 
             <div class="signup-form-container">
                 
                 <div class="signup-elements">
-                    <p class="signup-header">Sign Up</p>
+                    <p class="signup-header" onclick="show()">Sign Up</p>
                     <input type="text" placeholder="Enter Name" name="name">
-                    <div class="error">
-                        <%  if(type === "email") %>
-                        <%= err_msg %>
-                    </div>
+                   
                     <input type="email" placeholder="Enter Email" name="email">
                     
                     <div class="password">
@@ -57,10 +54,7 @@
                         <option value="Female">Female</option>
                     </select>
                     <input type="date" placeholder="dd/mm/yyyy" name="dob">
-                    <div class="error">
-                        <%  if(type === "phone") %>
-                        <%= err_msg %>
-                    </div>
+                   
                     <input type="number" placeholder="Enter Phone no" name="phone">
                     <div class="address">
                         <input type="text" placeholder="Enter City" name="city">
@@ -91,6 +85,7 @@
     <% include ./common/footer %>
     <script>
         function showpassword(){
+            console.log("hello")
             if(document.getElementById("password").getAttribute("type").localeCompare("password")===0){
                 document.getElementById("password").setAttribute("type","text")
             }
@@ -98,8 +93,9 @@
                 document.getElementById("password").setAttribute("type","password")
             }
         }
-        function close(){
-            document.getElementById("notification").style.display = none;
+
+        function show(){
+            document.getElementById("notification").style.display = "none";
         }
     </script>
     <script>

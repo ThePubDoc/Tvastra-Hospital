@@ -23,23 +23,32 @@ async function getOTP(req,res){
       workflow_id: '6',
     }, (err, result) => {
       if(err) {
-        console.log("error in get otp function",err)
-        res.render('otp', {message: 'Server Error'});
+        // console.log("error in get otp function",err)
+        res.render('otpLogin', {
+          msg : "Server Error",
+          type : "info"
+        });
       } else {
-        console.log("result in get otp function",result);
+        // console.log("result in get otp function",result);
         let requestId = result.request_id;
         req.session.request_id = result.request_id;
         if(result.status == '0') {
-          res.render('verifyOTP', {requestId: requestId});
+          res.render('verifyOTP');
         } else {
           //res.status(401).send(result.error_text);
-          res.render('status', {message: result.error_text, requestId: requestId});
+          res.render('otpLogin', {
+            msg : result.error_text,
+            type : "info"
+          });
         }
       }
     });
   }
   else{
-    res.render("otpLogin");
+    res.render("otpLogin", {
+      msg : "No user found",
+      type : "info"
+    });
   }
 }
 
@@ -64,7 +73,10 @@ async function verify(req,res){
       }
       else{
         console.log("---",err)
-        res.render("verifyOTP")
+        res.render("verifyOTP" , {
+          msg : "Invalid OTP",
+          type : "failure"
+        })
       }
     }
   })

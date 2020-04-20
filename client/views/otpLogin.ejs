@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="../css/index/querry.css">
     <link rel="stylesheet" href="../css/common/footer.css">
     <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/notification.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -26,6 +27,24 @@
     <% include ./common/navbar %>
     <div class="login-container">
         
+        <% if(type === "info"){ %>
+            <div class="notfication info" id="notification">
+                <i class="fa fa-info-circle icon1" aria-hidden="true"></i>
+                <h2>Info</h2>
+                <p><%= msg %></p>
+                <i class="fa fa-times icon2" aria-hidden="true" onclick="show()"></i>
+            </div>
+        <% } %>
+
+        <% if(type === "failure"){ %>
+            <div class="notfication failure" id="notification">
+                <i class="fa fa-info-circle icon1" aria-hidden="true"></i>
+                <h2>Info</h2>
+                <p><%= msg %></p>
+                <i class="fa fa-times icon2" aria-hidden="true" onclick="show()"></i>
+            </div>
+        <% } %>
+
         <form class="login-form" action="/getOTP" method="POST"> 
             <div class="login-form-container">
                 <div class="login-elements">

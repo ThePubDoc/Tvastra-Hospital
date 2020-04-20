@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/index/services.css">
     <link rel="stylesheet" href="css/index/querry.css">
     <link rel="stylesheet" href="css/common/footer.css">
+    <link rel="stylesheet" href="../css/notification.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNG4bfE94xFWigSEbChNxS1OtIRd4JIuE&callback=initMap" type="text/javascript"></script>
@@ -22,6 +23,14 @@
     <% include ./common/navbar %>
 
     <div class="locator">
+        <% if(type === "success"){ %>
+            <div class="notfication success" id="notification">
+                <i class="fa fa-info-circle icon1" aria-hidden="true"></i>
+                <h2>Info</h2>
+                <p><%= msg %></p>
+                <i class="fa fa-times icon2" aria-hidden="true" onclick="show()"></i>
+            </div>
+        <% } %>
 
         <h1>Find Affordable Healthcare</h1>
         <p>Join the thousands of others who have exercised their right to quality healthcare at a price you can afford.</p>
@@ -258,14 +267,8 @@
             }
         }
 
-        function initMap() {
-        // The location of Uluru
-        var uluru = {lat: -25.344, lng: 131.036};
-        // The map, centered at Uluru
-        var map = new google.maps.Map(
-            document.getElementById('map'), {zoom: 4, center: uluru});
-        // The marker, positioned at Uluru
-        var marker = new google.maps.Marker({position: uluru, map: map});
+        function show(){
+            document.getElementById("notification").style.display = "none";
         }
     </script>
 

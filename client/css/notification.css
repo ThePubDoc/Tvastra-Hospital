@@ -26,10 +26,14 @@
 .notfication h2 {
     font-family: bold;
     font-size: larger;
+    padding: 0;
+    margin: 0;
 }
 
 .notfication p {
     font-family: light;
+    padding: 0;
+    margin: 0;
 }
 
 .info {
@@ -51,7 +55,6 @@
 
 .success {
     box-shadow: 5px 0 inset green;
-    display: none;
 }
 
 .success .icon1 {
@@ -68,7 +71,6 @@
 
 .failure {
     box-shadow: 5px 0 inset red;
-    display: none;
 }
 
 .failure .icon1 {

@@ -1,5 +1,8 @@
 function index(req,res){
-    res.render("index")
+    res.render("index" , {
+        msg : "Successful Login",
+        type : "success"
+    })
 }
 
 function doctor(req,res){
@@ -27,7 +30,10 @@ function login(req,res){
         res.redirect("/")
     }
     else{
-        res.render("login");
+        res.render("login" , {
+            msg : "",
+            type : ""
+        });
     }
 }
 
@@ -37,7 +43,15 @@ function logout(req,res){
 }
 
 function OTPLogin(req,res){
-    res.render("otpLogin")
+    if(req.session.user){
+        res.redirect("/")
+    }
+    else{
+        res.render("otpLogin" , {
+            msg : "",
+            type : ""
+        });
+    }
 }
 
 function status(req,res){
