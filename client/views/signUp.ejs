@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/index/querry.css">
     <link rel="stylesheet" href="css/common/footer.css">
     <link rel="stylesheet" href="css/signUp.css">
+    <link rel="stylesheet" href="../css/notification.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -26,14 +27,17 @@
     <% include ./common/navbar %>
 
     <div class="signup-container">
-        
-        <script>
-            var error = <%= err_msg %>;
-            console.log(error)
-            alert(error);
-        </script>
+        <%  if(type !== "") {%>
+            <div class="notfication info" id="notification">
+                <i class="fa fa-info-circle icon1" aria-hidden="true"></i>
+                <h2>Info</h2>
+                <p><%= err_msg %></p>
+                <i class="fa fa-times icon2" aria-hidden="true" onclick="close()"></i>
+            </div>
+        <% } %>
         <form class="signup-form" method="POST" action="/signup"> 
             <div class="signup-form-container">
+                
                 <div class="signup-elements">
                     <p class="signup-header">Sign Up</p>
                     <input type="text" placeholder="Enter Name" name="name">
@@ -93,9 +97,13 @@
             else{
                 document.getElementById("password").setAttribute("type","password")
             }
-            
+        }
+        function close(){
+            document.getElementById("notification").style.display = none;
         }
     </script>
-      
+    <script>
+        
+    </script>
 </body>
 </html>

@@ -8,39 +8,39 @@ const nexmo = new Nexmo({
 });
 
 async function getOTP(req,res){
-    console.log(req.body)
-    let phoneNumber = req.body.phone;
-    const user = await Users.findOne({phone : phoneNumber});
-    console.log(user)
-    let message = "Tvastra";
-    
-    if(user){
-      req.session.phone = phoneNumber;
-      nexmo.verify.request({
-        number : "+91"+phoneNumber,
-        brand: message,
-        code_length: '4',
-        workflow_id: '6',
-      }, (err, result) => {
-        if(err) {
-          console.log("error in get otp function",err)
-          res.render('otp', {message: 'Server Error'});
+  console.log(req.body)
+  let phoneNumber = req.body.phone;
+  const user = await Users.findOne({phone : phoneNumber});
+  console.log(user)
+  let message = "Tvastra";
+  
+  if(user){
+    req.session.phone = phoneNumber;
+    nexmo.verify.request({
+      number : "+91"+phoneNumber,
+      brand: message,
+      code_length: '4',
+      workflow_id: '6',
+    }, (err, result) => {
+      if(err) {
+        console.log("error in get otp function",err)
+        res.render('otp', {message: 'Server Error'});
+      } else {
+        console.log("result in get otp function",result);
+        let requestId = result.request_id;
+        req.session.request_id = result.request_id;
+        if(result.status == '0') {
+          res.render('verifyOTP', {requestId: requestId});
         } else {
-          console.log("result in get otp function",result);
-          let requestId = result.request_id;
-          req.session.request_id = result.request_id;
-          if(result.status == '0') {
-            res.render('verifyOTP', {requestId: requestId});
-          } else {
-            //res.status(401).send(result.error_text);
-            res.render('status', {message: result.error_text, requestId: requestId});
-          }
+          //res.status(401).send(result.error_text);
+          res.render('status', {message: result.error_text, requestId: requestId});
         }
-      });
-    }
-    else{
-      res.render("otpLogin");
-    }
+      }
+    });
+  }
+  else{
+    res.render("otpLogin");
+  }
 }
 
 
@@ -70,8 +70,46 @@ async function verify(req,res){
   })
 }
 
+async function forgotOTP(req,res){
+  console.log(req.body)
+  let email = req.body.email;
+  const user = await Users.findOne({email : email});
+  console.log(user)
+  let phoneNumber = user.phone;
+  let message = "Tvastra";
+  
+  if(user){
+    req.session.phone = phoneNumber;
+    nexmo.verify.request({
+      number : "+91"+phoneNumber,
+      brand: message,
+      code_length: '4',
+      workflow_id: '6',
+    }, (err, result) => {
+      if(err) {
+        console.log("error in get otp function",err)
+        res.render('otp', {message: 'Server Error'});
+      } else {
+        console.log("result in get otp function",result);
+        let requestId = result.request_id;
+        req.session.request_id = result.request_id;
+        if(result.status == '0') {
+          res.render('verifyOTP', {requestId: requestId});
+        } else {
+          //res.status(401).send(result.error_text);
+          res.render('status', {message: result.error_text, requestId: requestId});
+        }
+      }
+    });
+  }
+  else{
+    res.render("otpLogin");
+  }
+}
+
 
 module.exports = {
     getOTP,
-    verify
+    verify,
+    forgotOTP,
 }

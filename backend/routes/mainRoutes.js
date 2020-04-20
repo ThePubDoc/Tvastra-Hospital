@@ -17,7 +17,7 @@ router.route('/logout').get(mainController.logout);
 router.route('/OTP-login').get(mainController.OTPLogin);
 router.route('status').get(mainController.status);
 router.route('/verify').get(mainController.verify);
-
+router.route('/forgotPassword').get(mainController.forgot);
 
 router.route('/signup').post(singupController.signup);
 router.route('/getOTP').post(OTPController.getOTP);

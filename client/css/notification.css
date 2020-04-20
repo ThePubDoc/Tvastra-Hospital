@@ -1,0 +1,84 @@
+.notfication {
+    display: grid;
+    grid-template-columns: 15% auto 15%;
+    width: 18rem;
+    background-color: white;
+    float: right;
+    gap: .5rem;
+    padding: .5rem 1rem;
+}
+
+.notfication .icon1 {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: center;
+    font-size: xx-large;
+}
+
+.notfication .icon2 {
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: center;
+    font-size: x-large;
+}
+
+.notfication h2 {
+    font-family: bold;
+    font-size: larger;
+}
+
+.notfication p {
+    font-family: light;
+}
+
+.info {
+    box-shadow: 5px 0 inset blue;
+    /* display: none; */
+}
+
+.info .icon1 {
+    color: blue;
+}
+
+.info h2 {
+    color: blue;
+}
+
+.info p {
+    color: blue;
+}
+
+.success {
+    box-shadow: 5px 0 inset green;
+    display: none;
+}
+
+.success .icon1 {
+    color: green;
+}
+
+.success h2 {
+    color: green;
+}
+
+.success p {
+    color: green;
+}
+
+.failure {
+    box-shadow: 5px 0 inset red;
+    display: none;
+}
+
+.failure .icon1 {
+    color: red;
+}
+
+.failure h2 {
+    color: red;
+}
+
+.failure p {
+    color: red;
+}

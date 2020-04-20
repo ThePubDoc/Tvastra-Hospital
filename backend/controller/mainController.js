@@ -48,6 +48,10 @@ function verify(req,res){
     res.render("verify")
 }
 
+function forgot(req,res){
+    res.render("forgot")
+}
+
 module.exports = {
     index,
     doctor,
@@ -58,4 +62,5 @@ module.exports = {
     OTPLogin,
     status,
     verify,
+    forgot,
 }

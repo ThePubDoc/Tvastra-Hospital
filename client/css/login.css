@@ -8,91 +8,6 @@
     
 }
 
-.login-container .notfication {
-    display: grid;
-    grid-template-columns: 15% auto 15%;
-    width: 18rem;
-    background-color: white;
-    float: right;
-    gap: .5rem;
-    padding: .5rem 1rem;
-}
-
-.login-container .notfication .icon1 {
-    grid-row-start: 1;
-    grid-row-end: 3;
-    align-self: center;
-    font-size: xx-large;
-}
-
-.login-container .notfication .icon2 {
-    grid-column-start: 3;
-    grid-row-start: 1;
-    grid-row-end: 3;
-    align-self: center;
-    font-size: x-large;
-}
-
-.login-container .notfication h2 {
-    font-family: bold;
-    font-size: larger;
-}
-
-.login-container .notfication p {
-    font-family: light;
-}
-
-.login-container .info {
-    box-shadow: 5px 0 inset blue;
-    display: none;
-}
-
-.login-container .info .icon1 {
-    color: blue;
-}
-
-.login-container .info h2 {
-    color: blue;
-}
-
-.login-container .info p {
-    color: blue;
-}
-
-.login-container .success {
-    box-shadow: 5px 0 inset green;
-    display: none;
-}
-
-.login-container .success .icon1 {
-    color: green;
-}
-
-.login-container .success h2 {
-    color: green;
-}
-
-.login-container .success p {
-    color: green;
-}
-
-.login-container .failure {
-    box-shadow: 5px 0 inset red;
-    display: none;
-}
-
-.login-container .failure .icon1 {
-    color: red;
-}
-
-.login-container .failure h2 {
-    color: red;
-}
-
-.login-container .failure p {
-    color: red;
-}
-
 .login-container .login-form-container .login-elements {
     display: flex;
     flex-direction: column;
@@ -100,6 +15,18 @@
     margin-bottom: 10rem;
     background-color: white;
     padding: 2rem;
+}
+
+.login-container .login-form-container .login-elements .links {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.login-container .login-form-container .login-elements .links a {
+    font-family: bold;
+    color: rgb(55, 115, 145);
+    font-size: large;
 }
 
 .login-container .login-form-container .login-elements .login-header{
