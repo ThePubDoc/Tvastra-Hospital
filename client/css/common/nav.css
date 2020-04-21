@@ -97,28 +97,26 @@ a {
     display: flex;
     flex-direction: column;
     background-color: white;
-    margin: .5rem 2rem 0 -15rem;
+    margin: .5rem 2rem 0 -17rem;
     width: max-content;
     font-size: x-large;
-    padding: 2rem 2rem 0 2rem;
-    display: none;
 }
 
-.menu-buttons .dropdown .dropdown-content a {
-    margin: 1rem 0;
+.menu-buttons .dropdown .dropdown-content .links{
+    padding: 1rem 2rem;
     font-family: bold;
     font-size: large;
 }
 
-.menu .dropdown .dropdown-content .menu-links:hover {
-    background-color: gray;
-    color: blue;
+.menu-buttons .dropdown .dropdown-content .links:hover {
+    background-color: rgba(128, 128, 128, 0.103);
+    box-shadow: 5px 0 inset blue;
 }
 
 .menu-buttons .dropdown .dropdown-content .user {
     display: grid;
     grid-template-columns:  30% auto;
-    margin: 0 0 2rem -1rem;
+    margin: .5rem 2rem 2rem 2rem;
 }
 
 .menu-buttons .dropdown .dropdown-content .user img {
@@ -150,7 +148,6 @@ a {
 .menu-buttons .dropdown .dropdown-content .line {
     content: "";
     border: 1px solid rgba(0, 0, 0, 0.315);
-    margin: -1rem -2rem 1rem -2rem;
 }
 
 @media only screen and (min-width: 600px) and (max-width: 1000px){

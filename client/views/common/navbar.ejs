@@ -30,7 +30,7 @@
             <button class="quote">Get a Quote</button>
             <div class="dropdown">
                 <i class="fa fa-check-circle" aria-hidden="true"></i>
-                <button class="dropbtn" onclick="userMenu()">
+                <button class="dropbtn" onclick="userMenu()" onfocus="userMenu()">
                     <p>User</p>
                     <i class="fas fa-chevron-down"></i>
                 </button>
@@ -44,9 +44,15 @@
                     <div class="line">
 
                     </div>
-                    <a href="#">My Appointments</a>
-                    <a href="#">My Lab Tests</a>
-                    <a href="/logout">Logout</a>
+                    <div class="links">
+                        <a href="#">My Appointments</a>
+                    </div>
+                    <div class="links">
+                        <a href="#">My Lab Tests</a>
+                    </div>
+                    <div class="links">
+                        <a href="/logout">Logout</a>
+                    </div>
                 </div>
               </div>
         </div>
