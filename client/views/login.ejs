@@ -11,12 +11,6 @@
     <title>Document</title>
     <link rel="stylesheet" href="../css/common/reset.css">
     <link rel="stylesheet" href="../css/common/nav.css">
-    <link rel="stylesheet" href="../css/index/locator.css">
-    <link rel="stylesheet" href="../css/index/working.css">
-    <link rel="stylesheet" href="../css/index/doctor_list.css">
-    <link rel="stylesheet" href="../css/index/treatments.css">
-    <link rel="stylesheet" href="../css/index/services.css">
-    <link rel="stylesheet" href="../css/index/querry.css">
     <link rel="stylesheet" href="../css/common/footer.css">
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../css/notification.css">
@@ -27,31 +21,14 @@
     <% include ./common/navbar %>
     <div class="login-container">
         
-        <% if(type === "info"){ %>
-            <div class="notfication info" id="notification">
-                <i class="fa fa-info-circle icon1" aria-hidden="true"></i>
-                <h2>Info</h2>
-                <p><%= msg %></p>
-                <i class="fa fa-times icon2" aria-hidden="true" onclick="show()"></i>
-            </div>
-        <% } %>
-
-        <% if(type === "failure"){ %>
-            <div class="notfication failure" id="notification">
-                <i class="fa fa-info-circle icon1" aria-hidden="true"></i>
-                <h2>Info</h2>
-                <p><%= msg %></p>
-                <i class="fa fa-times icon2" aria-hidden="true" onclick="show()"></i>
-            </div>
-        <% } %>
-
+        <% include ./common/notification %>
 
         <form class="login-form" action="/login" method="POST"> 
             <div class="login-form-container">
             
                 <div class="login-elements">
                     <p class="login-header">Login</p>
-                    <input type="text" placeholder="Enter Email" name="email" required>
+                    <input type="email" placeholder="Enter Email" name="email" required>
                     <div class="password">
                         <input type="password" placeholder="Enter Password" name="password" id="password" required>
                         <i class="fa fa-eye-slash" aria-hidden="true" onclick="showpassword()"></i>
@@ -91,13 +68,6 @@
             
         }
 
-        function show(){
-            document.getElementById("notification").style.display = "none";
-        }
-
-        setTimeout(() => {
-            document.getElementById("notification").style.display="none";
-        }, 1000);
     </script>
 </body>
 </html>

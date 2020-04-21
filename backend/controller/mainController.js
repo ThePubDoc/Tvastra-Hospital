@@ -1,16 +1,21 @@
+const success = {
+    msg : "Successful Login",
+    type : "success"
+}
+
+const empty = {
+    msg : "",
+    type : ""
+}
+
+
 function index(req,res){
     req.session.count++;
     if(req.session.count === 2){
-        res.render("index" , {
-            msg : "Successful Login",
-            type : "success"
-        })
+        res.render("index" , success)
     }
     else{
-        res.render("index" , {
-            msg : "",
-            type : ""
-        })
+        res.render("index" , empty)
     }
 }
 
@@ -27,10 +32,7 @@ function signup(req,res){
         res.redirect("/")
     }
     else{
-        res.render("signUp" , {
-            err_msg:"",
-            type:"",
-        });
+        res.render("signUp" , empty);
     }
 }
 
@@ -39,10 +41,7 @@ function login(req,res){
         res.redirect("/")
     }
     else{
-        res.render("login" , {
-            msg : "",
-            type : ""
-        });
+        res.render("login" , empty);
     }
 }
 
@@ -56,10 +55,7 @@ function OTPLogin(req,res){
         res.redirect("/")
     }
     else{
-        res.render("otpLogin" , {
-            msg : "",
-            type : ""
-        });
+        res.render("otpLogin" , empty);
     }
 }
 
@@ -72,7 +68,7 @@ function verify(req,res){
 }
 
 function forgot(req,res){
-    res.render("forgot")
+    res.render("forgot" , empty)
 }
 
 module.exports = {

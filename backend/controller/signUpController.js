@@ -39,6 +39,35 @@ function signup(req,res){
     });
 }
 
+function changePassword(req,res){
+    const email = req.session.email;
+    const user = users.findOne({email : email});
+    const password1 = req.body.password1;
+    const password2 = req.body.password2;
+    if(password1 != password2){
+        res.render("updatePassword", {
+            msg : "Password doesn't match",
+            type : "failure",
+        })
+    }
+    else{
+        users.findOneAndUpdate( {email : email} ,{password : password1} , (err,result) => {
+            if(err){
+                console.log(err)
+                res.render("updatePassword", {
+                    msg : err,
+                    type : "info"
+                })
+            }
+            else {
+                res.redirect("/")
+            }
+        });
+        
+    }
+}
+
 module.exports = {
-    signup : signup,
+    signup,
+    changePassword,
 }
