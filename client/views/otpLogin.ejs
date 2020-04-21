@@ -69,6 +69,14 @@
         
     </div>
     <% include ./common/footer %>
-    
+    <script>
+        function show(){
+            document.getElementById("notification").style.display = "none";
+        }
+        
+        setTimeout(() => {
+            document.getElementById("notification").style.display="none";
+        }, 1000);
+    </script>
 </body>
 </html>

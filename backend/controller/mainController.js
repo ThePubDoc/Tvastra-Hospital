@@ -1,8 +1,17 @@
 function index(req,res){
-    res.render("index" , {
-        msg : "Successful Login",
-        type : "success"
-    })
+    req.session.count++;
+    if(req.session.count === 2){
+        res.render("index" , {
+            msg : "Successful Login",
+            type : "success"
+        })
+    }
+    else{
+        res.render("index" , {
+            msg : "",
+            type : ""
+        })
+    }
 }
 
 function doctor(req,res){

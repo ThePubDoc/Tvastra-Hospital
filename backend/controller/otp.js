@@ -69,6 +69,7 @@ async function verify(req,res){
     else{
       if(result.status === '0'){
         req.session.user = user;
+        req.session.count = 1;
         res.redirect("/");
       }
       else{

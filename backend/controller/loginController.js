@@ -33,6 +33,7 @@ async function login(req,res){
             email : user.email
         }
         req.session.user = loggedUser;
+        req.session.count = 1;
         res.redirect("/")
     }
 }
