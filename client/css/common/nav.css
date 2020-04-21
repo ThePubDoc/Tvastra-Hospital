@@ -80,6 +80,79 @@ a {
     font-family: light;
 }
 
+.menu-buttons .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.menu-buttons .dropdown .dropbtn {
+    border: none;
+    padding: 1rem;
+    font-size: large;
+    background-color: white;
+}
+
+.menu-buttons .dropdown .dropdown-content {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: .5rem 2rem 0 -15rem;
+    width: max-content;
+    font-size: x-large;
+    padding: 2rem 2rem 0 2rem;
+    display: none;
+}
+
+.menu-buttons .dropdown .dropdown-content a {
+    margin: 1rem 0;
+    font-family: bold;
+    font-size: large;
+}
+
+.menu .dropdown .dropdown-content .menu-links:hover {
+    background-color: gray;
+    color: blue;
+}
+
+.menu-buttons .dropdown .dropdown-content .user {
+    display: grid;
+    grid-template-columns:  30% auto;
+    margin: 0 0 2rem -1rem;
+}
+
+.menu-buttons .dropdown .dropdown-content .user img {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    margin: 0;
+    align-self: center;
+    width: 100%;
+    height: 100%;
+    padding: 1rem 0;
+    border-radius: 50%;
+}
+
+.menu-buttons .dropdown .dropdown-content .user h1 {
+    font-family: bold;
+    color: rgb(0, 153, 255);
+    font-size: large;
+    margin-left: 1rem;
+    padding: .5rem 0;
+}
+
+.menu-buttons .dropdown .dropdown-content .user p {
+    font-family: light;
+    font-size: medium;
+    margin-left: 1rem;
+    padding: .5rem 0;
+}
+
+.menu-buttons .dropdown .dropdown-content .line {
+    content: "";
+    border: 1px solid rgba(0, 0, 0, 0.315);
+    margin: -1rem -2rem 1rem -2rem;
+}
+
 @media only screen and (min-width: 600px) and (max-width: 1000px){
 
 }
