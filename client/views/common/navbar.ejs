@@ -30,16 +30,16 @@
             <button class="quote">Get a Quote</button>
             <div class="dropdown">
                 <i class="fa fa-check-circle" aria-hidden="true"></i>
-                <button class="dropbtn" onclick="userMenu()" onfocus="userMenu()">
-                    <p>User</p>
+                <button class="dropbtn" onclick="userMenu()" id="dropbtn">
+                    <p><%= user.name %></p>
                     <i class="fas fa-chevron-down"></i>
                 </button>
                 
                 <div class="dropdown-content" id="dropdown-content">
                     <div class="user">
                         <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg">
-                        <h1>Aayush Agrawal</h1>
-                        <p>9152861500</p>
+                        <h1><%= user.name %></h1>
+                        <p><%= user.phone %></p>
                     </div>
                     <div class="line">
 
@@ -93,7 +93,16 @@
                 menu.style.display = "flex";
             else
                 menu.style.display = "none";
+                
         }
+
+        function hide(){
+            document.onclick = () => {
+                console.log("click hua bahar")
+                document.getElementById("dropdown-content").style.display = "none";
+            }
+        }
+
     </script>
 </body>
 </html>

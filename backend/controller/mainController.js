@@ -1,20 +1,33 @@
+const Users = require("../models/user");
+
 const success = {
     msg : "Successful Login",
-    type : "success"
+    type : "success",
+    user : ""
 }
 
 const empty = {
     msg : "",
-    type : ""
+    type : "",
+    user : ""
 }
 
 
-function index(req,res){
+async function index(req,res){
+    const user = await Users.findOne({email : req.session.user.email});
+    const requireFields = {
+        name : user.name,
+        email : user.email,
+        phone : user.phone,
+    }
     req.session.count++;
     if(req.session.count === 2){
+        success.user = requireFields;
+        console.log(success)
         res.render("index" , success)
     }
     else{
+        empty.user = requireFields;
         res.render("index" , empty)
     }
 }

@@ -100,6 +100,7 @@ a {
     margin: .5rem 2rem 0 -17rem;
     width: max-content;
     font-size: x-large;
+    display: none;
 }
 
 .menu-buttons .dropdown .dropdown-content .links{
