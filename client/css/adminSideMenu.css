@@ -1,0 +1,61 @@
+.menu {
+    display: flex;
+    flex-direction: column;
+    margin: 2rem;
+}
+
+.menu h1 {
+    font-family: bold;
+    font-size: xx-large;
+    margin-bottom: 2rem;
+}
+
+.menu ul li {
+    margin: 2rem 0;
+}
+
+.menu ul li i {
+    color: rgba(128, 128, 128, 0.74);
+    margin-right: 1rem;
+}
+
+.menu ul li a {
+    color: rgba(128, 128, 128, 0.74);
+    font-family: bold;
+}
+
+.admin-card-hero {
+    margin-top: -25rem;
+    margin-left: 15rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.admin-card-hero .admin-card {
+    display: grid;
+    grid-template-columns: 25% auto;
+    box-shadow: 0 0 2rem -0.7rem black;
+    padding: 1rem;
+    width: 12rem;
+}
+
+.admin-card-hero .admin-card i {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    align-self: center;
+    font-size: x-large;
+    color: rgba(0, 68, 255, 0.884);
+}
+
+.admin-card-hero .admin-card h2 {
+    font-family: bold;
+    font-size: large;
+    align-self: center;
+}
+
+.admin-card-hero .admin-card p {
+    font-family: bold;
+    font-size: large;
+    align-self: center;
+    color: rgba(0, 68, 255, 0.884);
+}

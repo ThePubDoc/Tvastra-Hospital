@@ -1,0 +1,41 @@
+.admin-navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: .5rem 2rem;
+    align-items: center;
+}
+
+.admin-navbar .admin {
+    display: flex;
+    flex-direction: row;
+}
+
+.admin-navbar img {
+    max-width: 7rem;
+    height: 2.5rem;
+}
+
+.admin-navbar .admin .bell {
+    /* position: relative; */
+    font-size: xx-large;
+    align-self: center;
+    margin: 1rem;
+}
+
+.admin-navbar .admin .number {
+    border: 1px solid white;
+    background-color: red;
+    border-radius: 50%;
+    padding: .2rem;
+    align-self: center;
+    height: 1rem;
+    width: 1rem;
+    text-align: center;
+    margin: -1rem 0 0 -1.7rem;
+}
+
+.admin-navbar .admin img {
+    height: 3rem;
+    margin: 1rem;
+    border-radius: 50%;
+}
