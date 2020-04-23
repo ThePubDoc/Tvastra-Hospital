@@ -1,4 +1,5 @@
 const express = require('express');
+const multer = require("multer")
 
 const mainController = require('../controller/mainController');
 const singupController = require('../controller/signUpController');
@@ -7,6 +8,12 @@ const OTPController = require("../controller/OTPController")
 const middle = require("../controller/middle");
 const router = express.Router();
 const app = express();
+
+
+
+const storage = multer.memoryStorage();
+const files = multer({ storage: storage });
+
 
 router.route('/').get(middle.checkLogin, mainController.index)
 router.route('/doctor').get(middle.checkLogin, mainController.doctor)
@@ -20,7 +27,7 @@ router.route('/verify').get(mainController.verify);
 router.route('/forgotPassword').get(mainController.forgot);
 
 
-router.route('/signup').post(singupController.signup);
+router.route('/signup').post(files.single("file"), singupController.signup);
 router.route('/getOTP').post(OTPController.getOTP);
 router.route('/login').post(loginController.login);
 router.route('/verify').post(OTPController.verify);
@@ -29,4 +36,8 @@ router.route('/verifyForgotOTP').post(OTPController.verifyForgot);
 router.route('/changePassword').post(singupController.changePassword);
 
 
+
+const aws = require("../controller/aws")
+router.route("/upload").get(mainController.upload)
+router.route("/upload").post(files.single("file") , aws.uploadUserDp)
 module.exports = router;

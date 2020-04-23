@@ -1,7 +1,19 @@
+require('dotenv').config();
 const users = require("../models/user")
+const aws = require('aws-sdk');
+const multer = require('multer');
+const multerS3 = require('multer-s3');
 
-function signup(req,res){
-    // console.log(req.body);
+aws.config.update({
+    secretAccessKey: process.env.AWS_Secret_Access_Key,
+    accessKeyId: process.env.AWS_Access_Key_ID,
+    region: process.env.AWS_region,
+});
+
+const s3 = new aws.S3();
+
+async function signup(req,res){
+
     const {name,email,password,gender,dob,phone,city,state,country} = req.body;
     const user = new users({
         name,
@@ -14,29 +26,43 @@ function signup(req,res){
         state,
         country,
     });
-    // console.log(user);
-    user.save((err) => {
-        if(err){
-            // console.log(err)
-            if(err.code === 11000 && Object.keys(err.keyPattern)[0] === "phone"){
-                var err_msg = "Number already exists";
-                res.render("signup", {
-                    type:"phone",
-                    err_msg
-                })
+    console.log(user);
+    const params = {
+        Bucket: "tvastra-users-dp",
+        Key: email+"."+req.file.mimetype.split("/")[1],
+        ACL: 'public-read',
+        Body: req.file.buffer
+    };
+  
+    try {
+        const newUser = await user.save()
+        const uploadDp = await s3.upload(params).promise()
+        s3.upload(params, async function (err, data) {
+            if (err) {
+                console.log("Error: ", err);
+            } else {
+                const url = await users.findOneAndUpdate({email : email} , {dp : data.Location})
+                res.redirect("/login")
             }
-            if(err.code === 11000 && Object.keys(err.keyPattern)[0] === "email"){
-                var err_msg = "Email already exists";
-                res.render("signup", {
-                    type:"email",
-                    err_msg
-                })
-            }
+        });
+    } catch(err){
+        if(err.code === 11000 && Object.keys(err.keyPattern)[0] === "phone"){
+            var err_msg = "Number already exists";
+            res.render("signup", {
+                type:"phone",
+                err_msg,
+                user : ""
+            })
         }
-        else{
-            res.redirect("/login")
+        if(err.code === 11000 && Object.keys(err.keyPattern)[0] === "email"){
+            var err_msg = "Email already exists";
+            res.render("signup", {
+                type:"email",
+                err_msg,
+                user : ""
+            })
         }
-    });
+    }
 }
 
 function changePassword(req,res){

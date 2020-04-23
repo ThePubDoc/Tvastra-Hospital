@@ -35,7 +35,7 @@
                 <i class="fa fa-times icon2" aria-hidden="true" onclick="show()"></i>
             </div>
         <% } %>
-        <form class="signup-form" method="POST" action="/signup"> 
+        <form class="signup-form" method="POST" action="/signup"  enctype="multipart/form-data"> 
             <div class="signup-form-container">
                 
                 <div class="signup-elements">
@@ -65,7 +65,7 @@
                         <option value="India">India</option>
                         <option value="Pakistan">Pakistan</option>
                     </select>
-                    <input type="number" placeholder="Enter OTP">
+                    <input type="file" name="file">
 
                     <button class="signup-button">
                         <div><p>SIGN UP</p></div>

@@ -19,6 +19,7 @@ async function index(req,res){
         name : user.name,
         email : user.email,
         phone : user.phone,
+        dp : user.dp,
     }
     req.session.count++;
     if(req.session.count === 2){
@@ -84,6 +85,9 @@ function forgot(req,res){
     res.render("forgot" , empty)
 }
 
+function upload(req,res){
+    res.render("uploadtest")
+}
 module.exports = {
     index,
     doctor,
@@ -95,4 +99,5 @@ module.exports = {
     status,
     verify,
     forgot,
+    upload
 }

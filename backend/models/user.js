@@ -12,6 +12,7 @@ const userSchema = new schema({
     city : {type: String, required: true},
     state : {type:String, required: true},
     country : {type : String,required:true},
+    dp : {type : String,required:false}
 },{timestamps : true})
 
 module.exports = users = mongoose.model("users" , userSchema);
