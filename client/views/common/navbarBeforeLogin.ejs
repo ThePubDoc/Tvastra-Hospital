@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common/reset.css">
+    <link rel="stylesheet" href="css/common/nav.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/4ca62a47de.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar">
+
+        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="">
+        
+        <ul class="menu" id="menu">
+            <li><a href="/doctor">Doctor</a></li>
+            <li><a href="/hospital">Hospitals</a></li>
+            <li><a href="#">Treatment</a></li>
+            <li><a href="#">Other Services</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+
+        <div class="menu-buttons">
+            <button class="login" hidden>Logout</button>
+            <!-- <button id="login" class="login" value="login">Login / Sign Up</button> -->
+            <button class="quote">Get a Quote</button>
+            
+        </div>
+
+        <div class="burger" id="burger" onclick="burgerMenu()">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </nav>  
+    
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="/doctor">Doctor</a></li>
+            <li><a href="/hospital">Hospitals</a></li>
+            <li><a href="#">Treatment</a></li>
+            <li><a href="#">Other Services</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+
+        <div class="menu-buttons">
+            <button class="login">Login / Sign Up</button>
+            <button class="quote">Get a Quote</button>
+        </div>
+    </div>
+    <script>
+        function burgerMenu(){
+            var menu = document.getElementById("mobile-menu")
+            if(menu.style.display === "none"){
+                menu.style.display = "block";
+            }
+            else{
+                menu.style.display = "none";
+            }
+        }
+
+        function userMenu(){
+            const menu = document.getElementById("dropdown-content");
+            if(menu.style.display === "none")
+                menu.style.display = "flex";
+            else
+                menu.style.display = "none";
+                
+        }
+
+        function hide(){
+            document.onclick = () => {
+                console.log("click hua bahar")
+                document.getElementById("dropdown-content").style.display = "none";
+            }
+        }
+
+    </script>
+</body>
+</html>
+

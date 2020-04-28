@@ -38,7 +38,7 @@ function doctor(req,res){
 }
 
 function hospital(req,res){
-    res.render("hospital")
+    res.render("hospital" ,empty)
 }
 
 function signup(req,res){
@@ -78,7 +78,7 @@ function status(req,res){
 }
 
 function verify(req,res){
-    res.render("verify")
+    res.render("verify" , empty)
 }
 
 function forgot(req,res){

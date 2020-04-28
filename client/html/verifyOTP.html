@@ -25,7 +25,20 @@
             <div class="login-form-container">
                 <div class="login-elements">
                     <p class="login-header">Login</p>
-                    <input type="text" name="otp" placeholder="Enter OTP" maxlength="4">
+                    <!-- <input type="text" name="otp" placeholder="Enter OTP" maxlength="4" class="otp"> -->
+                    <div class="otp-box">
+                        <input type="text" id="1" onkeyup="next(1)" maxlength="1" class="otp" name="otp1">
+                        <input type="text" id="2" onkeyup="next(2)" maxlength="1" class="otp" name="otp2">
+                        <input type="text" id="3" onkeyup="next(3)" maxlength="1" class="otp" name="otp3">
+                        <input type="text" id="4" maxlength="1" class="otp" name="otp4">    
+                    </div>
+                    <div class="timer">
+                        <div class="time">
+                            <p>00:</p>
+                            <p id="sec">30</p>                        
+                        </div>
+                        <a href="/resend" class="disable" id="resend">Resend</a>
+                    </div>
                     <button class="login-button">
                         <div><p>LOGIN</p></div>
                         <div><i class="fas fa-arrow-right"></i></div>
@@ -37,6 +50,25 @@
         
     </div>
     <!-- <% include ./common/footer %> -->
-    
+    <script>
+        function next(id){
+            document.getElementById(id+1).focus()
+        }
+
+        let s = 30;
+        let x= setInterval(() => {
+            if(s <10){
+                document.getElementById("sec").innerHTML = "0"+s;
+            }
+            else {
+                document.getElementById("sec").innerHTML = s;
+            }
+            s--;
+            if(s===-1){
+                clearInterval(x)
+                document.getElementById("resend").className = "active"
+            }
+        },1000)
+    </script>
 </body>
 </html>

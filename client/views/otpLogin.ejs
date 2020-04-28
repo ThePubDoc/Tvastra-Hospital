@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <% include ./common/navbar %>
+    <% include ./common/navbarBeforeLogin %>
     <div class="login-container">
         
         <% if(type === "info"){ %>
@@ -51,7 +51,9 @@
                     <p class="login-header">Login</p>
                     <input type="text" placeholder="Enter Phone Number" name="phone">
                     
-                    <a href="/login">Login With Email</a>
+                    <div class="links">
+                        <a href="/login" class="OTPlogin">Login With Email</a>                        
+                    </div>
                     
                     <button class="login-button">
                         <div><p>GET OTP</p></div>

@@ -9,9 +9,14 @@ const nexmo = new Nexmo({
 
 async function getOTP(req,res){
   // console.log(req.body)
-  let phoneNumber = req.body.phone;
+  if(req.session.phone){
+    phoneNumber = req.session.phone
+  }
+  else{
+    let phoneNumber = req.body.phone;
+  }
   const user = await Users.findOne({phone : phoneNumber});
-  // console.log(user)
+  console.log(user)
   let message = "Tvastra";
   
   if(user){
@@ -26,7 +31,8 @@ async function getOTP(req,res){
         // console.log("error in get otp function",err)
         res.render('otpLogin', {
           msg : "Server Error",
-          type : "info"
+          type : "info",
+          user : ""
         });
       } else {
         // console.log("result in get otp function",result);
@@ -54,7 +60,7 @@ async function getOTP(req,res){
 
 
 async function verify(req,res){
-  const otp = req.body.otp;
+  const otp = req.body.otp1 + req.body.otp2 + req.body.otp3 + req.body.otp4;
   const request_id = req.session.request_id;
   // console.log("request id:",request_id)
   // console.log(otp);
