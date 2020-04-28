@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const schema = mongoose.Schema
 
-const userSchema = new schema({
+const doctorSchema = new schema({
     name : {type : String ,required : true},
     email : {type : String , required : true, unique: true},
     password : {type: String,required: true},
@@ -12,8 +12,7 @@ const userSchema = new schema({
     city : {type: String, required: true},
     state : {type:String, required: true},
     country : {type : String,required:true},
-    dp : {type : String,required:false},
-    type : {type : String, required: true}
+    dp : {type : String,required:false}
 },{timestamps : true})
 
 module.exports = users = mongoose.model("users" , userSchema);

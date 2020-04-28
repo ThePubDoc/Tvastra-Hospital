@@ -14,7 +14,7 @@ const s3 = new aws.S3();
 
 async function signup(req,res){
 
-    const {name,email,password,gender,dob,phone,city,state,country} = req.body;
+    const {name,email,password,gender,dob,phone,city,state,country,type} = req.body;
     const user = new users({
         name,
         email,
@@ -25,8 +25,9 @@ async function signup(req,res){
         city,
         state,
         country,
+        type
     });
-    console.log(user);
+    // console.log(user);
     const params = {
         Bucket: "tvastra-users-dp",
         Key: email+"."+req.file.mimetype.split("/")[1],

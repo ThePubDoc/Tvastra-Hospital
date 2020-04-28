@@ -34,7 +34,7 @@ async function index(req,res){
 }
 
 function doctor(req,res){
-    res.render("doctor")
+    res.render("doctor" , empty)
 }
 
 function hospital(req,res){
