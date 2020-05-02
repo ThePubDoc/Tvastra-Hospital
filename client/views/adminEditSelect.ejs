@@ -51,28 +51,16 @@
         </ul>
     </div>
 
-    <div class="admin-card-hero">
-        <div class="admin-card">
-            <i class="fas fa-medkit"></i>
-            <h2>Appointments</h2>
-            <p>213</p>
-        </div>
-        <div class="admin-card">
-            <i class="fas fa-syringe"></i>
-            <h2>Operations</h2>
-            <p>213</p>
-        </div>
-        <div class="admin-card">
-            <i class="fas fa-user-injured"></i>
-            <h2>Patients</h2>
-            <p>213</p>
-        </div>
-        <div class="admin-card">
-            <i class="fas fa-rupee-sign"></i>
-            <h2>Hospital Earnings</h2>
-            <p>213</p>
-        </div>
-        <a href="/admin/edit">Edit</a>
+    <div>
+        <form action="/admin/edit" method="POST">
+            <select name="type">
+                <option value="user">User</option>
+                <option value="doctor">Doctor</option>
+            </select>
+            <input type="text" name="email" placeholder="Enter Email">
+            <input type="submit">
+        </form>
+        
     </div>
 </body>
 </html>

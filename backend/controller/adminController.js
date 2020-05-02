@@ -31,6 +31,22 @@ async function index(req,res){
     }
 }
 
+function edit(req,res){
+    res.render("adminEditSelect")
+}
+
+async function editUser(req,res){
+    // console.log(req.params)
+    const id = req.params.id;
+    const user = await Users.findOne({_id : id})
+    console.log(user)
+    res.render("adminEditUser.ejs", {
+        user
+    })
+}
+
 module.exports = {
     index,
+    editUser,
+    edit
 }

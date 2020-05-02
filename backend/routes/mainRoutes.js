@@ -6,6 +6,7 @@ const singupController = require('../controller/signUpController');
 const loginController = require('../controller/loginController');
 const OTPController = require("../controller/OTPController")
 const adminController = require("../controller/adminController");
+const adminPostController = require("../controller/adminPostController");
 const middle = require("../controller/middle");
 const router = express.Router();
 const app = express();
@@ -37,9 +38,12 @@ router.route('/verifyForgotOTP').post(OTPController.verifyForgot);
 router.route('/changePassword').post(singupController.changePassword);
 
 
-router.route('/admin').get(adminController.index)
+router.route('/admin').get(middle.checkLogin,adminController.index)
+router.route('/admin/edit').get(adminController.edit)
+router.route('/admin/edit/user/:id').get(adminController.editUser)
 
 
+router.route('/admin/edit').post(adminPostController.edit);
 // const aws = require("../controller/aws")
 // router.route("/upload").get(mainController.upload)
 // router.route("/upload").post(files.single("file") , aws.uploadUserDp)

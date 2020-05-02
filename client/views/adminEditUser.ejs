@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/common/reset.css">
+    <link rel="stylesheet" href="/css/adminIndex.css">
+    <link rel="stylesheet" href="/css/common/admin-nav.css">
+    <link rel="stylesheet" href="/css/common/adminSideMenu.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <nav class="admin-navbar">
+        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Logo.jpg" alt="">
+        <div class="admin">
+            <i class="fas fa-bell bell"></i>
+            <div class="number">3</div>
+            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg">
+        </div>
+    </nav>
+
+    <div class="menu">
+        <h1>Medicine</h1>
+        <ul>
+            <li>
+                <i class="fas fa-syringe"></i>
+                <a href="">Dashnoard</a>
+            </li>
+            <li>
+                <i class="fas fa-stethoscope"></i>
+                <a href="">Appointments</a>
+            </li>
+            <li>
+                <i class="fas fa-user-md"></i>
+                <a href="">Doctors</a> 
+            </li>
+            <li>
+                <i class="fas fa-user-nurse"></i>
+                <a href="">Departments</a>
+            </li>
+            <li>
+                <i class="fas fa-user-injured"></i>
+                <a href="">Patients</a> 
+            </li>
+            <li>
+                <i class="fas fa-money-check-alt"></i>
+                <a href="">Payments</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="edit-container">
+        <form method="POST" action="/admin/edit/user:id">
+            <div class="edit-container-header">
+                <h2>Account</h2>
+                <button>Save Changes</button>
+            </div>
+            <div class="line"></div>
+            <div class="user-header">
+                <div class="dp">
+                    <img src=<%= user.dp %>>
+                    <h2><%= user.name %></h2>
+                    <p><%= user.phone %></p>
+                </div>
+                <div class="user-name">
+                    <h2>Name</h2>
+                    <input type="text" name="name" value=<%= user.name %>>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="form">
+                <div class="form-elements">
+                    <p>Phone Number</p>
+                    <input type="number" name="phone" value="<%= user.phone %>">
+                </div>
+                <div class="form-elements">
+                    <p>Email</p>
+                    <input type="email" name="email" value="<%= user.email %>">
+                </div>
+                <div class="form-elements">
+                    <p>Gender</p>
+                    <select name="gender">
+                        <option value="male">Male</option>
+                        <option value="femaile">Female</option>
+                    </select>
+                </div>
+                <div class="form-elements">
+                    <p>DOB</p>
+                    <input type="date" name="dob" value="<%= user.dob %>">
+                </div>
+                <div class="form-elements">
+                    <p>Blood Group</p>
+                    <select name="blood" id="">
+                        <option value="o">O</option>
+                        <option value="a">A</option>
+                        <option value="b">B</option>
+                    </select>
+                </div>
+                <div class="form-elements">
+                    <p>Time Zone</p>
+                    <select name="time-zone" id="">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-elements">
+                    <p>Location</p>
+                    <input type="text" name="location" value=<%= user.city %>>
+                </div>
+                <div class="form-elements">
+                    <p>State</p>
+                    <select name="" id=""></select>
+                </div>
+                <div class="form-elements">
+                    <p>Country</p>
+                    <select name="" id=""></select>
+                </div>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
