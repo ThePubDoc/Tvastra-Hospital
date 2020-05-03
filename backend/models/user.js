@@ -13,6 +13,7 @@ const userSchema = new schema({
     state : {type:String, required: true},
     country : {type : String,required:true},
     dp : {type : String,required:false},
+    blood: {type :String , required:false},
     type : {type : String, required: true, default : "user"}
 },{timestamps : true})
 

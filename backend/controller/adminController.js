@@ -39,7 +39,6 @@ async function editUser(req,res){
     // console.log(req.params)
     const id = req.params.id;
     const user = await Users.findOne({_id : id})
-    console.log(user)
     res.render("adminEditUser.ejs", {
         user
     })

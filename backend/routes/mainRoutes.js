@@ -44,6 +44,7 @@ router.route('/admin/edit/user/:id').get(adminController.editUser)
 
 
 router.route('/admin/edit').post(adminPostController.edit);
+router.route('/admin/edit/user/:id').post(adminPostController.editUser)
 // const aws = require("../controller/aws")
 // router.route("/upload").get(mainController.upload)
 // router.route("/upload").post(files.single("file") , aws.uploadUserDp)
