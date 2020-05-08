@@ -14,7 +14,17 @@ const userSchema = new schema({
     country : {type : String,required:true},
     dp : {type : String,required:false},
     blood: {type :String , required:false},
-    type : {type : String, required: true, default : "user"}
+    type : {type : String, required: true, default : "User"},
+    description : {type: String, required:false},
+    speciality : {type: Array, required:false},
+    education : {type: Array, required:false},
+    treatment : {type: Array, required:false},
+    hospitals : {type: Array, required:false},
+    achievements : {type: Array, required:false},
+    awards : {type: Array, required:false},
+    achievements : {type: Array, required:false},
+    experience : {type: Number,required:false},
+    fees : {type: Number,required:false},
 },{timestamps : true})
 
 module.exports = users = mongoose.model("users" , userSchema);

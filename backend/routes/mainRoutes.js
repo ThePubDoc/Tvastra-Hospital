@@ -7,15 +7,11 @@ const loginController = require('../controller/loginController');
 const OTPController = require("../controller/OTPController")
 const adminController = require("../controller/adminController");
 const adminPostController = require("../controller/adminPostController");
-const middle = require("../controller/middle");
+const middle = require("../controller/middleware/middle");
 const router = express.Router();
-const app = express();
-
-
 
 const storage = multer.memoryStorage();
 const files = multer({ storage: storage });
-
 
 router.route('/').get(middle.checkLogin, mainController.index)
 router.route('/doctor').get(mainController.doctor)
@@ -28,6 +24,7 @@ router.route('status').get(mainController.status);
 router.route('/verify').get(mainController.verify);
 router.route('/forgotPassword').get(mainController.forgot);
 router.route('/resend').get(OTPController.getOTP);
+router.route('/addDoctor').get(mainController.addDoctor);
 
 router.route('/signup').post(files.single("file"), singupController.signup);
 router.route('/getOTP').post(OTPController.getOTP);
@@ -36,7 +33,7 @@ router.route('/verify').post(OTPController.verify);
 router.route('/forgot').post(OTPController.forgotOTP);
 router.route('/verifyForgotOTP').post(OTPController.verifyForgot);
 router.route('/changePassword').post(singupController.changePassword);
-
+router.route('/addDoctor').post(singupController.addDoctor);
 
 router.route('/admin').get(middle.checkLogin,adminController.index)
 router.route('/admin/edit').get(adminController.edit)

@@ -7,7 +7,16 @@ async function login(req,res){
     const password = req.body.password;
     const user = await Users.findOne({email : email});
     // console.log(user)
-    if(user.type === "Admin"){
+    if(!user){
+        const msg = "No User Found";
+        const type = "info"
+        res.render("login" , {
+            msg : msg,
+            type : type,
+            user : ""
+        })
+    }
+    else if(user.type === "Admin"){
         console.log("admin login")
         if(user.password !== password){
             const msg = "Password is wrong";
@@ -53,15 +62,6 @@ async function login(req,res){
             req.session.count = 1;
             res.redirect("/")
         }
-    }
-    else {
-        const msg = "No User Found";
-        const type = "info"
-        res.render("login" , {
-            msg : msg,
-            type : type,
-            user : ""
-        })
     }
 }
 

@@ -5,7 +5,8 @@
 }
 
 .signup-container .signup-form-container {
-    
+    max-width: 40rem;
+    margin: auto;
 }
 
 .signup-container .signup-form-container .signup-elements {

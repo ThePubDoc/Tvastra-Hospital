@@ -5,7 +5,8 @@
 }
 
 .login-container .login-form-container {
-    
+    margin: auto;
+    max-width: 40rem;
 }
 
 .login-container .login-form-container .login-elements {

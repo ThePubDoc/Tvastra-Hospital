@@ -88,6 +88,11 @@ function forgot(req,res){
 function upload(req,res){
     res.render("uploadtest")
 }
+
+const addDoctor = (req,res) => {
+    res.render("addDoctor")
+}
+
 module.exports = {
     index,
     doctor,
@@ -99,5 +104,6 @@ module.exports = {
     status,
     verify,
     forgot,
-    upload
+    upload,
+    addDoctor,
 }

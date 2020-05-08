@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/tagify.css">
+    <link rel="stylesheet" href="css/addDoctor.css">
+    <script src="js/tagify.min.js"></script>
+</head>
+<body>
+    <% include ./common/navbarBeforeLogin %>
+    
+    <div class="add-doctor-container">
+        <form method="POST" action="/addDoctor">
+            <div class="add-doctor-form-container">
+                <div class="add-doctor-elements">
+                    <p class="add-doctor-header">Add Doctor</p>
+                    <textarea name="description" cols="10" rows="5" placeholder="Description"></textarea>
+                    <input name="speciality" placeholder="Speciality"> 
+                    <input name="education" placeholder="Education">
+                    <input name="treatment" placeholder="Treatment">
+                    <input name="hospitals" placeholder="Hospitals">
+                    <input name="achievements" placeholder="Achievements">
+                    <input name="awards" placeholder="Awards">
+                    <input type="number" name="experience" placeholder="Years Of Experience">
+                    <input type="number" name="fees" placeholder="Avg Fees">
+                    <button class="add-doctor-button">Add fields</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var speciality = document.querySelector('input[name=speciality]');
+        var education = document.querySelector('input[name=education]');
+        var treatment = document.querySelector('input[name=treatment]');
+        var hospitals = document.querySelector('input[name=hospitals]');
+        var achievements = document.querySelector('input[name=achievements]');
+        var awards = document.querySelector('input[name=awards]');
+        new Tagify(speciality , {
+            originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(",")
+        });
+        new Tagify(education, {
+            originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(",")
+        });
+        new Tagify(treatment, {
+            originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(",")
+        });
+        new Tagify(hospitals, {
+            originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(",")
+        });
+        new Tagify(achievements, {
+            originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(",")
+        });
+        new Tagify(awards, {
+            originalInputValueFormat: valuesArr => valuesArr.map(item => item.value).join(",")
+        });
+    </script>
+</body>
+</html>

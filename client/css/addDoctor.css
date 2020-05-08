@@ -1,0 +1,81 @@
+.add-doctor-container {
+    background-color: rgb(119, 169, 192);
+    height: 100%;
+    padding: 1rem;
+}
+
+.add-doctor-container .add-doctor-form-container {
+    max-width: 40rem;
+    margin: auto;
+}
+
+.add-doctor-container .add-doctor-form-container .add-doctor-elements {
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    margin-bottom: 10rem;
+    background-color: white;
+    padding: 2rem;
+}
+
+.add-doctor-container .add-doctor-form-container .add-doctor-elements .add-doctor-header{
+    color: rgb(55, 115, 145);
+    font-size: x-large;
+    margin-bottom: 2rem;
+    font-family: bold;
+    text-align: center;
+}
+
+.add-doctor-container .add-doctor-form-container .add-doctor-elements input,textarea {
+    padding: .5rem 1rem;
+    margin-bottom: 1rem;
+    color: rgb(128, 128, 128);
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    font-family: light;
+}
+
+.add-doctor-container .add-doctor-form-container .add-doctor-elements .tagify {
+    margin-bottom: 1rem;
+    font-family: light;
+}
+
+.add-doctor-container .add-doctor-form-container .add-doctor-elements .add-doctor-button {
+    background-color: rgb(19, 19, 43);
+    border: none;
+    color: white;
+    padding: .5rem;
+    font-family: bold;
+    font-size: large;
+    margin-bottom: 2rem;
+}
+
+.add-doctor-container .add-doctor-form-container .add-doctor-elements .add-doctor-footer{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-family: light;
+}
+
+.add-doctor-container .add-doctor-form-container .add-doctor-elements .add-doctor-footer a{
+    color: rgb(0, 153, 255);
+}
+
+@media only screen and (min-width: 600px){
+    .add-doctor-container .add-doctor-form-container .add-doctor-elements{
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+    .add-doctor-container .add-doctor-form-container .add-doctor-elements .address input {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .add-doctor-container .add-doctor-form-container {
+        padding: 0 20rem;
+    }
+
+    .add-doctor-container .add-doctor-form-container .add-doctor-elements{
+        margin: 5rem 0;
+    }
+}
