@@ -93,6 +93,10 @@ const addDoctor = (req,res) => {
     res.render("addDoctor")
 }
 
+const addHospital = (req,res) => {
+    res.render("addHospital")
+};
+
 module.exports = {
     index,
     doctor,
@@ -106,4 +110,5 @@ module.exports = {
     forgot,
     upload,
     addDoctor,
+    addHospital
 }

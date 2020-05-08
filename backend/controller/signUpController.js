@@ -1,6 +1,7 @@
 require('dotenv').config();
 const Users = require("../models/user");
-const Doctors = require("../models/doctor");
+const Hospitals = require("../models/hospital");
+
 const aws = require('aws-sdk');
 
 aws.config.update({
@@ -120,8 +121,13 @@ const addDoctor = async (req,res) => {
     console.log(newDoc)
 }
 
+const addHospital = async (req,res) => {
+    const hospital = new Hospitals(req.body);
+    const newHospital = await hospital.save();
+}
 module.exports = {
     signup,
     changePassword,
     addDoctor,
+    addHospital
 }

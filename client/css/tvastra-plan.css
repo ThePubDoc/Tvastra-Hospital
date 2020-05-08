@@ -24,13 +24,14 @@
 .plan-hero p {
     font-family: light;
     font-size: small;
-    margin: 0 1rem 0rem 1rem;
+    margin: 0 2rem;
     padding-bottom: 10rem;
 }
 
 .tvastra-plans-hero {
     background-image: linear-gradient(to bottom,#9bc8e1 50%,white);
     padding: 1rem;
+    text-align: center;
 }
 
 .tvastra-plans-hero .tvastra-plans {
@@ -115,7 +116,7 @@
     padding: .5rem;
     border: none;
     border-radius: 3px;
-    margin: 0 7rem 1rem 7rem;
+    margin: auto;
 }
 
 .tvastra-plans-hero .tvastra-plans .plans-grid .advance {
@@ -135,6 +136,10 @@
     align-self: center;
     margin-top: -.7rem;
     font-size: small;
+}
+
+.ratings-hero {
+    text-align: center;
 }
 
 .ratings-hero h1{
@@ -194,6 +199,7 @@
     display: grid;
     grid-template-columns: 50% 50%;
     margin: 3rem 1rem 3rem 1rem;
+    text-align: center;
 }
 
 .brag-container .brag-point {
@@ -223,6 +229,7 @@
 
 .benifits-hero {
     margin: 1rem;
+    text-align: center;
 }
 
 .benifits-hero p {
@@ -433,9 +440,13 @@
 }
 
 @media only screen and (min-width: 768px){
+    .plan-hero {
+        text-align: left;
+    }
+
     .tvastra-plans-hero .tvastra-plans .plans-grid {
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: 33.3% 33.3% 33.3%;
     }
 
     .ratings-hero .overall-rating {
@@ -459,7 +470,7 @@
 
     .features {
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: auto auto;
         padding: 2rem;
         gap: 1rem;
         text-align: left;
@@ -476,8 +487,8 @@
     }
 
     .features img {
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
     }
 
     .tests-hero h1 {
@@ -508,5 +519,60 @@
 
     .faqs-hero h1{
         text-align: left;
+    }
+}
+
+@media only screen and (min-width: 1024px){
+    .plan-hero {
+        padding: 3.5rem;
+    }
+
+    .tvastra-plans-hero .tvastra-plans{
+        margin: 0 4rem;
+        margin-top: -10rem;
+    }
+
+    .ratings-hero {
+        margin: 1rem 4rem;
+    }
+
+    .ratings-hero p {
+        margin: 0 8rem;
+    }
+
+    .ratings-hero .overall-rating p {
+        margin: 0;
+    }
+
+    .brag-container {
+        margin: 2rem 6rem;
+    }
+
+    .features {
+        grid-template-columns: auto auto;
+    }
+
+    .tests-hero .tests-list{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .tests-hero .tests-list .test {
+        width: 100%;
+    }
+
+    .tests-hero .tests-list .test img {
+        align-self: baseline;
+    }
+
+    .love-hero .reviews-hero {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .love-hero .reviews-hero .review {
+        max-width: 100%;
+        margin: .33rem;
     }
 }

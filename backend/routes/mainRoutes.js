@@ -25,6 +25,8 @@ router.route('/verify').get(mainController.verify);
 router.route('/forgotPassword').get(mainController.forgot);
 router.route('/resend').get(OTPController.getOTP);
 router.route('/addDoctor').get(mainController.addDoctor);
+router.route('/addHospital').get(mainController.addHospital);
+
 
 router.route('/signup').post(files.single("file"), singupController.signup);
 router.route('/getOTP').post(OTPController.getOTP);
@@ -34,6 +36,9 @@ router.route('/forgot').post(OTPController.forgotOTP);
 router.route('/verifyForgotOTP').post(OTPController.verifyForgot);
 router.route('/changePassword').post(singupController.changePassword);
 router.route('/addDoctor').post(singupController.addDoctor);
+router.route('/addHospital').post(singupController.addHospital)
+
+
 
 router.route('/admin').get(middle.checkLogin,adminController.index)
 router.route('/admin/edit').get(adminController.edit)
