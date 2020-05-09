@@ -68,6 +68,18 @@ a {
     font-family: light;
 }
 
+.plus {
+    background-color: #0173b2;
+    border: solid;
+    color: white;
+    border-width: 1px;
+    padding: 1rem;
+    border-radius: 5px;
+    max-width: 10rem;
+    font-size: medium;
+    font-family: light;
+}
+
 .quote {
     background-color: rgba(22, 22, 49, 0.904);
     border: solid;

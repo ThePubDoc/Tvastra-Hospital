@@ -26,7 +26,7 @@ router.route('/forgotPassword').get(mainController.forgot);
 router.route('/resend').get(OTPController.getOTP);
 router.route('/addDoctor').get(mainController.addDoctor);
 router.route('/addHospital').get(mainController.addHospital);
-
+router.route('/tvastraPlus').get(mainController.tvastraPlus);
 
 router.route('/signup').post(files.single("file"), singupController.signup);
 router.route('/getOTP').post(OTPController.getOTP);

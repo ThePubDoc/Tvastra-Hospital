@@ -235,6 +235,7 @@
 .benifits-hero p {
     font-family: light;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .benifits-hero .line {
@@ -249,6 +250,7 @@
 .benifits-hero .benifits-grid h1{
     font-family: bold;
     font-size: x-large;
+
 }
 
 .checkpoints {
@@ -533,7 +535,8 @@
     }
 
     .ratings-hero {
-        margin: 1rem 4rem;
+        margin: auto;
+        max-width: 85rem;
     }
 
     .ratings-hero p {
@@ -545,11 +548,55 @@
     }
 
     .brag-container {
-        margin: 2rem 6rem;
+        margin: auto;
+        max-width: 85rem;
+        margin-top: 3rem;
+    }
+
+    .benifits-hero {
+        max-width: 85rem;
+        margin: auto;
+        margin-top: 2rem;
+    }
+
+    .benifits-hero .benifits-grid {
+        margin: 0 4rem;
     }
 
     .features {
-        grid-template-columns: auto auto;
+        grid-template-columns: 33.3% 33.3% 33.3%;
+        padding: 1rem 6rem;
+        width: 80rem;
+        margin: auto;
+    }
+
+    .features .feature {
+        margin: auto;
+    }
+
+    .features .feature-img-one{
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+    
+    .features .feature-one {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    .features .feature-two {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+
+    .features .feature-three {
+        grid-column-start: 2;
+        grid-column-end: 4;
+    }
+
+    .tests-hero {
+        max-width: 95rem;
+        margin: auto;
     }
 
     .tests-hero .tests-list{
@@ -566,6 +613,11 @@
         align-self: baseline;
     }
 
+    .love-hero {
+        margin: auto;
+        max-width: 95rem;
+    }
+
     .love-hero .reviews-hero {
         display: flex;
         flex-direction: row;
@@ -575,4 +627,10 @@
         max-width: 100%;
         margin: .33rem;
     }
+
+    .faqs-hero {
+        max-width: 95rem;
+        margin: auto;
+    }
+    
 }

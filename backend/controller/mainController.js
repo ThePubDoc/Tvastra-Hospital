@@ -97,6 +97,10 @@ const addHospital = (req,res) => {
     res.render("addHospital")
 };
 
+const tvastraPlus = (req,res) => {
+    res.render("tvastraPlan")
+}
+
 module.exports = {
     index,
     doctor,
@@ -110,5 +114,6 @@ module.exports = {
     forgot,
     upload,
     addDoctor,
-    addHospital
+    addHospital,
+    tvastraPlus
 }
