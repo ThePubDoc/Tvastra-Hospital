@@ -20,7 +20,7 @@
 }
 
 .doctor-sort {
-    padding: 2rem 3rem;
+    padding: 2rem 6rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -41,7 +41,7 @@
 .doctors-hero {
     display: grid;
     grid-template-columns: 20% auto;
-    padding: 1rem 3rem;
+    padding: 1rem 6rem;
 }
 
 .doctors-hero .filters-hero h3 {
@@ -82,7 +82,8 @@
     border: 1px solid black;
     margin-left: 1rem;
     display: grid;
-    grid-template-columns: 70% auto;
+    grid-template-columns: 85% auto;
+    margin-bottom: 1rem;
 }
 
 .doctor-cards-hero .doctor-card .details h1{
@@ -130,5 +131,5 @@
 
 .doctor-cards-hero .doctor-card .doctor-dp img{
     width: 100%;
-    max-height: 18rem;
+    max-height: 16rem;
 }
