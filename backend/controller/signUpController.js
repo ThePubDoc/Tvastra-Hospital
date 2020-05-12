@@ -45,9 +45,30 @@ async function signup(req,res){
                 if(req.body.doctor === "on"){
                     req.session.body = req.body;
                     req.session.body.type= "Doctor";
+                    user.type = "Doctor";
                     req.session.dp = data.Location;
-                    // console.log(req.session.body)
-                    res.redirect("/addDoctor")
+                    console.log(user)
+                    try {
+                        const newDoctor = await user.save();
+                        res.redirect("/addDoctor")
+                    } catch(err) {
+                        if(err.code === 11000 && Object.keys(err.keyPattern)[0] === "phone"){
+                            var err_msg = "Number already exists";
+                            res.render("signup", {
+                                type:"phone",
+                                err_msg,
+                                user : ""
+                            })
+                        }
+                        if(err.code === 11000 && Object.keys(err.keyPattern)[0] === "email"){
+                            var err_msg = "Email already exists";
+                            res.render("signup", {
+                                type:"email",
+                                err_msg,
+                                user : ""
+                            })
+                        }
+                    }
                 }
                 else{
                     const newUser = await user.save();
@@ -111,14 +132,16 @@ const addDoctor = async (req,res) => {
     doc.hospitals = req.body.hospitals.split(",");
     doc.achievements = req.body.achievements.split(",");
     doc.awards = req.body.awards.split(",");
-
-    const newDoc = new Users({
-        ...req.session.body,
-        ...doc
-    })
-    const saveDoc = await newDoc.save();
+    // const newDoc = new Users (req.body);
+    // const newDoc = new Users({
+    //     ...req.session.body,
+    //     ...doc
+    // })
+    const email = req.session.body.email;
+    console.log(doc)
+    console.log(email)
+    const saveDoc = await Users.findOneAndUpdate({email : email}, doc);
     res.redirect("/")
-    console.log(newDoc)
 }
 
 const addHospital = async (req,res) => {

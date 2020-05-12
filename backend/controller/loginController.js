@@ -32,7 +32,9 @@ async function login(req,res){
             const loggedUser = {
                 id : user._id,
                 name : user.name,
-                email : user.email
+                email : user.email,
+                dp : user.dp,
+                phone : user.phone,
             }
             
             req.session.user = loggedUser;
@@ -55,7 +57,9 @@ async function login(req,res){
             const loggedUser = {
                 id : user._id,
                 name : user.name,
-                email : user.email
+                email : user.email,
+                dp : user.dp,
+                phone : user.phone,
             }
             
             req.session.user = loggedUser;

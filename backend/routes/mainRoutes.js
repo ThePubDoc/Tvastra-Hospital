@@ -7,6 +7,7 @@ const loginController = require('../controller/loginController');
 const OTPController = require("../controller/OTPController")
 const adminController = require("../controller/adminController");
 const adminPostController = require("../controller/adminPostController");
+const slotController = require('../controller/slotController');
 const middle = require("../controller/middleware/middle");
 const router = express.Router();
 
@@ -27,6 +28,8 @@ router.route('/resend').get(OTPController.getOTP);
 router.route('/addDoctor').get(mainController.addDoctor);
 router.route('/addHospital').get(mainController.addHospital);
 router.route('/tvastraPlus').get(mainController.tvastraPlus);
+router.route('/scheduleAppointments').get(mainController.scheduleAppointments);
+
 
 router.route('/signup').post(files.single("file"), singupController.signup);
 router.route('/getOTP').post(OTPController.getOTP);
@@ -36,8 +39,8 @@ router.route('/forgot').post(OTPController.forgotOTP);
 router.route('/verifyForgotOTP').post(OTPController.verifyForgot);
 router.route('/changePassword').post(singupController.changePassword);
 router.route('/addDoctor').post(singupController.addDoctor);
-router.route('/addHospital').post(singupController.addHospital)
-
+router.route('/addHospital').post(singupController.addHospital);
+router.route('/addSlot').post(slotController.addSlot);
 
 
 router.route('/admin').get(middle.checkLogin,adminController.index)

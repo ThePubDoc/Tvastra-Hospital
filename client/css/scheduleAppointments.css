@@ -1,0 +1,35 @@
+.hero {
+    display: grid;
+    grid-template-columns: 25% auto;
+}
+
+.hero .schedule-hero {
+    
+    padding: 3rem;
+}
+
+.hero .schedule-hero .schedule-form {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 2rem;
+}
+
+.hero .schedule-hero .schedule-form h2 {
+    font-family: bold;
+    font-size: medium;
+    margin-bottom: 1rem;
+}
+
+.hero .schedule-hero .schedule-form input,select {
+    width: 10rem;
+}
+
+.hero .schedule-hero .schedule-form .add {
+    border: none;
+    background-color: #0173b2;
+    font-family: bold;
+    color: white;
+    width: 6rem;
+    align-self: flex-end;
+    padding: .5rem;
+}

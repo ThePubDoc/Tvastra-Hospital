@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="css/common/reset.css">
-    <link rel="stylesheet" href="css/common/nav.css">
-    <link rel="stylesheet" href="css/doctor.css">
-    <link rel="stylesheet" href="css/common/footer.css">
+    <link rel="stylesheet" href="../css/common/reset.css">
+    <link rel="stylesheet" href="../css/doctor.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>]
-    <% include ./common/navbar %>
+<body>
     <div class="doctor-head-hero">
         <h1>Cardiac Surgeons in</h1>
         <h2>Delhi</h2>
@@ -104,41 +101,38 @@
             </div>
         </div>
         <div class="doctor-cards-hero">
-            <% for(var i=0;i < doctors.length ;i++) {%> 
             <div class="doctor-card">
                 <div class="details">
-                    <h1><%= doctors[i].name %></h1>
+                    <h1>Aayush Agrawal</h1>
                     <div class="info-hero">
                         <div class="info">
                             <i class="fa fa-certificate"></i>
-                            <p><%= doctors[i].speciality %></p>
+                            <p>Cardiac Surgeon</p>
                         </div>
                         <div class="info">
                             <i class="fa fa-hospital-o"></i>
-                            <p><%= doctors[i].hospitals %></p>
+                            <p>Apollo Hospital</p>
                         </div>
                         <div class="info">
                             <i class="fas fa-ribbon"></i>
-                            <p><%= doctors[i].education %></p>
+                            <p>MBBS,MD</p>
                         </div>
                         <div class="info">
                             <i class="fa fa-map-marker"></i>
-                            <p><%= doctors[i].city %></p>
+                            <p>Delhi</p>
                         </div>
                         <div class="info">
                             <i class="fa fa-clock-o"></i>
-                            <p><%= doctors[i].experience %></p>
+                            <p>8 years</p>
                         </div>
                     </div>
                     <button>Book An Appointment</button>
                 </div>
                 <div class="doctor-dp">
-                    <img src= <%= doctors[i].dp %> alt="" srcset="">
+                    <img src="../images/image--005.jpg" alt="" srcset="">
                 </div>
             </div>
-            <% } %>
         </div>
     </div>
-    <% include ./common/footer %>
 </body>
 </html>

@@ -1,4 +1,7 @@
 const Users = require("../models/user");
+const Hospitals = require("../models/hospital");
+
+
 
 const success = {
     msg : "Successful Login",
@@ -24,7 +27,6 @@ async function index(req,res){
     req.session.count++;
     if(req.session.count === 2){
         success.user = requireFields;
-        console.log(success)
         res.render("index" , success)
     }
     else{
@@ -33,8 +35,11 @@ async function index(req,res){
     }
 }
 
-function doctor(req,res){
-    res.render("doctor" , empty)
+const doctor = async (req,res) => {
+    const doctors = await Users.find({type : "Doctor"})
+    console.log(doctors)
+    empty.doctors = doctors
+    res.render("doctor" , empty,)
 }
 
 function hospital(req,res){
@@ -101,6 +106,15 @@ const tvastraPlus = (req,res) => {
     res.render("tvastraPlan")
 }
 
+const scheduleAppointments = async (req,res) => {
+    const requireFields = req.session.user;
+    const hospitals = await Hospitals.find();
+    
+    success.user = requireFields;
+    success.hospitals = hospitals
+    res.render("scheduleAppointments", success);
+}
+
 module.exports = {
     index,
     doctor,
@@ -115,5 +129,6 @@ module.exports = {
     upload,
     addDoctor,
     addHospital,
-    tvastraPlus
+    tvastraPlus,
+    scheduleAppointments
 }

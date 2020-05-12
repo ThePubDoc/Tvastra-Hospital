@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+        
+    <link rel="stylesheet" href="css/common/adminSideMenu.css">
+    <link rel="stylesheet" href="css/scheduleAppointments.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+</head>
+<body>
+    <% include ./common/navbar %>
+
+    <div class="hero">
+        <div class="menu">
+            <h1>Dashboard</h1>
+            <ul>
+                <li>
+                    <i class="fas fa-syringe"></i>
+                    <a href="">Profile</a>
+                </li>
+                <li>
+                    <i class="fas fa-syringe"></i>
+                    <a href="">Dashnoard</a>
+                </li>
+                <li>
+                    <i class="fas fa-stethoscope"></i>
+                    <a href="">Appointments</a>
+                </li>
+                <li>
+                    <i class="fas fa-user-md"></i>
+                    <a href="">Schedule Appointments</a> 
+                </li>
+            </ul>
+        </div>
+
+        <div class="schedule-hero">
+                <form action="/addSlot" method="POST" class="schedule-form">
+                    <div>
+                        <h2>Day</h2>
+                        <select name="day" class="day">
+                            <option value="monday">monday</option>
+                            <option value="tuesday">tuesday</option>
+                            <option value="wednesday">wednesday</option>
+                            <option value="thursday">thursday</option>
+                            <option value="friday">friday</option>
+                            <option value="saturday">saturday</option>
+                            <option value="sunday">sunday</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h2>Start Time</h2>
+                        <input type="time" name="start_time">
+                        <!-- <input type="text" class="timepicker" name="start_time"> -->
+                    </div>
+                    <div>
+                        <h2>End Time</h2>
+                        <input type="time" name="end_time">
+                        <!-- <input type="text" class="timepicker" name="end_time"> -->
+                    </div>
+                    <div>
+                        <h2>Interval</h2>
+                        <select name="interval" class="interval">
+                            <option value="10">10</option>
+                            <option value="20">20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="holiday">Holiday</option>
+                        </select>
+                    </div>
+                    <div>
+                        <h2>Hospital</h2>
+                        <select name="hospital" class="hospital">
+                            <% for (var i=0;i < hospitals.length; i++) { %>
+                                <option value="<%= hospitals[i].name %>"><%= hospitals[i].name  %></option>
+                            <% } %>
+                        </select>
+                    </div>
+                    <button class="add">Add Slot</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.timepicker');
+            var options = {}
+            var instances = M.Timepicker.init(elems, options);
+        });
+    </script>
+</body>
+</html>
