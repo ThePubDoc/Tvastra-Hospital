@@ -37,7 +37,6 @@ async function index(req,res){
 
 const doctor = async (req,res) => {
     const doctors = await Users.find({type : "Doctor"})
-    console.log(doctors)
     empty.doctors = doctors
     res.render("doctor" , empty,)
 }

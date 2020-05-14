@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 </head>
-<body>
+<body onload="getAllSlots()">
     <% include ./common/navbar %>
 
     <div class="hero">
@@ -39,58 +39,176 @@
         </div>
 
         <div class="schedule-hero">
-                <form action="/addSlot" method="POST" class="schedule-form">
-                    <div>
-                        <h2>Day</h2>
-                        <select name="day" class="day">
-                            <option value="monday">monday</option>
-                            <option value="tuesday">tuesday</option>
-                            <option value="wednesday">wednesday</option>
-                            <option value="thursday">thursday</option>
-                            <option value="friday">friday</option>
-                            <option value="saturday">saturday</option>
-                            <option value="sunday">sunday</option>
-                        </select>
+            <form action="/addSlot" method="POST" class="schedule-form">
+                <div>
+                    <h2>Day</h2>
+                    <select name="day" class="day">
+                        <option value="monday">monday</option>
+                        <option value="tuesday">tuesday</option>
+                        <option value="wednesday">wednesday</option>
+                        <option value="thursday">thursday</option>
+                        <option value="friday">friday</option>
+                        <option value="saturday">saturday</option>
+                        <option value="sunday">sunday</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Start Time</h2>
+                    <input type="time" name="start_time">
+                    <!-- <input type="text" class="timepicker" name="start_time"> -->
+                </div>
+                <div>
+                    <h2>End Time</h2>
+                    <input type="time" name="end_time">
+                    <!-- <input type="text" class="timepicker" name="end_time"> -->
+                </div>
+                <div>
+                    <h2>Interval</h2>
+                    <select name="interval" class="interval">
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="30">30</option>
+                        <option value="40">40</option>
+                        <option value="holiday">Holiday</option>
+                    </select>
+                </div>
+                <div>
+                    <h2>Hospital</h2>
+                    <select name="hospital" class="hospital">
+                        <% for (var i=0;i < hospitals.length; i++) { %>
+                            <option value="<%= hospitals[i].name %>"><%= hospitals[i].name  %></option>
+                        <% } %>
+                    </select>
+                </div>
+                <button class="add">Add Slot</button>
+            </form>
+
+            <div class="scheduled-slots-hero" id="scheduled-slots-hero">
+                <h1>Scheduled Slots</h1>
+                <!-- <div class="slot-container">
+                    <div class="slots-header">
+                        <div class="slot-detail">
+                            <h2 class="slot-day" id="day">Tuesday</h2>
+                            <h2 class="slot-hospital" id="hospital">Apollo</h2>
+                            <div class="time">
+                                <p id="s_time">10:00pm</p>
+                                <p>-</p>
+                                <p id="e_time">12:00pm</p>
+                            </div>
+                        </div>
+                        <div class="slot-header-buttons">
+                            <button>Delete Slot</button>
+                            <button>Edit Slot</button>
+                            <button>View Detail</button>
+                        </div>
                     </div>
-                    <div>
-                        <h2>Start Time</h2>
-                        <input type="time" name="start_time">
-                        <!-- <input type="text" class="timepicker" name="start_time"> -->
+                    <div class="slots-hero">
+                        <div class="slot">
+                            <p>12:00PM</p>
+                            <input type="checkbox">
+                        </div>
+                        <div class="slot">
+                            <p>12:00PM</p>
+                            <input type="checkbox">
+                        </div>
+                        <div class="slot">
+                            <p>12:00PM</p>
+                            <input type="checkbox">
+                        </div>
                     </div>
-                    <div>
-                        <h2>End Time</h2>
-                        <input type="time" name="end_time">
-                        <!-- <input type="text" class="timepicker" name="end_time"> -->
-                    </div>
-                    <div>
-                        <h2>Interval</h2>
-                        <select name="interval" class="interval">
-                            <option value="10">10</option>
-                            <option value="20">20</option>
-                            <option value="30">30</option>
-                            <option value="40">40</option>
-                            <option value="holiday">Holiday</option>
-                        </select>
-                    </div>
-                    <div>
-                        <h2>Hospital</h2>
-                        <select name="hospital" class="hospital">
-                            <% for (var i=0;i < hospitals.length; i++) { %>
-                                <option value="<%= hospitals[i].name %>"><%= hospitals[i].name  %></option>
-                            <% } %>
-                        </select>
-                    </div>
-                    <button class="add">Add Slot</button>
-                </form>
+                </div> -->
             </div>
         </div>
     </div>
+
     <script>
-          document.addEventListener('DOMContentLoaded', function() {
-            var elems = document.querySelectorAll('.timepicker');
-            var options = {}
-            var instances = M.Timepicker.init(elems, options);
-        });
+        const getAllSlots = async () => {
+            const slots = await fetch('/getAllSlots' ,{
+                method : "GET"
+            })
+            const requiredSlots = await slots.json();
+            console.log(requiredSlots.length)
+            const container = document.getElementById("scheduled-slots-hero");
+            for(let i=0;i<requiredSlots.length;i++){
+                console.log("--",requiredSlots[i].subSlots.length)
+                let slot_container = document.createElement("div");
+                slot_container.className = "slot-container";
+                
+                let slots_header = document.createElement("div");
+                slots_header.className = "slots-header";
+                
+                let slot_detail = document.createElement("div");
+                slot_detail.className = "slot-detail";
+
+                let slot_day = document.createElement("h2");
+                slot_day.className = "slot-day";
+                slot_day.id = "day";
+                slot_day.innerText = requiredSlots[i].day[0]
+
+                let slot_hospital = document.createElement("h2");
+                slot_hospital.className = "slot-hospital";
+                slot_hospital.id = "hospital";
+                slot_hospital.innerText = requiredSlots[i].hospital;
+
+                let time = document.createElement("div");
+                time.className = "time";
+
+                let s_time = document.createElement("p");
+                s_time.id = "s_time";
+                s_time.innerText = requiredSlots[i].start_time;
+
+                let p_dash = document.createElement("p")
+                p_dash.innerText = "-";
+
+                let e_time = document.createElement("p");
+                e_time.id = "e_time";
+                e_time.innerText = requiredSlots[i].end_time;
+
+                let slot_header_buttons = document.createElement("div");
+                slot_header_buttons.className = "slot-header-buttons";
+
+                let deleteButton = document.createElement("button");
+                deleteButton.innerText = "Delete Slot"
+                let editButton = document.createElement("button");
+                editButton.innerText = "Edit Slot";
+                let viewButton = document.createElement("button");
+                viewButton.innerText = "View Detail";
+
+                slot_header_buttons.appendChild(deleteButton)
+                slot_header_buttons.appendChild(editButton)
+                slot_header_buttons.appendChild(viewButton)
+
+                time.appendChild(s_time);
+                time.appendChild(p_dash);
+                time.appendChild(e_time);
+
+                slot_detail.appendChild(slot_day);
+                slot_detail.appendChild(slot_hospital);
+                slot_detail.appendChild(time);
+                slots_header.appendChild(slot_detail);
+                slots_header.appendChild(slot_header_buttons)
+                slot_container.appendChild(slots_header)
+
+                let slots_hero = document.createElement("div")
+                slots_hero.className = "slots-hero";
+
+                for(let j=0 ; j<requiredSlots[i].subSlots.length;j++){
+                    let slot = document.createElement("div");
+                    slot.className = "slot";
+
+                    let p_time = document.createElement("p")
+                    p_time.innerText = requiredSlots[i].subSlots[j].s_time;
+
+                    let input = document.createElement("input")
+                    input.type = "checkbox";
+                    slot.appendChild(p_time);
+                    slot.appendChild(input)
+                    slots_hero.appendChild(slot);
+                }
+                slot_container.appendChild(slots_hero)
+                container.appendChild(slot_container)
+            }
+        }
     </script>
 </body>
 </html>

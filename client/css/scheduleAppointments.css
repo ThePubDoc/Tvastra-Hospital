@@ -4,7 +4,6 @@
 }
 
 .hero .schedule-hero {
-    
     padding: 3rem;
 }
 
@@ -32,4 +31,93 @@
     width: 6rem;
     align-self: flex-end;
     padding: .5rem;
+}
+
+.hero .schedule-hero .scheduled-slots-hero {
+    margin: 5rem 0;
+}
+
+.hero .schedule-hero .scheduled-slots-hero h1 {
+    font-family: bold;
+    font-size: x-large;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-header {
+    display: flex;
+    flex-direction: row;
+    background-color: #dddddd;
+    padding: 1rem;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-header .slot-detail {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: .3rem;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-header .slot-detail .slot-day {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    background-color: #eeeeee;
+    font-family: bold;
+    padding: .9rem;
+    border-radius: 5px;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-header .slot-detail .slot-hospital {
+    font-family: bold;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-header .slot-detail .time {
+    display: flex;
+    flex-direction: row;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-header .slot-detail p {
+    font-family: light;
+    font-size: small;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-header .slot-header-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-header .slot-header-buttons button {
+    font-family: bold;
+    border: none;
+    color: white;
+    background-color: #0173b2;
+    margin: 0 .2rem;
+    padding: 0 1rem;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #eeeeee;
+    padding: 1rem;
+    align-items: center;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-hero .slot {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid #a2a2a2;
+    padding: .4rem;
+    border-radius: 5px;
+    align-items: center;
+    margin: 0 .2rem;
+}
+
+.hero .schedule-hero .scheduled-slots-hero .slot-container .slots-hero .slot p {
+    color: #a2a2a2;
+    font-family: bold;
+    font-size: x-small;
 }

@@ -37,9 +37,10 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="checklist">
-                    <input type="checkbox" name="delhi"><p>Delhi</p>
-                    <input type="checkbox" name="mumbai"><p>Mumbai</p>
-                    <input type="checkbox" name="noida"><p>Noida</p>
+                    <input type="checkbox" name="Delhi" onchange="locationFilter(name)"><p>Delhi</p>
+                    <input type="checkbox" name="Mumbai" onchange="locationFilter(name)"><p>Mumbai</p>
+                    <input type="checkbox" name="Noida" onchange="locationFilter(name)"><p>Noida</p>
+                    <input type="checkbox" name="Rishikesh" onchange="locationFilter(name)"><p>Rishikesh</p>
                 </div>
                 <div>
                     <a href="http://"><i class="fa fa-plus">Show More</i></a>
@@ -55,9 +56,9 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="checklist">
-                    <input type="checkbox" name="mot"><p>Multi Organ Transplant</p>
-                    <input type="checkbox" name="dentistry"><p>Dentistry</p>
-                    <input type="checkbox" name="cancer"><p>Cancer</p>
+                    <input type="checkbox" name="mot" onchange="treatmentFilter(name)"><p>Multi Organ Transplant</p>
+                    <input type="checkbox" name="dentistry" onchange="treatmentFilter(name)"><p>Dentistry</p>
+                    <input type="checkbox" name="cancer" onchange="treatmentFilter(name)"><p>Cancer</p>
                 </div>
                 <div>
                     <a href="http://"><i class="fa fa-plus">Show More</i></a>
@@ -73,9 +74,9 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="checklist">
-                    <input type="checkbox" name="aiims"><p>AIIMS</p>
-                    <input type="checkbox" name="apollo"><p>Apollo</p>
-                    <input type="checkbox" name="city"><p>City</p>
+                    <input type="checkbox" name="AIIMS" onchange="hospitalFilter(name)"><p>AIIMS</p>
+                    <input type="checkbox" name="Apollo" onchange="hospitalFilter(name)"><p>Apollo</p>
+                    <input type="checkbox" name="city" onchange="hospitalFilter(name)"><p>City</p>
                 </div>
                 <div>
                     <a href="http://"><i class="fa fa-plus">Show More</i></a>
@@ -91,9 +92,9 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="checklist">
-                    <input type="checkbox" name="5"><p>5+</p>
-                    <input type="checkbox" name="10"><p>10+</p>
-                    <input type="checkbox" name="15"><p>15+</p>
+                    <input type="checkbox" name="5"  onchange="experienceFilter(name)"><p>5+</p>
+                    <input type="checkbox" name="10"  onchange="experienceFilter(name)"><p>10+</p>
+                    <input type="checkbox" name="15"  onchange="experienceFilter(name)"><p>15+</p>
                 </div>
                 <div>
                     <a href="http://"><i class="fa fa-plus">Show More</i></a>
@@ -130,7 +131,7 @@
                             <p><%= doctors[i].experience %></p>
                         </div>
                     </div>
-                    <button>Book An Appointment</button>
+                    <button name="<%= doctors[i].email %>" onclick="showSlots(name)">Book An Appointment</button>
                 </div>
                 <div class="doctor-dp">
                     <img src= <%= doctors[i].dp %> alt="" srcset="">
@@ -140,5 +141,106 @@
         </div>
     </div>
     <% include ./common/footer %>
+
+    <script>
+        var locationFilters = [];
+        var treatmentFilters = [];
+        var hospitalFilters = [];
+        var experienceFilters = [];
+        const locationFilter = async (name) => {
+            if(locationFilters.includes(name)){
+                locationFilters = locationFilters.filter(function(x){
+                    return x !== name;
+                });
+            }
+            else{
+                locationFilters.push(name)
+            }
+            console.log(locationFilters)
+            const response = await fetch("/getDoctor", {
+                method : "POSt",
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({locationFilters , treatmentFilters, hospitalFilters, experienceFilters})
+            });
+            console.log(await response.json())
+        }
+        
+        const treatmentFilter = async (name) => {
+            if(treatmentFilters.includes(name)){
+                treatmentFilters = treatmentFilters.filter(function(x){
+                    return x !== name;
+                });
+            }
+            else{
+                treatmentFilters.push(name)
+            }
+            console.log(treatmentFilters)
+            const response = await fetch("/getDoctor", {
+                method : "POSt",
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({locationFilters , treatmentFilters, hospitalFilters, experienceFilters})
+            });
+            console.log(await response.json())
+        }
+
+        const hospitalFilter = async (name) => {
+            if(hospitalFilters.includes(name)){
+                hospitalFilters = hospitalFilters.filter(function(x){
+                    return x !== name;
+                });
+            }
+            else{
+                hospitalFilters.push(name)
+            }
+            const response = await fetch("/getDoctor", {
+                method : "POSt",
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({locationFilters , treatmentFilters, hospitalFilters, experienceFilters})
+            });
+            console.log(await response.json())
+        }
+
+        const experienceFilter = async (name) => {
+            if(experienceFilters.includes(name)){
+                experienceFilters = experienceFilters.filter(function(x){
+                    return x !== name;
+                });
+            }
+            else{
+                experienceFilters.push(name)
+            }
+            const response = await fetch("/getDoctor", {
+                method : "POSt",
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({locationFilters , treatmentFilters, hospitalFilters, experienceFilters})
+            });
+            console.log(await response.json())
+        }
+
+        const showSlots = async (name) => {
+            
+            const slots = await fetch('/slots', {
+                method : "POST",
+                headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(name)
+            })
+            console.log(await slots.json());
+        }
+    </script>
 </body>
 </html>

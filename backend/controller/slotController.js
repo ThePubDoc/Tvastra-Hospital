@@ -20,7 +20,7 @@ const addSlot = async (req,res) => {
     slot.subSlots = slots;
     const newSlot = new Slot(slot);
     const addedSlot = await newSlot.save();
-    res.redirect('/doctor')
+    res.redirect('/scheduleAppointments')
 }
 
 const strToMins = (t) =>  {
