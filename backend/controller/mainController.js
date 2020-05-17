@@ -1,6 +1,6 @@
 const Users = require("../models/user");
 const Hospitals = require("../models/hospital");
-
+const Slot = require('../models/slot');
 
 
 const success = {
@@ -16,7 +16,10 @@ const empty = {
 }
 
 
-async function index(req,res){
+const index = async (req,res) => {
+    const date = new Date();
+    const day = date.getDay();
+    const oldSlot = await Slot.deleteMany({day: {$lt : day}});
     const user = await Users.findOne({email : req.session.user.email});
     const requireFields = {
         name : user.name,

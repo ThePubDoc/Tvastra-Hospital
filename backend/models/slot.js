@@ -41,9 +41,9 @@ const slotSchema = new schema({
         type: Number,
         required: true
     },
-    day:[{
-        type: String
-    }],
+    day:{
+        type: Number
+    },
     disableSlots:[{
         type: String
     }],

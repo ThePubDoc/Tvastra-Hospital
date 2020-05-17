@@ -40,9 +40,9 @@
 
         <div class="schedule-hero">
             <form action="/addSlot" method="POST" class="schedule-form">
-                <div>
+                <div class="days" id="days">
                     <h2>Day</h2>
-                    <select name="day" class="day">
+                    <!-- <select name="day" class="day">
                         <option value="monday">monday</option>
                         <option value="tuesday">tuesday</option>
                         <option value="wednesday">wednesday</option>
@@ -50,7 +50,7 @@
                         <option value="friday">friday</option>
                         <option value="saturday">saturday</option>
                         <option value="sunday">sunday</option>
-                    </select>
+                    </select> -->
                 </div>
                 <div>
                     <h2>Start Time</h2>
@@ -122,15 +122,30 @@
     </div>
 
     <script>
+        const date =new Date();
+        const day = date.getDay();
+        const days = ["Sunday","Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let select = document.createElement("select");
+        select.name = "day";
+        select.className = "day";
+        for(let i=day;i<7;i++){
+            let option = document.createElement("option");
+            option.value = i;
+            option.innerText = days[i];
+            select.appendChild(option);  
+        }
+        let days_div = document.getElementById("days");
+        days_div.appendChild(select);
+
         const getAllSlots = async () => {
             const slots = await fetch('/getAllSlots' ,{
                 method : "GET"
             })
             const requiredSlots = await slots.json();
-            console.log(requiredSlots.length)
+            
             const container = document.getElementById("scheduled-slots-hero");
             for(let i=0;i<requiredSlots.length;i++){
-                console.log("--",requiredSlots[i].subSlots.length)
+            
                 let slot_container = document.createElement("div");
                 slot_container.className = "slot-container";
                 
@@ -143,7 +158,7 @@
                 let slot_day = document.createElement("h2");
                 slot_day.className = "slot-day";
                 slot_day.id = "day";
-                slot_day.innerText = requiredSlots[i].day[0]
+                slot_day.innerText = days[requiredSlots[i].day];
 
                 let slot_hospital = document.createElement("h2");
                 slot_hospital.className = "slot-hospital";

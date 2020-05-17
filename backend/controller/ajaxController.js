@@ -13,19 +13,37 @@ const doctor = async (req,res) => {
         city : locationFilters,
         // hospitals : { $all: hospitalFilters },
     })
-    console.log(doc)
+    // console.log(doc)
     res.send(doc)
 }
 
+//schedule appointment page
 const getAllSlots = async (req,res) => {
-    // console.log(req.session.user);
-    const email = req.session.user.email;
+    const email = req.session.user.id;
     const slots= await Slot.find({user : email});
-    console.log(slots)
+    res.send(slots)
+}
+
+
+const getDoctorSlots = async(req,res) => {
+    const id = req.params.id;
+    const date = new Date();
+    const day = date.getDay();
+    const slots = await Slot.find({user : id,  day : { $gte : day} } ).sort({day : 1})
+    res.send(slots)
+}
+
+//doctors page get all slots of a particular day
+const getAllSlotsOfDay = async (req,res) => {
+    const id = req.query.id;
+    const day = req.query.day;
+    const slots = await Slot.find({user : id, day : day})
     res.send(slots)
 }
 
 module.exports = {
     doctor,
-    getAllSlots
+    getAllSlots,
+    getDoctorSlots,
+    getAllSlotsOfDay
 }

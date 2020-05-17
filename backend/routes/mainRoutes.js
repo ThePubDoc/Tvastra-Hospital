@@ -31,6 +31,8 @@ router.route('/addHospital').get(mainController.addHospital);
 router.route('/tvastraPlus').get(mainController.tvastraPlus);
 router.route('/scheduleAppointments').get(mainController.scheduleAppointments);
 router.route('/getAllSlots').get(ajaxController.getAllSlots);
+router.route('/slots/:id').get(ajaxController.getDoctorSlots)
+router.route('/getAllSlotsOfDay').get(ajaxController.getAllSlotsOfDay);
 
 
 router.route('/signup').post(files.single("file"), singupController.signup);

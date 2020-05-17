@@ -131,12 +131,31 @@
                             <p><%= doctors[i].experience %></p>
                         </div>
                     </div>
-                    <button name="<%= doctors[i].email %>" onclick="showSlots(name)">Book An Appointment</button>
+                    <button name="<%= doctors[i]._id %>" id = "<%= i %>" onclick="showSlots(name,id)">Book An Appointment</button>
+                    
                 </div>
                 <div class="doctor-dp">
                     <img src= <%= doctors[i].dp %> alt="" srcset="">
                 </div>
+                <div class="slot-days" id="slot-days-<%= i %>">
+                    <!-- <i class="fas fa-angle-left"></i> -->
+                    <!-- <div class="slot">
+                        <h2>Today</h2>
+                        <p id="1-slot">No Slots available</p>
+                        <div class="line">
+
+                        </div>
+                    </div>
+                    -->
+                    <!-- <i class="fas fa-angle-right"></i> -->
+                </div>
+                <div class="slot-time-hero" id="slot-time-hero-<%= i %>">
+                    <!-- <div class="slot-time">
+                        <p>11:00 PM</p>
+                    </div> -->
+                </div>
             </div>
+            
             <% } %>
         </div>
     </div>
@@ -147,6 +166,92 @@
         var treatmentFilters = [];
         var hospitalFilters = [];
         var experienceFilters = [];
+
+        const showSlots = async (userID,id) => {
+            let userId = userID;
+            const url = '/slots/' + userID;
+            const slots = await fetch(url, {
+                method : "GET",
+            })
+            const slotJSON = await slots.json();
+            const todayDate = new Date();
+            const todayDay = todayDate.getDay();
+            let availableSlotsCount = [0,0,0,0,0,0,0];
+            
+            for(let i=0;i<slotJSON.length;i++){
+                availableSlotsCount[slotJSON[i].day-todayDay] += slotJSON[i].subSlots.length; 
+            }
+
+            let slot_days = document.getElementById("slot-days-"+id)
+            for(let i=0;i<7;i++){
+                let slot = document.createElement("div")
+                slot.className = "slot";
+                
+                
+                let p = document.createElement("p");
+
+                if(availableSlotsCount[i] === 0){
+                    p.innerText = "No Slots Availanle"
+                }
+                else{
+                    p.innerText = availableSlotsCount[i] + " Slots Available"
+                }
+                
+                let line = document.createElement("div");
+                line.className = "line";
+
+                if(i === 0){
+                    let h2 = document.createElement("h2");
+                    h2.innerText = "Today";
+                    slot.appendChild(h2);
+                }
+                else if(i === 1){
+                    let h2 = document.createElement("h2");
+                    h2.innerText = "Tomorrow";
+                    slot.appendChild(h2);
+                }
+                else{
+                    let h2 = document.createElement("h2");
+                    let newdate = new Date();
+                    newdate.setDate(newdate.getDate() + i);
+                    h2.innerText = newdate.toDateString();
+                    slot.appendChild(h2);
+                }
+                let newdate = new Date();
+                newdate.setDate(newdate.getDate() + i);
+                let day = newdate.getDay();
+                slot.id = userID;
+                slot.setAttribute("name", day);
+                slot.setAttribute("onclick","getAllSlotsOfDay("+day+",id,"+id+")")
+                slot.appendChild(p);
+                slot.appendChild(line);
+                slot_days.appendChild(slot);
+            }
+        }
+
+        const getAllSlotsOfDay = async (day,id,divId) => {
+            const url = "/getAllSlotsOfDay?day="+day+"&id="+id;
+            
+            const allSlotsOfDay = await fetch(url , {
+                method : "GET"
+            })
+            const allSlotsOfDayJSON = await allSlotsOfDay.json();
+            console.log(allSlotsOfDayJSON);
+            let slotTimeHero = document.getElementById("slot-time-hero-"+divId);
+            slotTimeHero.innerHTML = "";
+            for(let i=0;i<allSlotsOfDayJSON.length;i++){
+                for(let j=0;j<allSlotsOfDayJSON[i].subSlots.length;j++){
+                    let slotTime = document.createElement("div");
+                    slotTime.className = "slot-time";
+                    let p = document.createElement("p");
+                    p.innerText = allSlotsOfDayJSON[i].subSlots[j].s_time;
+                    slotTime.appendChild(p)
+                    slotTimeHero.appendChild(slotTime)
+                }
+            }
+        }
+
+
         const locationFilter = async (name) => {
             if(locationFilters.includes(name)){
                 locationFilters = locationFilters.filter(function(x){
@@ -229,18 +334,10 @@
             console.log(await response.json())
         }
 
-        const showSlots = async (name) => {
-            
-            const slots = await fetch('/slots', {
-                method : "POST",
-                headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(name)
-            })
-            console.log(await slots.json());
-        }
+        
+    </script>
+    <script>
+
     </script>
 </body>
 </html>

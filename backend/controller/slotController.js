@@ -3,7 +3,7 @@ const Slot = require("../models/slot");
 
 const addSlot = async (req,res) => {
     let slot = new Slot(req.body);
-    slot.user = req.session.user.email;
+    slot.user = req.session.user.id;
     let sTime = strToMins(slot.start_time);
     let eTimme = strToMins(slot.end_time);
     let totalTime = eTimme-sTime;
