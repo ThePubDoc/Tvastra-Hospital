@@ -168,6 +168,8 @@
         var experienceFilters = [];
 
         const showSlots = async (userID,id) => {
+            let slot_days_id = document.getElementById("slot-days-"+id);
+            slot_days_id.innerHTML = "";
             let userId = userID;
             const url = '/slots/' + userID;
             const slots = await fetch(url, {
@@ -183,6 +185,7 @@
             }
 
             let slot_days = document.getElementById("slot-days-"+id)
+            var slotsArray = [];
             for(let i=0;i<7;i++){
                 let slot = document.createElement("div")
                 slot.className = "slot";
@@ -225,10 +228,65 @@
                 slot.setAttribute("onclick","getAllSlotsOfDay("+day+",id,"+id+")")
                 slot.appendChild(p);
                 slot.appendChild(line);
-                slot_days.appendChild(slot);
+                // slot_days.appendChild(slot);
+                slotsArray.push(slot);
             }
+            let leftArrow = document.createElement("i");
+            leftArrow.className = "fas fa-angle-left";
+            leftArrow.id = 0;
+            // leftArrow.setAttribute("onclick","shiftLeft("+slotsArray+")")
+            leftArrow.addEventListener("click" , () => {
+                slot_days_id.innerHTML = "";
+                if(leftArrow.id === 6){
+                    rightArrow.id = 6
+                }
+                leftArrow.id = Number(leftArrow.id)-3
+                slot_days.appendChild(leftArrow);
+                for(let i=Number(leftArrow.id);i<Number(rightArrow.id)-3;i++){
+                    slot_days.appendChild(slotsArray[i]);
+                }
+                rightArrow.id = Number(rightArrow.id)-3;
+                slot_days.appendChild(rightArrow)
+            })
+            slot_days.appendChild(leftArrow);
+            for(let i=leftArrow.id;i<leftArrow.id+3;i++){
+                console.log(i)
+                slot_days.appendChild(slotsArray[i])
+            }
+            let rightArrow = document.createElement("i");
+            rightArrow.className = "fas fa-angle-right";
+            rightArrow.id = Number(leftArrow.id)+3;
+            rightArrow.addEventListener("click" , () => {
+                slot_days_id.innerHTML = "";
+                leftArrow.id = Number(rightArrow.id);
+                slot_days.appendChild(leftArrow);
+                let upto = (Number(rightArrow.id)+3)>6 ? 7 : Number(rightArrow.id)+3;
+                for(let i=Number(rightArrow.id);i<upto;i++){
+                    slot_days.appendChild(slotsArray[i])
+                }
+                rightArrow.id = Number(rightArrow.id)+3
+                slot_days.appendChild(rightArrow);
+            })  
+            slot_days.appendChild(rightArrow)
+            
+            let slotDaysDivLength = document.getElementsByClassName("slot-days").length;
+            for(let i=0;i<slotDaysDivLength;i++){
+                if(i!=id){
+                    document.getElementsByClassName("slot-days")[i].style.display = "none";
+                    document.getElementsByClassName("slot-time-hero")[i].style.display = "none"
+                }
+                else {
+                    document.getElementsByClassName("slot-days")[i].style.display = "flex";
+                    document.getElementsByClassName("slot-time-hero")[i].style.display = "flex"
+                }
+            }
+            
         }
 
+        const shiftLeft = (id,slotsArray) => {
+            console.log(id)
+            // console.log(slotsArray.length)
+        }
         const getAllSlotsOfDay = async (day,id,divId) => {
             const url = "/getAllSlotsOfDay?day="+day+"&id="+id;
             
@@ -239,6 +297,7 @@
             console.log(allSlotsOfDayJSON);
             let slotTimeHero = document.getElementById("slot-time-hero-"+divId);
             slotTimeHero.innerHTML = "";
+            
             for(let i=0;i<allSlotsOfDayJSON.length;i++){
                 for(let j=0;j<allSlotsOfDayJSON[i].subSlots.length;j++){
                     let slotTime = document.createElement("div");

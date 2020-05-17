@@ -181,6 +181,8 @@
     justify-content: start;
     padding: 2rem;
     background-color: #f9f9f9;
+    grid-column-start: 1;
+    grid-column-end: 3;
 }
 
 .doctor-cards-hero .doctor-card .slot-time-hero .slot-time {
@@ -188,4 +190,5 @@
     color: #8bc248;
     font-family: bold;
     padding: .5rem 1rem;
+    margin: 1rem;
 }
