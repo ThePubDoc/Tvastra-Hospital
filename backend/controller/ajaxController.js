@@ -3,18 +3,67 @@ const Slot = require('../models/slot');
 
 const doctor = async (req,res) => {
     const filters = req.body;
-    const locationFilters = filters.locationFilters;
-    const treatmentFilters = filters.treatmentFilters;
-    const hospitalFilters = filters.hospitalFilters;
-    const experienceFilters = filters.experienceFilters;
-    const locationQuery = { $ne : locationFilters};
-    const doc = await User.find({
+    let locationFilters = filters.locationFilters;
+    let treatmentFilters = filters.treatmentFilters;
+    let hospitalFilters = filters.hospitalFilters;
+    let experienceFiltersString = filters.experienceFilters;
+    let experienceFilters = [];
+    let minExperienceYear = 100;
+    for(let i=0;i<experienceFiltersString.length;i++){
+        experienceFilters.push(Number(experienceFiltersString[i]))
+        if(experienceFilters[i]<minExperienceYear){
+            minExperienceYear = experienceFilters[i];
+        }
+    }
+    
+    let location = [];
+    let treatment = [];
+    let hospital = [];
+    const doctors = await User.find({type : "Doctor"});
+    for(let i=0;i<doctors.length;i++){
+        if(location.includes(doctors[i].city)==false){
+            location.push(doctors[i].city);
+        }
+        
+        for(let j=0;j<doctors[i].treatment.length;j++){
+            if(treatment.includes(doctors[i].treatment[j])==false){
+                treatment.push(doctors[i].treatment[j]);
+            }
+        }
+
+        for(let j=0;j<doctors[i].hospitals.length;j++){
+            if(hospital.includes(doctors[i].hospitals[j])==false){
+                hospital.push(doctors[i].hospitals[j]);
+            }
+        }
+    }
+    if(locationFilters.length === 0){
+        locationFilters = location
+    }
+    if(treatmentFilters.length === 0){
+        treatmentFilters = treatment;
+    }
+    if(hospitalFilters.length === 0){
+        hospitalFilters = hospital;
+    }
+    minExperienceYear = (minExperienceYear === 100) ? 0 : minExperienceYear;
+    console.log(minExperienceYear)
+    const filterdDoctors = await User.find({
         type : "Doctor",
-        city : locationFilters,
-        // hospitals : { $all: hospitalFilters },
+        city : {
+            $in : locationFilters
+        },
+        treatment : {
+            $in : treatmentFilters
+        },
+        hospitals : {
+            $in : hospitalFilters
+        },
+        experience : {
+            $gte : minExperienceYear
+        }
     })
-    // console.log(doc)
-    res.send(doc)
+    res.send(filterdDoctors)
 }
 
 //schedule appointment page

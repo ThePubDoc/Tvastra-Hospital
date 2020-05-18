@@ -37,10 +37,9 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="checklist">
-                    <input type="checkbox" name="Delhi" onchange="locationFilter(name)"><p>Delhi</p>
-                    <input type="checkbox" name="Mumbai" onchange="locationFilter(name)"><p>Mumbai</p>
-                    <input type="checkbox" name="Noida" onchange="locationFilter(name)"><p>Noida</p>
-                    <input type="checkbox" name="Rishikesh" onchange="locationFilter(name)"><p>Rishikesh</p>
+                    <% for(var i=0;i < location.length ;i++) {%> 
+                    <input type="checkbox" name="<%= location[i] %>" onchange="locationFilter(name)"><p><%= location[i] %></p>
+                    <% } %>
                 </div>
                 <div>
                     <a href="http://"><i class="fa fa-plus">Show More</i></a>
@@ -56,9 +55,9 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="checklist">
-                    <input type="checkbox" name="mot" onchange="treatmentFilter(name)"><p>Multi Organ Transplant</p>
-                    <input type="checkbox" name="dentistry" onchange="treatmentFilter(name)"><p>Dentistry</p>
-                    <input type="checkbox" name="cancer" onchange="treatmentFilter(name)"><p>Cancer</p>
+                    <% for(var i=0;i < treatment.length ;i++) {%> 
+                    <input type="checkbox" name="<%= treatment[i] %>" onchange="treatmentFilter(name)"><p><%= treatment[i] %></p>
+                    <% } %>
                 </div>
                 <div>
                     <a href="http://"><i class="fa fa-plus">Show More</i></a>
@@ -74,9 +73,9 @@
                     <i class="fa fa-search"></i>
                 </div>
                 <div class="checklist">
-                    <input type="checkbox" name="AIIMS" onchange="hospitalFilter(name)"><p>AIIMS</p>
-                    <input type="checkbox" name="Apollo" onchange="hospitalFilter(name)"><p>Apollo</p>
-                    <input type="checkbox" name="city" onchange="hospitalFilter(name)"><p>City</p>
+                    <% for(var i=0;i < hospital.length ;i++) {%>
+                    <input type="checkbox" name="<%= hospital[i] %>" onchange="hospitalFilter(name)"><p><%= hospital[i] %></p>
+                    <% } %>
                 </div>
                 <div>
                     <a href="http://"><i class="fa fa-plus">Show More</i></a>
@@ -320,16 +319,7 @@
             else{
                 locationFilters.push(name)
             }
-            console.log(locationFilters)
-            const response = await fetch("/getDoctor", {
-                method : "POSt",
-                headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({locationFilters , treatmentFilters, hospitalFilters, experienceFilters})
-            });
-            console.log(await response.json())
+            filterRequest(locationFilters , treatmentFilters, hospitalFilters, experienceFilters)
         }
         
         const treatmentFilter = async (name) => {
@@ -341,16 +331,7 @@
             else{
                 treatmentFilters.push(name)
             }
-            console.log(treatmentFilters)
-            const response = await fetch("/getDoctor", {
-                method : "POSt",
-                headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({locationFilters , treatmentFilters, hospitalFilters, experienceFilters})
-            });
-            console.log(await response.json())
+            filterRequest(locationFilters , treatmentFilters, hospitalFilters, experienceFilters)
         }
 
         const hospitalFilter = async (name) => {
@@ -362,15 +343,8 @@
             else{
                 hospitalFilters.push(name)
             }
-            const response = await fetch("/getDoctor", {
-                method : "POSt",
-                headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({locationFilters , treatmentFilters, hospitalFilters, experienceFilters})
-            });
-            console.log(await response.json())
+            filterRequest(locationFilters , treatmentFilters, hospitalFilters, experienceFilters)
+            
         }
 
         const experienceFilter = async (name) => {
@@ -382,6 +356,11 @@
             else{
                 experienceFilters.push(name)
             }
+            filterRequest(locationFilters , treatmentFilters, hospitalFilters, experienceFilters)
+        }
+
+        const filterRequest = async (locationFilters , treatmentFilters, hospitalFilters, experienceFilters) => {
+
             const response = await fetch("/getDoctor", {
                 method : "POSt",
                 headers: {
@@ -390,9 +369,72 @@
                 },
                 body: JSON.stringify({locationFilters , treatmentFilters, hospitalFilters, experienceFilters})
             });
-            console.log(await response.json())
-        }
+            const filteredDoctors = await response.json();
+            
+            document.getElementsByClassName("doctor-cards-hero")[0].innerHTML = "";
+            for(let i=0;i<filteredDoctors.length;i++){
+                let doctor_card = document.createElement("div");
+                doctor_card.className = "doctor-card";
 
+                let details = document.createElement("div");
+                details.className = "details";
+
+                let h1 = document.createElement("h1")
+                h1.innerText = filteredDoctors[i].name;
+
+                let info_hero = document.createElement("div");
+                info_hero.className = "info-hero";
+
+                let iconsClass = ["fa fa-certificate", "fa fa-hospital-o", "fas fa-ribbon", "fa fa-map-marker", "fa fa-clock-o"];
+                let infoInnerText = [filteredDoctors[i].speciality , filteredDoctors[i].hospitals, filteredDoctors[i].education, filteredDoctors[i].city, filteredDoctors[i].experience];
+
+                for(let j=0;j<5;j++){
+                    let info = document.createElement("div");
+                    info.className = "info";
+
+                    let certificate = document.createElement("i");
+                    certificate.className = iconsClass[j];
+
+                    let specialityP = document.createElement("p");
+                    specialityP.innerText = infoInnerText[j];
+
+                    info.appendChild(certificate);
+                    info.appendChild(specialityP);
+                    info_hero.appendChild(info);
+                }
+
+                let button = document.createElement("button");
+                button.name = filteredDoctors[i]._id;
+                button.id = i;
+                button.setAttribute("onclick" , "showSlots(name,id)");
+                button.innerText = "Book An Appointment";
+
+                let dp = document.createElement("div");
+                dp.className = "doctor-dp";
+                let img = document.createElement("img");
+                img.src = filteredDoctors[i].dp;
+
+                let slot_days = document.createElement("div");
+                slot_days.className = "slot-days";
+                slot_days.id = "slot-days-"+i;
+
+                let slot_time_hero = document.createElement("div");
+                slot_time_hero.className = "slot-time-hero";
+                slot_time_hero.id = "slot-time-hero-"+i;
+
+                doctor_card.appendChild(details);
+                details.appendChild(h1);
+                details.appendChild(info_hero);
+                details.appendChild(button)
+
+                doctor_card.appendChild(dp);
+                dp.appendChild(img);
+
+                doctor_card.appendChild(slot_days);
+                doctor_card.appendChild(slot_time_hero);
+                document.getElementsByClassName("doctor-cards-hero")[0].appendChild(doctor_card)
+            }
+        }
         
     </script>
     <script>

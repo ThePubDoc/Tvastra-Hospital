@@ -39,8 +39,33 @@ const index = async (req,res) => {
 }
 
 const doctor = async (req,res) => {
-    const doctors = await Users.find({type : "Doctor"})
+    const doctors = await Users.find({type : "Doctor"});
+    let location = [];
+    let treatment = [];
+    let hospital = [];
+    for(let i=0;i<doctors.length;i++){
+        if(location.includes(doctors[i].city)==false){
+            location.push(doctors[i].city);
+        }
+        
+        for(let j=0;j<doctors[i].treatment.length;j++){
+            if(treatment.includes(doctors[i].treatment[j])==false){
+                treatment.push(doctors[i].treatment[j]);
+            }
+        }
+
+        for(let j=0;j<doctors[i].hospitals.length;j++){
+            if(hospital.includes(doctors[i].hospitals[j])==false){
+                hospital.push(doctors[i].hospitals[j]);
+            }
+        }
+    }
+ 
     empty.doctors = doctors
+    empty.location = location;
+    empty.treatment = treatment;
+    empty.hospital = hospital;
+    
     res.render("doctor" , empty,)
 }
 
