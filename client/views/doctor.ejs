@@ -227,13 +227,13 @@
                 slot.setAttribute("onclick","getAllSlotsOfDay("+day+",id,"+id+")")
                 slot.appendChild(p);
                 slot.appendChild(line);
-                // slot_days.appendChild(slot);
+                
                 slotsArray.push(slot);
             }
             let leftArrow = document.createElement("i");
             leftArrow.className = "fas fa-angle-left";
             leftArrow.id = 0;
-            // leftArrow.setAttribute("onclick","shiftLeft("+slotsArray+")")
+            
             leftArrow.addEventListener("click" , () => {
                 slot_days_id.innerHTML = "";
                 if(leftArrow.id === 6){
@@ -247,6 +247,8 @@
                 rightArrow.id = Number(rightArrow.id)-3;
                 slot_days.appendChild(rightArrow)
             })
+
+
             slot_days.appendChild(leftArrow);
             for(let i=leftArrow.id;i<leftArrow.id+3;i++){
                 console.log(i)
@@ -255,6 +257,8 @@
             let rightArrow = document.createElement("i");
             rightArrow.className = "fas fa-angle-right";
             rightArrow.id = Number(leftArrow.id)+3;
+            
+            
             rightArrow.addEventListener("click" , () => {
                 slot_days_id.innerHTML = "";
                 leftArrow.id = Number(rightArrow.id);
@@ -266,6 +270,8 @@
                 rightArrow.id = Number(rightArrow.id)+3
                 slot_days.appendChild(rightArrow);
             })  
+            
+            
             slot_days.appendChild(rightArrow)
             
             let slotDaysDivLength = document.getElementsByClassName("slot-days").length;
