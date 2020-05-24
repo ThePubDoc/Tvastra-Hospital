@@ -148,6 +148,7 @@
 .doctor-cards-hero .doctor-card .slot-days .slot {
     text-align: center;
     margin-top: 1rem;
+    cursor: pointer;
 }
 
 .doctor-cards-hero .doctor-card .slot-days i {
@@ -191,4 +192,5 @@
     font-family: bold;
     padding: .5rem 1rem;
     margin: 1rem;
+    cursor: pointer;
 }

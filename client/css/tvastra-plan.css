@@ -566,7 +566,7 @@
     .features {
         grid-template-columns: 33.3% 33.3% 33.3%;
         padding: 1rem 6rem;
-        width: 80rem;
+        max-width: 80rem;
         margin: auto;
     }
 

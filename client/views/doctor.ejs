@@ -309,6 +309,7 @@
                     slotTime.className = "slot-time";
                     let p = document.createElement("p");
                     p.innerText = allSlotsOfDayJSON[i].subSlots[j].s_time;
+                    slotTime.id = allSlotsOfDayJSON[i].subSlots[j]._id;
                     slotTime.appendChild(p)
                     slotTimeHero.appendChild(slotTime)
                 }

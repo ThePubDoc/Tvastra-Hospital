@@ -142,6 +142,11 @@ const scheduleAppointments = async (req,res) => {
     res.render("scheduleAppointments", success);
 }
 
+
+const bookAppointment = (req,res) => {
+    res.render("bookAppointment" , empty);
+}
+
 module.exports = {
     index,
     doctor,
@@ -157,5 +162,6 @@ module.exports = {
     addDoctor,
     addHospital,
     tvastraPlus,
-    scheduleAppointments
+    scheduleAppointments,
+    bookAppointment,
 }

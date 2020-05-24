@@ -22,7 +22,7 @@ router.route('/signup').get(mainController.signup)
 router.route('/login').get(mainController.login);
 router.route('/logout').get(mainController.logout);
 router.route('/OTP-login').get(mainController.OTPLogin);
-router.route('status').get(mainController.status);
+router.route('/status').get(mainController.status);
 router.route('/verify').get(mainController.verify);
 router.route('/forgotPassword').get(mainController.forgot);
 router.route('/resend').get(OTPController.getOTP);
@@ -33,7 +33,7 @@ router.route('/scheduleAppointments').get(mainController.scheduleAppointments);
 router.route('/getAllSlots').get(ajaxController.getAllSlots);
 router.route('/slots/:id').get(ajaxController.getDoctorSlots)
 router.route('/getAllSlotsOfDay').get(ajaxController.getAllSlotsOfDay);
-
+router.route('/bookAppointment').get(mainController.bookAppointment);
 
 router.route('/signup').post(files.single("file"), singupController.signup);
 router.route('/getOTP').post(OTPController.getOTP);

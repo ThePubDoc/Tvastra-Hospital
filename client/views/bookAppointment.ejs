@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/common/reset.css">
+    <link rel="stylesheet" href="css/common/nav.css">
+    <link rel="stylesheet" href="css/bookAppointment.css">
+    <link rel="stylesheet" href="css/common/footer.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <% include ./common/navbar %>
+
+    <div class="book-appointment-hero">
+        <div class="doctor-details-hero">
+            <h2>In-clinic Appointment</h1>
+            <div class="date-hero">
+                <div class="date">
+                    <i class="fa fa-calendar" aria-hidden="true"></i>
+                    <p>On</p>
+                    <h3>May 01,2020</h3>
+                </div>
+                
+                <div class="date">
+                    <i class="far fa-clock"></i>
+                    <p>At</p>
+                    <h3>5:30 P.M</h3>
+                </div>
+            </div>
+
+            <div class="doctor">
+                <img src="../images/image--002.jpg" alt="" srcset="">
+                <h4>Dr. Aayush Agrawal</h4>
+                <p>MBBS, MD ,PGDE (Cosmetic & Esthetic Dentist)</p>
+                <p>Implantologist, Cosmetic/Aesthetic Dentist</p>
+            </div>
+        </div>
+
+        <div class="patient-details-hero">
+            <h1>Patient Details</h1>
+            <h3>This appointment is for</h3>
+            <form action="/bookAppointment" method="POST">
+                <div class="patient-name-hero">
+                    <div class="patient-name">
+                        <input type="radio">
+                        <p>Aayush Agrawal</p>
+                    </div>
+                    <div class="patient-name">
+                        <input type="radio">
+                        <p>Someone Else</p>
+                    </div>
+                </div>
+                <h3>Please provide details about Aayush</h3>
+
+                <div class="form-elements">
+                    <p>Full Name</p>
+                    <input type="text" placeholder="Full Name">
+                </div>
+
+                <div class="form-elements">
+                    <p>Mobile</p>
+                    <input type="number" placeholder="+919152861500">
+                </div>
+
+                <div class="form-elements">
+                    <p>Your Email</p>
+                    <input type="text" placeholder="Enter your email (optional)">
+                </div>
+                <button>Confirm</button>
+            </form>
+        </div>
+    </div>
+
+    <% include ./common/footer %>
+</body>
+</html>

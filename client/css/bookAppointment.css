@@ -1,109 +1,114 @@
-h2 {
-    font-family: bold;
-    font-size: larger;
-    text-align: left;
-}
-
-p {
-    font-family: light;
-}
-
-.appointment-container {
-    background-color: rgb(119, 169, 192);
-    height: 100%;
-    padding: 1rem;
-}
-
-.appointment-container .appointment-form-container {
-    
-}
-
-.appointment-container .appointment-form-container .appointment-elements {
-    display: flex;
-    flex-direction: column;
-    margin-top: 5rem;
-    margin-bottom: 10rem;
-    background-color: white;
-    padding: 2rem;
-}
-
-.appointment-container .appointment-form-container .appointment-elements .appointment-header{
-    color: rgb(55, 115, 145);
-    font-size: x-large;
-    margin-bottom: 2rem;
-    font-family: bold;
-}
-
-input {
-    padding: 1rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: grey;
-}
-
-.file {
-    padding: 0;
-}
-.appointment-container .appointment-form-container .appointment-elements .radio-container {
-    display: grid;
-    grid-template-columns: 10% auto;
-    margin-top: 1rem;
-}
-
-.appointment-container .appointment-form-container .appointment-elements .radio-container input {
-    margin-top: 0;
-}
-
-.appointment-container .appointment-form-container .appointment-elements .radio-container p {
-    justify-self: left;
-}
-
-.appointment-container .appointment-form-container .appointment-elements textarea {
-    margin-bottom: 1rem;
-    margin-top: 1rem;
-}
-
-.appointment-container .appointment-form-container .appointment-elements .appointment-button {
-    display: flex;
-    flex-direction: row;
-    justify-content:space-evenly;
-    background-color: rgb(19, 19, 43);
-    border: none;
-    color: white;
-    padding: 1rem;
-    font-family: bold;
-    font-size: large;
-    margin-bottom: 2rem;
-}
-
-.appointment-container .appointment-form-container .appointment-elements .appointment-footer{
+.book-appointment-hero {
     display: flex;
     flex-direction: row;
     justify-content: center;
+    background-color: #f0f0f5;
+    padding: 1rem 0 10rem 0;
+}
+
+.book-appointment-hero  .doctor-details-hero {
+    background-color: white;
+    margin: 2rem;
+    width: 40%;
+}
+
+.book-appointment-hero  .doctor-details-hero h2 {
+    font-family: bold;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+    padding: .5rem 1.5rem;
+}
+
+.book-appointment-hero  .doctor-details-hero .date-hero {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: .5rem 1.5rem;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+}
+
+.book-appointment-hero  .doctor-details-hero .date-hero .date {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.book-appointment-hero  .doctor-details-hero .date-hero .date i {
+    margin-right: .4rem;
+}
+
+.book-appointment-hero  .doctor-details-hero .date-hero .date p {
+    margin-right: .2rem;
     font-family: light;
 }
 
-.appointment-container .appointment-form-container .appointment-elements .appointment-footer a{
-    color: rgb(0, 153, 255);
+.book-appointment-hero  .doctor-details-hero .date-hero .date h3 {
+    font-family: bold;
 }
 
-@media only screen and (min-width: 600px){
-    .appointment-container .appointment-form-container .appointment-elements{
-        margin-left: 5rem;
-        margin-right: 5rem;
-    }
+.book-appointment-hero  .doctor-details-hero .doctor {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    padding: .5rem 1.5rem;
 }
 
-@media only screen and (min-width: 1000px){
-    .appointment-container .appointment-form-container .appointment-elements{
-        margin-top: 10rem;
-        margin-left: 20rem;
-        margin-right: 20rem;
-    }
+.book-appointment-hero  .doctor-details-hero .doctor img {
+    grid-row-start: 1;
+    grid-row-end: 4;
+    width: 100%;
+}
 
-    .appointment-container .appointment-form-container .appointment-elements .radio-container {
-        display: grid;
-        grid-template-columns: 5% auto;
-        margin-top: 1rem;
-    }
+.book-appointment-hero  .doctor-details-hero .doctor h4 {
+    font-family: bold;
+}
+
+.book-appointment-hero  .doctor-details-hero .doctor p {
+    font-family: light;
+}
+
+.book-appointment-hero .patient-details-hero {
+    margin: 2rem;
+}
+
+.book-appointment-hero .patient-details-hero h1 {
+    font-family: bold;
+    font-size: x-large;
+    margin-bottom: .5rem;
+}
+
+.book-appointment-hero .patient-details-hero h3 {
+    font-family: bold;
+}
+
+.book-appointment-hero .patient-details-hero .patient-name-hero {
+    display: flex;
+    flex-direction: column;
+}
+
+.book-appointment-hero .patient-details-hero .patient-name-hero .patient-name {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    border: 1px solid black;
+    align-items: baseline;
+    margin: .5rem 0;
+    padding: .5rem;
+}
+
+.book-appointment-hero .patient-details-hero .patient-name-hero .patient-name p {
+    font-family: light;
+}
+
+.book-appointment-hero .patient-details-hero .patient-name-hero h3 {
+    font-family: bold;
+}
+
+.book-appointment-hero .patient-details-hero .form-elements {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem 0;
+}
+
+.book-appointment-hero .patient-details-hero .form-elements input {
+    padding: .5rem;
+    margin: .3rem 0;
 }
