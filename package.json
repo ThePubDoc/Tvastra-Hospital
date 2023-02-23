@@ -33,7 +33,7 @@
     "multer-s3": "^2.9.0",
     "nexmo": "^2.6.0",
     "nodemon": "^2.0.4",
-    "sequelize": "^5.12.2",
+    "sequelize": "^6.28.2",
     "sqlite3": "^4.0.9",
     "supertest": "^4.0.2",
     "wget-improved": "^3.0.2"
